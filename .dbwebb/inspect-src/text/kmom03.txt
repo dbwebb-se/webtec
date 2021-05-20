@@ -1,0 +1,15 @@
+Vi kör på med kmom03 och enhetstester!
+
+Jag läser igenom din rapport och ser hur du upplevde enhetstestningen.
+
+Jag checkar ut den senaste taggen som är >= 3.0.0 och < 4.0.0 och jag hade gärna sett att du hade femton committs eller så.
+
+Det vore bra om valideringsverktygen ger en bra bild av din kod.
+
+Jag kikar extra på dina enhetstester och vilken kodtäckning du har.
+
+Förhoppningen med kmomet är att du upplever testning som intressant och förhoppningsvis sporrande till att uppdatera din kod och göra den "testbar", vilket kan leda till bättre kod rent allmänt.
+
+Vi kommer återkomma till mer kodkvalitet i kmom06.
+
+$TEACHER_SIGNATURE

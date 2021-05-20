@@ -1,0 +1,16 @@
+Välkommen till kursen mvc!
+
+Jag har kollat igenom din inlämning för att se att saker ligger på rätt plats och att du har ordning och reda på ditt Git-repo. I samband med det kör jag ett antal tester mot ditt repo och du ser resultatet från dem längst ned i denna texten.
+
+Jag vill se att din pdf med redovisningstext ser bra ut. Jag har lite högre förväntningar på rapporten i denna kursen än normalt sett.
+
+Jag förväntar mig ordning och reda med taggar och commits i repot, både lokalt och på GitHub/GitLab. När jag testar ditt repo kommer jag att använda den senaste taggen som är >= 1.0.0 och < 2.0.0. Jag hade gärna sett att du hade en handfull commits redan nu.
+
+Jag vill helst inte se några problem med valideringsverktygen, det blir snyggast om de hintar att koden ser bra ut.
+
+Avslutningsvis spelar jag ditt spel och vill se att det fungerar enligt kraven.
+
+$TEACHER_SIGNATURE
+
+PS. Glöm inte att fråga i GitHub issues för mer utförliga svar på funderingar eller för feedback på kod och lösningar.
+https://github.com/dbwebb-se/mvc/issues

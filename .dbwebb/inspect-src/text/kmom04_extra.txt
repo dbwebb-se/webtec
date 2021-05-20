@@ -1,0 +1,4 @@
+FIX. Din redovisningstext är alltför kort. Uppdatera den så att den matchar det som önskas.
+
+FIX. Din redovisningstext skall vara samlad i ett dokument enligt mallen. Uppdatera din rapport så att den motsvarar kraven enligt:
+https://dbwebb.se/kurser/mvc-v1/redovisa

@@ -1,0 +1,20 @@
+{
+    "name" : "dbwebb/webtec",
+    "description": "Course material for webtec.",
+    "homepage": "https://github.com/dbwebb-se/webtec",
+    "license": "MIT",
+    "keywords": ["dbwebb", "education", "course"],
+    "authors": [
+        {
+            "name": "Mikael Roos",
+            "email": "mos@dbwebb.se"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/dbwebb-se/webtec/issues",
+        "source": "https://github.com/dbwebb-se/webtec"
+    },
+    "require": {
+        "php": "^8.0"
+    }
+}

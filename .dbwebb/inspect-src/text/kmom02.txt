@@ -1,0 +1,14 @@
+Då kikar vi på kmom02!
+
+Jag läser igenom din rapport.
+
+Jag checkar ut den senaste taggen som är >= 2.0.0 och < 3.0.0. Jag hade gärna sett att du hade tiotalet commits i ditt repo.
+
+Det vore bra om valideringsverktygen inte visade på några bekymmer.
+
+Avslutningsvis spelar jag ditt spel och vill se att det fungerar enligt kraven.
+
+$TEACHER_SIGNATURE
+
+PS. Glöm inte att fråga i GitHub issues för mer utförliga svar på funderingar eller för feedback på kod och lösningar.
+https://github.com/dbwebb-se/mvc/issues

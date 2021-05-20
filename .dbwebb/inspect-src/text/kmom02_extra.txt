@@ -1,0 +1,11 @@
+[FIX] Jag spelade ditt spel, både lokalt med rätt tagg och på studentservern (senaste versionen du publicerat). Ingen av de versionerna fungerade. Laga så att spelet Yatzy fungerar.
+
+[FIX TILL NÄSTA KMOM] Du har en hel del valideringsfel när man kör 'make phps', städa upp dem till nästa kmom. Det är egentligen rätt enkelt om du kör 'make phpcbf' som försöker städa upp koden automatiskt.
+
+[FIX] Jag hittar inte filerna till dina flödesdiagram/pseudokoden, de skulle ligga i katalogen 'me/game/doc/yatzy'.
+
+[FIX TILL NÄSTA KMOM] Jag hittar inte filerna till dina flödesdiagram/pseudokoden, de skulle ligga i katalogen 'me/game/doc/yatzy'. Jag hittade dem dock på en annan plats.
+
+[FIX] Jag provade ditt spel enligt ovan tagg men det gav ett felmeddelande.
+
+[FIX TILL KOMMANDE KMOM] Du hade döpt din tagg till v.2 och det är inte ett korrekt sätt att döpa en tagg. Det skall vara v2 eller 2. Tänk gärna på det till kommande kmom.

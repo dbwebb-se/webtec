@@ -1,0 +1,97 @@
+#
+# Inspect, tools to inspect a kmom.
+#
+# Usage: dbwebb inspect kmom01
+#
+# Sequence executed:
+# webtec(), webteckmom01(), webteclast()
+#
+
+
+
+#
+# Test webtec general, always executed first
+#
+webtec()
+{
+    inspectIntro
+}
+
+
+
+#
+# Test general, always executed last in sequence
+#
+webteclast()
+{
+    :
+}
+
+
+
+#
+# Test webtec kmom01
+#
+webteckmom01()
+{
+    :
+}
+
+
+
+#
+# Test webtec kmom02
+#
+webteckmom02()
+{
+    :
+}
+
+
+
+#
+# Test webtec kmom03
+#
+webteckmom03()
+{
+    :
+}
+
+
+
+#
+# Test webtec kmom04
+#
+webteckmom04()
+{
+    :
+}
+
+
+#
+# Test webtec kmom05
+#
+webteckmom05()
+{
+    :
+}
+
+
+
+#
+# Test webtec kmom06
+#
+webteckmom06()
+{
+    :
+}
+
+
+
+#
+# Test webtec kmom10
+#
+webteckmom10()
+{
+    :
+}

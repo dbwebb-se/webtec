@@ -1,0 +1,16 @@
+{
+  "name": "course-repo-validation-tools",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "clean-css": "^4.2.1",
+    "csslint": "^1.0.1",
+    "html-minifier": "^4.0.0",
+    "htmlhint": "^0.11.0",
+    "js-yaml": "^3.13.1",
+    "jscs": "^3.0.7",
+    "jshint": "^2.10.2",
+    "jsonlint": "^1.6.3",
+    "uglify-js": "^3.6.5"
+  }
+}

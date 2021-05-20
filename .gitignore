@@ -1,0 +1,21 @@
+.bin/
+/bin/
+build/
+.venv/
+vendor/
+node_modules/
+package-lock.json
+composer.lock
+.log/
+gui-repo/
+.phpunit.result.cache
+.work/
+
+__pycache__
+*.pyc
+
+# Mac OS
+.DS_Store
+
+
+/repo/

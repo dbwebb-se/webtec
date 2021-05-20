@@ -1,0 +1,13 @@
+[FIX] Jag spelade ditt spel, både lokalt med rätt tagg och på studentservern (senaste versionen du publicerat). Ingen av de versionerna fungerade. Laga så att spelet 21 fungerar.
+
+[FIX] Du har en hel del valideringsfel när man kör 'make phps', städa upp dem.
+
+[FIX TILL NÄSTA KMOM] Du har en hel del valideringsfel när man kör 'make phps', städa upp dem till nästa kmom. Det är egentligen rätt enkelt om du kör 'make phpcbf' som försöker städa upp koden automatiskt.
+
+[FIX TILL NÄSTA KMOM] Du har en hel del valideringsfel när man kör 'make test', se om du kan städa upp dem så att det ser snyggare ut.
+
+[FIX TILL NÄSTA KMOM] Du har lite för få commits. Gör många och små commits. Det blir enklare när du kommit igång med kodbasen att jobba på det viset.
+
+[FIX] Det verkar som du inte har laddat upp ditt senaste repo på studentservern, eller så har du missat att ladda upp ditt git-repo till GitHub/GitLab för jag kan inte hitta en "remote" i ditt repo. Om du är osäker, visa länken till ditt GitHub/Lab så tar vi det därifrån.
+
+[FIX] Du verkar inte ha initierat ett Git-repo i din 'me/game'. Du behöver göra den delen också (skapa Git, ladda upp på GitHub/Lab).

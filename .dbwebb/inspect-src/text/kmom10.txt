@@ -1,0 +1,16 @@
+Jag har tittat på din sista inlämning och betygsatt enligt:
+https://dbwebb.se/kurser/faq/bedomning-och-betygsattning
+
+Du har fått poäng och slutbetyg enligt följande:
+
+Projekt krav 1-3: 30 (30p)
+Projekt krav 4:    0 (10p)
+Projekt krav 5:    0 (10p)
+Projekt krav 6:    0 (10p)
+Redovisa baskrav: 30 (30p)
+Redovisa extra:    0 (10p)
+---------------------------------
+TOTALT:           60 poäng (100p)
+SLUTBETYG:        D        (A-F, Fx)
+
+$TEACHER_SIGNATURE
