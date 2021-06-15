@@ -4,26 +4,16 @@
 # Map item to dirname while doing, for example, dbwebb validate lab1
 #
 
-# kmom01
-#me/kmom01/
+# kmom01/02
+me/report
+me/onepage
+me/htmlcss
 
-# kmom02
-#me/kmom02/
+# kmom03/04
+#me/onepage2
+me/report
 
-# kmom03
-#me/kmom03/
+# kmom05/06
 
-# kmom04
-#me/kmom04/
-
-# kmom05
-#me/kmom05/
-
-# kmom06
-#me/kmom06/
-
-# kmom10
-#me/kmom10/
-
-me/redovisa
+# kmom01/02
 me/proj
