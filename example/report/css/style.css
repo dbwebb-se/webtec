@@ -1,0 +1,13 @@
+html {
+    overflow-y:scroll;
+}
+
+body {
+    margin: 8px auto;
+    background: #fff;
+    width: 700px;
+}
+
+article h2 {
+    border-bottom: 1px solid #aaa;
+}
