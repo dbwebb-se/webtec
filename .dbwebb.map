@@ -10,10 +10,13 @@ me/onepage
 me/htmlcss
 
 # kmom03/04
-#me/onepage2
-me/report
+me/php
+me/session
 
 # kmom05/06
+me/sqlite
+me/pdoclient
+me/pdoweb
 
 # kmom01/02
 me/proj

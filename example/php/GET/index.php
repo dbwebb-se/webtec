@@ -1,0 +1,1 @@
+Example on using GET.
