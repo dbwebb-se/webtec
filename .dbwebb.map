@@ -14,6 +14,7 @@ me/php
 me/session
 
 # kmom05/06
+me/dbtest
 me/sqlite
 me/pdoclient
 me/pdoweb

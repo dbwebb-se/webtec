@@ -8,7 +8,7 @@ Nämn hur man jobbar med objekt, eftersom det förekommer i slutet av kursen.
 Responsivitet med navbar för mobiler
 
 phpstan
-    * låg nivå
+    * låg nivåseptember
 
 Labbmiljö?
     * PHP i pathen
