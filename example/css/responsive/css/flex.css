@@ -1,0 +1,107 @@
+html {
+  box-sizing: border-box;   /* Alternate box model */
+  background: url(../img/grid-square-20.png) repeat;  /* Show background grid image */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;      /* Alternate box model */
+}
+
+body {
+    overflow-y: scroll;     /* Always display scrollbar, avoid hopping pages */
+}
+
+:root {
+    --box-max-width: 1200px;
+    --box-min-height: 100px;
+    --box-margin-bottom: 24px;
+    --box-margin-right: 20px;
+}
+
+.siteheader {
+    margin: 0 auto;
+    /*max-width: var(--box-max-width);*/
+    min-height: var(--box-min-height);
+    margin-bottom: var(--box-margin-bottom);
+    background-color: Aquamarine;
+    padding: 1em;
+}
+
+.flash {
+    margin: 0 auto;
+    max-width: var(--box-max-width);
+    min-height: var(--box-min-height);
+    margin-bottom: var(--box-margin-bottom);
+    background-color: CadetBlue;
+    color: white;
+    padding: 1em;
+}
+
+.triptych,
+.half,
+.wrap-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /*align-items: stretch;*/
+    margin: 0 auto;
+    max-width: var(--box-max-width);
+    min-height: var(--box-min-height);
+}
+
+.half > * {
+    /*min-height: var(--box-min-height);*/
+    background-color: Bisque;
+    /*border: 1px solid white;*/
+    width: calc(var(--box-max-width) / 2);
+    margin-right: var(--box-margin-right);
+    margin-bottom: var(--box-margin-bottom);
+    padding: 1em;
+}
+
+.triptych > * {
+    background-color: Bisque;
+    width: calc(var(--box-max-width) / 3);
+    margin-right: var(--box-margin-right);
+    margin-bottom: var(--box-margin-bottom);
+    padding: 1em;
+}
+
+.half > *:last-child,
+.triptych > *:last-child {
+    margin-right: 0;
+}
+
+main {
+    /*min-height: var(--box-min-height);*/
+    background-color: SeaShell;
+    /*border: 1px solid white;*/
+    width: calc(var(--box-max-width) / 2);
+    margin-right: var(--box-margin-right);
+    margin-bottom: var(--box-margin-bottom);
+    padding: 1em;
+}
+
+aside.left,
+aside.right {
+    background-color: CadetBlue;
+    width: calc(var(--box-max-width) / 4);
+    margin-right: var(--box-margin-right);
+    margin-bottom: var(--box-margin-bottom);
+    padding: 1em;
+}
+
+aside.right {
+    margin-right: 0;
+}
+
+.sitefooter {
+    margin: 0 auto;
+    /*max-width: var(--box-max-width);*/
+    min-height: var(--box-min-height);
+    /*margin-bottom: var(--box-margin-bottom);*/
+    background-color: DarkSeaGreen;
+    color: white;
+    padding: 1em;
+    clear: both;
+}

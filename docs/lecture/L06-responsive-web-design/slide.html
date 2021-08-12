@@ -9,7 +9,7 @@
 
 <script data-role="slide" type="text/html" data-markdown class="titlepage center">
 # Responsive web design
-## Adaptable web sites
+## Same content - many devices
 ### Mikael Roos
 </script>
 
@@ -18,7 +18,271 @@
 <script data-role="slide" type="text/html" data-markdown>
 # Agenda
 
-*
+* Responsive web design
+* What it is
+* How to do it
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Responsive web design
+
+> "an approach to web design that makes web pages render well on a variety of devices and window or screen sizes from minimum to maximum display size"
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Mobile, padlet, desktop
+<figure>
+    <img src="img/StatCounter-comparison-ww-monthly-201112-202108.png" style="width: 85%">
+    <figcaption>Desktop vs Mobile vs Tablet Market Share Worldwide
+Dec 2011 - Aug 2021<br>https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/worldwide/#monthly-201112-202108</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Render same content
+<figure>
+    <img src="img/rwd.png" style="width: 30%">
+    <figcaption>How the same content is rendered on different devices.</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Full width
+<figure>
+    <img src="img/responsive1.png" style="width: 80%">
+    <figcaption>This might be how the website looks on a desktop.</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Medium width
+<figure>
+    <img src="img/responsive2.png" style="width: 50%">
+    <figcaption>This might be how the website looks on a padlet.</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Small width
+<figure>
+    <img src="img/responsive3.png" style="width: 20%">
+    <figcaption>This might be how the website looks on a mobile.</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Render same content...
+
+* One website
+* Render different on
+    * desktop (1920x1080)
+    * large desktop (5120x2160 for example)
+    * padlet
+    * large mobile
+    * small mobile
+    * watch
+* Show and hide content, resize and reflow it
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Related techniques
+
+* Adaptive web design (multiple versions to fit the users device)
+* Mobile first (create the mobile site first and then expand it)
+* Unobtrusive JavaScript (fully function without JavaScript)
+* Progressive enhancement (enhance presentation if device & performance allows it)
+* Fluid design (page elements relative size to viewport)
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# Responsive web design
+## How to do it
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Responsive web design
+
+* Set the viewport
+* Size content to the viewport
+* Media queries for responsiveness
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Set the viewport
+
+Allow the page to reflow content to match different screen sizes
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+```
+
+<p class="footnote">The page should match the screen's width in device-independent pixels, a device independent pixel being a representation of a single pixel, which may on a high density screen consist of many physical pixels.</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Size content to the viewport
+
+* Layout (no scrolling horizontally)
+* Content to fit in the viewport width
+* Images
+* Text
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Layout and content
+
+Use some or all of these techniques
+
+* Use floating layout using %
+* Use max-width to set how wide the box can be
+* Use flex (or grid) to ease positioning
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Responsive images
+
+Let the image take up max width to make it scalable
+
+```
+img {
+  max-width: 100%;
+  display: block;
+}
+```
+
+<p class="footnote">Dealing with images might also involve knowing the initial width of the image (full, 3/4 half, third, quarter).</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Different images
+
+Show different images depending on the device
+
+```
+<picture>
+  <source srcset="img_smallflower.jpg" media="(max-width: 600px)">
+  <source srcset="img_flowers.jpg" media="(max-width: 1500px)">
+  <source srcset="flowers.jpg">
+  <img src="img_smallflower.jpg" alt="Flowers">
+</picture>
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Responsive text
+
+* Use media queries
+* Use `vw` (% of viewport width) when specifying font-size
+* Use `calc()` and media queries
+* Use `clamp()` to specify min, preferred, max size
+
+<p class="footnote">Checking it out on the actual device and make adjustments using media queries might be a easy way to go.</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Responsive breakpoints
+
+* Media queries for responsivnes
+
+```
+@media (max-width: 1000px) {
+    .triptych {
+        flex-wrap: wrap;
+    }
+
+    .triptych > * {
+        width: calc(var(--box-max-width));
+        margin-right: 0;
+    }
+}
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# How to breakpoint
+
+* Focus on actual needed breakpoints
+* Focus on width and not device
+* Try out the website on common devices such as desktop, padlet/mobile
+    * Check both portrait and landscape
+    * Adjust when needed
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Setting the breakpoints
+
+* Adjust the content to fit in the viewport width
+* Images
+* Layout (no scrolling horizontally)
+* Media queries for responsiveness
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Tip
+
+* Avoid hiding content
+* Have a plan for your layout
+    * Stick to it
+    * Your layout always has limitations
+    * Fixing things that your layout does not support is costable
 
 </script>
 
@@ -50,29 +314,7 @@
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# W3C
-
-Bekanta dig kort med det arbetet som [organisationen W3C](https://www.w3.org/) utför när det gäller standardiseringar av HTML och CSS.
-
-Vi pratar mest om HTML och CSS vilket är en del av W3C's arbete inom [Web design and Applications](https://www.w3.org/standards/webdesign/).
-
-De har sammanställt [arbetet inom HTML och CSS](https://www.w3.org/standards/webdesign/htmlcss) och där kan man bland annat se nuvarande status och versioner av de standarder de jobbar med.
-
-Se till att du vet hur standarderna för HTML och CSS ser ut, bara så du vet. Det kan vara viktiga dokument för en professionell webbprogrammerare.
-
-</script>
-
-
-
-<script data-role="slide" type="text/html" data-markdown>
-# W3C validators
-
-</script>
-
-
-
-<script data-role="slide" type="text/html" data-markdown>
-# CanIUse
+# Resources
 
 </script>
 
