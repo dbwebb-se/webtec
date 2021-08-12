@@ -9,6 +9,7 @@ html {
 
 body {
     overflow-y: scroll;     /* Always display scrollbar, avoid hopping pages */
+    font-size: 18px;
 }
 
 :root {

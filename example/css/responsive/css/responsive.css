@@ -7,6 +7,10 @@ img {
 }
 
 @media (max-width: 1000px) {
+    body {
+        font-size: 16px;
+    }
+
     .triptych {
         flex-wrap: wrap;
     }

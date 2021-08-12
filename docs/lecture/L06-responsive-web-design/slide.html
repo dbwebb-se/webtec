@@ -20,8 +20,16 @@
 
 * Responsive web design
 * What it is
+* Why?
 * How to do it
 
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# Responsive web design
+## What it is
 </script>
 
 
@@ -35,13 +43,49 @@
 
 
 
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# Responsive web design
+## Why?
+</script>
+
+
+
 <script data-role="slide" data-markdown type="text/html" class="center">
-# Mobile, padlet, desktop
+# Market share devices
 <figure>
     <img src="img/StatCounter-comparison-ww-monthly-201112-202108.png" style="width: 85%">
-    <figcaption>Desktop vs Mobile vs Tablet Market Share Worldwide
-Dec 2011 - Aug 2021<br>https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/worldwide/#monthly-201112-202108</figcaption>
+    <figcaption>Desktop vs Mobile vs Tablet Market Share Worldwide<br>https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet
 </figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Screen resolutions
+<figure>
+    <img src="img/StatCounter-resolution-ww-monthly-202007-202107.png" style="width: 85%">
+    <figcaption>Screen Resolution Stats Worldwide<br>https://gs.statcounter.com/screen-resolution-stats</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Screen resolutions...
+
+```
+1920x1080
+1536x864
+1440x900
+1366x768
+768x1024
+414x896
+375x812,667
+360x800,780,760,720,640
+```
+
+<p class="footnote">Really large screens does not yet seem to be on the list.<br>It is also hard to view what is a desktop, laptop, tablet, mobile or watch.</p>
+
 </script>
 
 
@@ -50,7 +94,7 @@ Dec 2011 - Aug 2021<br>https://gs.statcounter.com/platform-market-share/desktop-
 # Render same content
 <figure>
     <img src="img/rwd.png" style="width: 30%">
-    <figcaption>How the same content is rendered on different devices.</figcaption>
+    <figcaption>Render same content - website - on different devices.</figcaption>
 </figure>
 </script>
 
@@ -91,13 +135,13 @@ Dec 2011 - Aug 2021<br>https://gs.statcounter.com/platform-market-share/desktop-
 
 * One website
 * Render different on
-    * desktop (1920x1080)
     * large desktop (5120x2160 for example)
+    * desktop (1920x1080)
+    * laptop
     * padlet
-    * large mobile
-    * small mobile
+    * large/small mobile
     * watch
-* Show and hide content, resize and reflow it
+* Show and hide, resize and reflow the content to the viewport
 
 </script>
 
@@ -106,11 +150,11 @@ Dec 2011 - Aug 2021<br>https://gs.statcounter.com/platform-market-share/desktop-
 <script data-role="slide" type="text/html" data-markdown>
 # Related techniques
 
+* Fluid design (page elements relative size to viewport)
 * Adaptive web design (multiple versions to fit the users device)
 * Mobile first (create the mobile site first and then expand it)
-* Unobtrusive JavaScript (fully function without JavaScript)
 * Progressive enhancement (enhance presentation if device & performance allows it)
-* Fluid design (page elements relative size to viewport)
+* Unobtrusive JavaScript (fully function without JavaScript)
 
 </script>
 
@@ -142,9 +186,9 @@ Allow the page to reflow content to match different screen sizes
 ```
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 ```
 
 <p class="footnote">The page should match the screen's width in device-independent pixels, a device independent pixel being a representation of a single pixel, which may on a high density screen consist of many physical pixels.</p>
@@ -170,9 +214,12 @@ Allow the page to reflow content to match different screen sizes
 
 Use some or all of these techniques
 
-* Use floating layout using %
+* Use fluid layout using %
 * Use max-width to set how wide the box can be
-* Use flex (or grid) to ease positioning
+    * It shrinks when the viewport shrinks
+* Use flex (or grid) to ease layout
+
+<p class="footnote">Your basic layout will set the limitations for your page responsive structure.</p>
 
 </script>
 
@@ -190,7 +237,61 @@ img {
 }
 ```
 
-<p class="footnote">Dealing with images might also involve knowing the initial width of the image (full, 3/4 half, third, quarter).</p>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Default max width
+<figure>
+    <img src="img/image-1.png" style="width: 90%">
+    <figcaption>Max size of image when the article width is wide.</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Smaller width
+<figure>
+    <img src="img/image-2.png" style="width: 75%">
+    <figcaption>Image scales to outer box boundary when article width is smaller.</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Small width
+<figure>
+    <img src="img/image-3.png" style="width: 35%">
+    <figcaption>Image scaled further down when the article width is set for a mobile.</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Floating images
+
+When floating images to the left/right you might need to know the original size of the image to make it reponsive.
+
+```
+<img src="flower.png" class="full">
+<img src="flower.png" class="third right">
+```
+
+Make the smaller image take up the full space when the article shrinks.
+
+```
+@media (max-width: 800px) {
+    img.third {
+        float: none;
+        width: 100%;
+    }
+}
+```
+
 
 </script>
 
@@ -210,6 +311,8 @@ Show different images depending on the device
 </picture>
 ```
 
+<p class="footnote">A bit more advanced when writing your HTML for each image. You need logistics to create and maintain several versions of the same image.</p>
+
 </script>
 
 
@@ -219,10 +322,36 @@ Show different images depending on the device
 
 * Use media queries
 * Use `vw` (% of viewport width) when specifying font-size
-* Use `calc()` and media queries
+* Use `calc()`, a reference variable for size, and media queries
 * Use `clamp()` to specify min, preferred, max size
 
-<p class="footnote">Checking it out on the actual device and make adjustments using media queries might be a easy way to go.</p>
+<p class="footnote">Checking it out on the actual device and make adjustments using media queries might be an easy way to go.</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Responsive text...
+
+Start with a reasonable font size for desktop (depends on your font)
+
+```
+body {
+    font-size: 18px;
+}
+```
+
+Adjust when going to smaller devices
+
+```
+@media (max-width: 1000px) {
+    body {
+        font-size: 16px;
+    }
+```
+
+<p class="footnote">Always view with the actual font-family on the target device.</p>
 
 </script>
 
@@ -231,7 +360,7 @@ Show different images depending on the device
 <script data-role="slide" type="text/html" data-markdown>
 # Responsive breakpoints
 
-* Media queries for responsivnes
+* Media queries for responsiveness
 
 ```
 @media (max-width: 1000px) {
@@ -246,6 +375,28 @@ Show different images depending on the device
 }
 ```
 
+<p class="footnote">Change box width when viewport changes.</p>
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Width > 1000
+<figure>
+    <img src="img/responsive-1001.png" style="width: 80%">
+    <figcaption>Default layout when the width is greater than 1000px.</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Width < 1000
+<figure>
+    <img src="img/responsive-1000.png" style="width: 80%">
+    <figcaption>Responsive layout when the width is less than 1000px.</figcaption>
+</figure>
 </script>
 
 
@@ -253,23 +404,25 @@ Show different images depending on the device
 <script data-role="slide" type="text/html" data-markdown>
 # How to breakpoint
 
-* Focus on actual needed breakpoints
-* Focus on width and not device
-* Try out the website on common devices such as desktop, padlet/mobile
+* Focus on actual needed (larger) breakpoints
+* Focus on viewport width and not the device
+* Try out the website on common devices such as desktop, padlet, mobile
     * Check both portrait and landscape
-    * Adjust when needed
+    * Add (smaller) breakpoints when needed
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Setting the breakpoints
+# How to breakpoint...
 
-* Adjust the content to fit in the viewport width
-* Images
-* Layout (no scrolling horizontally)
-* Media queries for responsiveness
+* No horisontal scrollbar
+* Content boxes has enough space (width)
+* Text is readable
+* Images (media) are viewable
+* Whitespace is adequate
+    * The empty space between content and boxes
 
 </script>
 
@@ -279,42 +432,13 @@ Show different images depending on the device
 # Tip
 
 * Avoid hiding content
+    * Parts of the website not visible on some devices (width)?
 * Have a plan for your layout
     * Stick to it
     * Your layout always has limitations
-    * Fixing things that your layout does not support is costable
-
-</script>
-
-
-
-<script data-role="slide" type="text/html" data-markdown class="titlepage center">
-# Resources
-</script>
-
-
-
-<script data-role="slide" type="text/html" data-markdown class="titlepage center">
-# Flexbox
-</script>
-
-
-
-<script data-role="slide" type="text/html" data-markdown class="titlepage center">
-# Style in the browser
-
-* Browser default style
-* Normalising style
-
-</script>
-
-
-
-
-
-
-<script data-role="slide" type="text/html" data-markdown>
-# Resources
+    * Fixing things that your layout does not support can usually be done but might be costable
+    * More and more fixes gets you into trouble
+        * Consider changing your layout
 
 </script>
 
@@ -323,6 +447,13 @@ Show different images depending on the device
 <script data-role="slide" type="text/html" data-markdown>
 # Industry matters
 
+* Common websites should always be responsive
+    * Easiest way to support all devices
+* Search engine promotes mobile good design
+* Older layout is not responsive - might be a bit hard to change that (layout does not support responsiveness - a lot of fixes)
+
+Consider you content, application, service - who is using it and when, on what type of device - then decide for your "responsive strategy" or another one.
+
 </script>
 
 
@@ -330,12 +461,23 @@ Show different images depending on the device
 <script data-role="slide" type="text/html" data-markdown>
 # Research matters
 
+* Designing The Autogate Pass Dashboard Application with Android based Responsive Web Design Technology
+* A Study on the Transition of the Adaptive into Responsive Web Design Methods on Smart Devices
+* Vast: An Open Source Web Framework Extending the Responsive Web to Large Scale Display Systems
+* A responsive web search system using word co-occurrence density and ontology: Independent Study Project Search
+
+<p class="footnote">Titles of research papers including "Responsive web design" from 2017 and forward.</p>
+
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
 # Summary
+
+* Responsive web design is a easy way to reach customers on all devices
+* Could be mandatory for all common websites
+* Build a responsive layout and the rest is "easy"
 
 </script>
 
