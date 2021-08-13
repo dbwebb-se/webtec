@@ -202,6 +202,7 @@ Allow the page to reflow content to match different screen sizes
 
 * Layout (no scrolling horizontally)
 * Content to fit in the viewport width
+* Content flows with the width
 * Images
 * Text
 
@@ -320,6 +321,8 @@ Show different images depending on the device
 <script data-role="slide" type="text/html" data-markdown>
 # Responsive text
 
+Ensure the text is readable on all devices.
+
 * Use media queries
 * Use `vw` (% of viewport width) when specifying font-size
 * Use `calc()`, a reference variable for size, and media queries
@@ -404,7 +407,7 @@ Adjust when going to smaller devices
 <script data-role="slide" type="text/html" data-markdown>
 # How to breakpoint
 
-* Focus on actual needed (larger) breakpoints
+* Focus on actual needed (major) breakpoints
 * Focus on viewport width and not the device
 * Try out the website on common devices such as desktop, padlet, mobile
     * Check both portrait and landscape
@@ -432,7 +435,7 @@ Adjust when going to smaller devices
 # Tip
 
 * Avoid hiding content
-    * Parts of the website not visible on some devices (width)?
+    * Parts of the website not visible on some devices?
 * Have a plan for your layout
     * Stick to it
     * Your layout always has limitations
