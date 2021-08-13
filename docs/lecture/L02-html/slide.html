@@ -75,7 +75,6 @@ The specifications as WHATWG Living Standards
 # HTML
 
 * HTML HyperText Markup Language
-* HTML is the World Wide Web's core markup language
 
 > "Originally, HTML was primarily designed as a language for semantically describing scientific documents. Its general design, however, has enabled it to be adapted, over the subsequent years, to describe a number of other types of documents and even applications."
 
@@ -98,7 +97,7 @@ The specifications as WHATWG Living Standards
 # Webtec standards
 <figure>
     <img src="img/html5-standards.png" style="width: 50%">
-    <figcaption>HTML5 related web technologies and standards.</figcaption>
+    <figcaption>"HTML5" related web technologies and standards.</figcaption>
 </figure>
 </script>
 
@@ -171,6 +170,8 @@ Streams             URL             XMLHttpRequest
     * Mime type `application/xhtml+xml`
 * HTML/XML are extended from SGML (Standard Generalized Markup Language)
 
+<p class="footnote">XHTML is like XML, more strict in its format and parsing may fail with error. Parsing HTML may esult in "browser fixes it for you".</p>
+
 </script>
 
 
@@ -193,7 +194,7 @@ Streams             URL             XMLHttpRequest
 </html>
 ```
 
-<p class="footnote">Note document type with head and body, all elements have starttag and endtag</p>
+<p class="footnote">Note document type with head and body, all elements have starttag and endtag.</p>
 
 </script>
 
@@ -244,10 +245,30 @@ Correct!
 
 
 <script data-role="slide" data-markdown type="text/html" class="center">
+# Source
+<figure>
+    <img src="img/source.png" style="width: 75%">
+    <figcaption>You can right click in the web page, get the menu and select "View page source" to see the actual source retrieved from the server. Really, really useful for debugging and development!</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Parsed DOM
+<figure>
+    <img src="img/parsed-dom.png" style="width: 75%">
+    <figcaption>The browser parses the response, builds a tree of nodes (DOM), might reformat the source and adds styles and scripts.</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
 # Manipulate DOM
 <figure>
     <img src="img/script.png" style="width: 100%">
-    <figcaption>Scripts (JavaScript) can manipulate the in-memory DOM tree, in the browser.</figcaption>
+    <figcaption>Scripts (JavaScript) can manipulate the in-memory DOM tree, in the browser.<br>This can make the web page a bit more "live" and less static in the browser.</figcaption>
 </figure>
 </script>
 
@@ -257,7 +278,7 @@ Correct!
 # Affect the style
 <figure>
     <img src="img/style.png" style="width: 65%">
-    <figcaption>Use CSS to influence how the HTML is rendered.</figcaption>
+    <figcaption>Use CSS to influence how the HTML is rendered.<br>CSS is for style, presentation and layout.</figcaption>
 </figure>
 </script>
 
@@ -271,6 +292,9 @@ Correct!
 * SQL injection
 * Cross-site request forgery (CSRF)
 * Clickjacking
+* No GET to change state
+
+<p class="footnote">Building secure web applications is always an issue. You need to be aware of the most common pitfalls.</p>
 
 </script>
 
@@ -287,6 +311,8 @@ Correct!
     * https://validator.w3.org/unicorn/
 * Link checker
     * https://validator.w3.org/checklink
+
+<p class="footnote">Add to your footer when developing a page.</p>
 
 </script>
 
@@ -369,7 +395,7 @@ address
     <body>
         <header></header>
         <article>
-            <header></header>
+            <header><h1></h1></header>
             <section></section>
             <section></section>
             <footer></footer>
@@ -389,13 +415,13 @@ address
 # Grouping content
 
 ```
-p   hr
-pre blockquote
+p       hr
+pre     blockquote
 ol  ul  li
-menu
 dl  dt  dd
-figure figcaption
-main div
+figure  figcaption
+main    div
+menu
 ```
 
 <p class="footnote">Elements to group and organise the actual content of the page.</p>
@@ -457,7 +483,7 @@ cat sat on the mat.</p>
 </figure>
 ```
 
-<p class="footnote">Figures with a caption.</p>
+<p class="footnote">Figures with a caption, wrapping images or media.</p>
 
 </script>
 
@@ -587,15 +613,15 @@ bdi     bdo     span    br      wbr
 # Embedded content
 
 ```
-picture source  img
-iframe  embed   object
-param   video   audio
-track   map     area
+picture     source      img
+iframe      embed       object
+param       video       audio
+track       map         area
 ```
 
 * MathML, SVG
 
-<p class="footnote">Embed various items into your HTML document.</p>
+<p class="footnote">Embed various external items into your HTML document.</p>
 
 </script>
 
@@ -611,7 +637,7 @@ tbody       thead       tfoot
 tr          td          th
 ```
 
-<p class="footnote">Create tables with data and organise with caption, header and footer. Perhaps layout all your courses with their grades, points and subject matter.</p>
+<p class="footnote">Create tables with data and organise with caption, header and footer.<br>Perhaps layout all your courses with their grades, points and subject matter, that would make a nice table.</p>
 
 </script>
 
@@ -720,6 +746,8 @@ legend
 </html>
 ```
 
+<p class="footnote">Use a small example page like this when you try to learn new elements.</p>
+
 </script>
 
 
@@ -739,7 +767,7 @@ legend
         <!-- this is a comment -->
 ```
 
-<p class="footnote">Some endtags are optional.</p>
+<p class="footnote">Some endtags are optional.<br>The specification says so.<br>THe w3C cheatsheet is an easy way to access those details.<br>Use the validators to see if you got it right.</p>
 
 </script>
 
@@ -751,9 +779,10 @@ legend
 * To validate, some characters may be escaped by their respective HTML entity
 * A way to enter special characters
 * A © can be entered by the entity `&copy;`
-
-&#x1F970;
-&#129392;
+* The most common are (in a web page)
+    * &amp; `&amp;`
+    * &lt; `&lt;`
+    * &gt; `&gt;`
 
 <p class="footnote">Check out the HTML entities at:<br>https://dev.w3.org/html5/html-author/charref</p>
 
@@ -776,7 +805,6 @@ legend
 
 * You can use UTF-8 characters directly
 * or through their Unicode (value identifying the character)
-* (if the HTML entity does not exists)
 
 🥰 &#x1F970; &#129392;
 😍 &#x1F60D; &#128525;
@@ -788,7 +816,7 @@ legend
 😂 &#x1F602; &#128514;
 ```
 
-<p class="footnote">Use HTML entities or UTF-8 characters to display icons and special characters.</p>
+<p class="footnote">Use HTML entities or Unicode/UTF-8 characters to display icons and special characters.</p>
 
 </script>
 
@@ -824,7 +852,7 @@ legend
 * W3C
 * https://www.w3.org/2009/cheatsheet/
 * MDN Mozilla Developers Network
-* (W3Schools)
+* W3Schools
 * Validators
 * CanIUse
 * Google "mdn html element" or "html element"
@@ -851,7 +879,7 @@ legend
 <script data-role="slide" type="text/html" data-markdown>
 # Research matters
 
-* HTML is a technique and a standard driven by the standardisation organisation
+* HTML is a technique and a standard driven by a standardisation organisation
 * Research is not solely done on such technique
 * You need to add an aspect of HTML to make it more researchable
     * Security, usability
