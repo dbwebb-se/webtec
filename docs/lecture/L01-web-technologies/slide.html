@@ -64,7 +64,7 @@
 <script data-role="slide" data-markdown type="text/html" class="center">
 # First website
 <figure>
-    <img src="img/first-website.png" style="width: 90%">
+    <img src="img/first-website.png" style="width: 85%">
     <figcaption>Project to restore the first website ever, info.cern.ch. Reach it at:<br>http://info.cern.ch/hypertext/WWW/TheProject.html</figcaption>
 </figure>
 </script>
@@ -74,7 +74,7 @@
 <script data-role="slide" data-markdown type="text/html" class="center">
 # First web browser
 <figure>
-    <img src="img/first-web-browser.png" style="width: 90%">
+    <img src="img/first-web-browser.png" style="width: 85%">
     <figcaption>2019 rebuilding of the original NeXT web browser from 1990.</figcaption>
 </figure>
 </script>
@@ -84,7 +84,7 @@
 <script data-role="slide" data-markdown type="text/html" class="center">
 # Line-mode browser -92
 <figure>
-    <img src="img/line-mode-browser.png" style="width: 90%">
+    <img src="img/line-mode-browser.png" style="width: 85%">
     <figcaption>First browser with cross-platform codebase.</figcaption>
 </figure>
 </script>
@@ -94,7 +94,7 @@
 <script data-role="slide" data-markdown type="text/html" class="center">
 # svt.se 1997
 <figure>
-    <img src="img/svt-97.png" style="width: 70%">
+    <img src="img/svt-97.png" style="width: 65%">
     <figcaption>The Wayback machine has snapshots of early websites, here is svt.se from 1997.</figcaption>
 </figure>
 </script>
@@ -133,6 +133,11 @@ authority = [userinfo@]host[:port]
 
 https://www.google.se/
 https://www.google.se/search?q=www
+
+http://localhost/index.html#section2
+http://127.0.0.1:8080/hello_world.php
+
+http://username:password@example.com/
 ```
 
 </script>
@@ -143,13 +148,12 @@ https://www.google.se/search?q=www
 # A web address...
 
 ```
-scheme:[//authority]path[?query][#fragment]
-authority = [userinfo@]host[:port]
+scheme://host/path?query#fragment
 
-https://en.wikipedia.org/
-https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web
-https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web#public
-https://en.wikipedia.org/w/index.php?title=History_of_the_WWW&action=edit&section=3
+https://wiki.org/
+https://wiki.org/wiki/History_of_the_WWW
+https://wiki.org/wiki/History_of_the_WWW#public
+https://wiki.org/w/index.php?title=History_WWW&action=edit&section=3
 ```
 
 </script>
@@ -163,9 +167,11 @@ https://en.wikipedia.org/w/index.php?title=History_of_the_WWW&action=edit&sectio
 scheme://server/path?query#fragment
 ```
 
-* scheme: http or https
+* scheme: http or https (more schemes exists, ftp, file, data)
 * host: antagning.se, svt.se
-* path: path to resource or filename, index.html or me-png
+    * http is port 80, https is port 443
+    * svt.se:8080 connects to another port
+* path: path to resource or filename, index.html or img/me.png
 * ?query: the querystring with key=value separated by &
     * ?key1=value1&key2=value2
 * #fragment: part (id) of the page to show first
@@ -187,11 +193,61 @@ scheme://server/path?query#fragment
 
 * Client = Web browser
 * Server = Web server
-* Client retrieves resource from URL
-* Send a HTTP GET request to the server, asking for the specified resource
+* Client parses the URL for details
+* Send a HTTP request to the server, asking for the specified resource
 * Server produces a HTTP response with the resource
 * The client receives the response and deals with it
 
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Requests
+<figure>
+    <img src="img/request.png" style="width: 75%">
+    <figcaption>One url requests one resource, within that resource, more urls are found and retrieved.</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Headers
+<figure>
+    <img src="img/headers.png" style="width: 75%">
+    <figcaption>The request has a header and the response has a header. This way the client and server can communicate on the format of the request and other request meta information.</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Body
+<figure>
+    <img src="img/response.png" style="width: 75%">
+    <figcaption>The response body contains the document as a "file", or a stream of characters.</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Source
+<figure>
+    <img src="img/source.png" style="width: 75%">
+    <figcaption>You can right click in the web page, get the menu and select "View page source" to see the actual source retrieved from the server. Really, really useful for debugging and development!</figcaption>
+</figure>
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Parsed DOM
+<figure>
+    <img src="img/parsed-dom.png" style="width: 75%">
+    <figcaption>The browser parses the response, builds a tree of nodes (DOM), might reformat the source and adds styles and scripts.</figcaption>
+</figure>
 </script>
 
 
@@ -292,7 +348,7 @@ HTML
 </head>
 ```
 
-CSS
+CSS in the file `style.css`
 
 ```
 body {
@@ -383,6 +439,20 @@ p {
 
 
 <script data-role="slide" type="text/html" data-markdown>
+# Web server
+
+* A server (some code up and running listening on a port for requests)
+* Listen for requests on port
+    * 80 for http requests
+    * 443 for https requests
+* Find the resource asked for
+* Send a response
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
 # Most used web server?
 
 * Which is the most used web server today?
@@ -411,6 +481,19 @@ p {
 
 
 
+<script data-role="slide" type="text/html" data-markdown>
+# XAMPP
+
+* Apache + MariaDB + PHP
+* A collection of software to get going with web development
+* Easy to install and a friendly default configuration
+
+<p class="footnote">XAMPP is just one of the development stacks available.</p>
+
+</script>
+
+
+
 <script data-role="slide" type="text/html" data-markdown class="titlepage center">
 # Resources
 </script>
@@ -424,7 +507,7 @@ p {
 * WHATWG
 * https://www.w3.org/2009/cheatsheet/
 * MDN Mozilla Developers Network
-* (W3Schools)
+* W3Schools
 
 </script>
 
@@ -451,6 +534,7 @@ p {
     * Usability
     * Security
 * The basic technologies are driven by standardisations
+* Web technologies is an broad area, narrow it down to its parts to make it more researchable
 
 </script>
 
@@ -461,7 +545,10 @@ p {
 
 * Web technologies
     * Address as URL
-    * Protocol as HTTP/HTTPS
+    * Protocol as HTTP/HTTPS (stateless)
+        * Request
+        * Response
+    * Document (HTML, CSS, Script, media and more)
     * Web browser
     * Web server
 
