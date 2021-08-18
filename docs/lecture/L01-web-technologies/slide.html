@@ -64,7 +64,7 @@
 <script data-role="slide" data-markdown type="text/html" class="center">
 # First website
 <figure>
-    <img src="img/first-website.png" style="width: 85%">
+    <img src="img/first-website.png" style="width: 75%">
     <figcaption>Project to restore the first website ever, info.cern.ch. Reach it at:<br>http://info.cern.ch/hypertext/WWW/TheProject.html</figcaption>
 </figure>
 </script>
@@ -171,6 +171,22 @@ scheme://server/path?query#fragment
 * host: antagning.se, svt.se
     * http is port 80, https is port 443
     * svt.se:8080 connects to another port
+* path
+* ?query
+* #fragment
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# A web address...
+
+```
+scheme://server/path?query#fragment
+```
+
+* scheme, host, host:port
 * path: path to resource or filename, index.html or img/me.png
 * ?query: the querystring with key=value separated by &
     * ?key1=value1&key2=value2
@@ -205,7 +221,7 @@ scheme://server/path?query#fragment
 <script data-role="slide" data-markdown type="text/html" class="center">
 # Requests
 <figure>
-    <img src="img/request.png" style="width: 75%">
+    <img src="img/request.png" style="width: 70%">
     <figcaption>One url requests one resource, within that resource, more urls are found and retrieved.</figcaption>
 </figure>
 </script>
@@ -215,7 +231,7 @@ scheme://server/path?query#fragment
 <script data-role="slide" data-markdown type="text/html" class="center">
 # Headers
 <figure>
-    <img src="img/headers.png" style="width: 75%">
+    <img src="img/headers.png" style="width: 70%">
     <figcaption>The request has a header and the response has a header. This way the client and server can communicate on the format of the request and other request meta information.</figcaption>
 </figure>
 </script>
@@ -225,7 +241,7 @@ scheme://server/path?query#fragment
 <script data-role="slide" data-markdown type="text/html" class="center">
 # Body
 <figure>
-    <img src="img/response.png" style="width: 75%">
+    <img src="img/response.png" style="width: 70%">
     <figcaption>The response body contains the document as a "file", or a stream of characters.</figcaption>
 </figure>
 </script>
@@ -235,7 +251,7 @@ scheme://server/path?query#fragment
 <script data-role="slide" data-markdown type="text/html" class="center">
 # Source
 <figure>
-    <img src="img/source.png" style="width: 75%">
+    <img src="img/source.png" style="width: 70%">
     <figcaption>You can right click in the web page, get the menu and select "View page source" to see the actual source retrieved from the server. Really, really useful for debugging and development!</figcaption>
 </figure>
 </script>
@@ -245,7 +261,7 @@ scheme://server/path?query#fragment
 <script data-role="slide" data-markdown type="text/html" class="center">
 # Parsed DOM
 <figure>
-    <img src="img/parsed-dom.png" style="width: 75%">
+    <img src="img/parsed-dom.png" style="width: 70%">
     <figcaption>The browser parses the response, builds a tree of nodes (DOM), might reformat the source and adds styles and scripts.</figcaption>
 </figure>
 </script>
