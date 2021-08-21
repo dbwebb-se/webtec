@@ -18,21 +18,411 @@
 <script data-role="slide" type="text/html" data-markdown>
 # Agenda
 
-*
+* Numeric array
+* Key value array
+* Iteration
+* Array functions
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Industry matters
+# Array
+
+* Compound data type
+* Keys are numeric or strings
+    * Numeric key, position
+    * String key, key/value
+* Funcions
+
+<p class="footnote">https://www.php.net/manual/en/book.array.php</p>
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Research matters
+# Numeric array
+
+```
+$a = {"1", "2"};
+```
+
+```
+$a[0] === "1";
+$a[1] === "2";
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Numeric array...
+
+```
+$a = {"1", "2"};
+$a[] = "3";
+```
+
+```
+$a[2] === "3";
+count($a) === 3;
+```
+
+<p class="footnote">https://www.php.net/manual/en/function.count.php</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Numeric array...
+
+```
+$a = {42, "Mikael", 3.1415, true, false, null, []};
+
+$a[] = rand(1, 6);
+
+$a[1337] = new Foo();
+```
+
+Any type can be stored in the array.
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Numeric array...
+
+```
+$a = {
+    2 => 42,
+    4 => "Mikael",
+    6 => 3.1415,
+    8 => true,
+    10 => false,
+    12 => null,
+    14 => [],
+    16 => rand(1, 6).
+    1337 => new Foo(),
+};
+```
+
+You can set the key (position) in the numeric array.
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Key value array
+
+```
+$a = {
+    "fortytwo" => 42,
+    "name" => "Mikael",
+    "pi" => 3.1415,
+    "boolean" => true,
+    "noValue" => null,
+    "moreItems" => [1, 2, 3, 4],
+};
+```
+
+The position (key) is a string instead of an integer
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Noughts and crosses
+
+* How to store a game of noughts and crosses in an array?
+
+```
+|---|---|---|
+|   |   | O |
+|---|---|---|
+|   | X |   |
+|---|---|---|
+| X |   | O |
+|---|---|---|
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# 1 dimensional array
+
+```
+    0   1   2
+  |---|---|---|
+0 |   |   | O |
+  |---|---|---|
+1 |   | X |   |
+  |---|---|---|
+2 | X |   | O |
+  |---|---|---|
+
+$game = []; // row 0, 1, 2 && col 0, 1, 2
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# 1 dimensional array...
+
+```
+$game[4] = "X"; // row=1, col=1
+$game[8] = "O"; // row=2, col=2
+$game[6] = "X"; // row=2, col=0
+$game[2] = "O"; // row=0, col=2
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# 1 dimensional array...
+
+```
+$row = 1; $col = 1;
+$game[$row * 3 + $col] = "X"; // pos 4
+
+$row = 2; $col = 2;
+$game[$row * 3 + $col] = "O"; // pos 8
+
+$row = 2; $col = 0;
+$game[$row * 3 + $col] = "X"; // pos 6
+
+$row = 0; $col = 2;
+$game[$row * 3 + $col] = "O"; // pos 2
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# 1 dimensional array...
+
+```
+$row = 1; $col = 1;
+$game[$row * 3 + $col] = "X"; // pos 4
+
+$row = 2; $col = 2;
+$game[$row * 3 + $col] = "O"; // pos 8
+
+$row = 2; $col = 0;
+$game[$row * 3 + $col] = "X"; // pos 6
+
+$row = 0; $col = 2;
+$game[$row * 3 + $col] = "O"; // pos 2
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# 2 dimensional array
+
+```
+$game = [[], [], []];
+
+$game[1][1] = "X"; // row=1, col=1
+$game[2][2] = "O"; // row=2, col=2
+$game[2][0] = "X"; // row=2, col=0
+$game[0][2] = "O"; // row=0, col=2
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# 2 dimensional array...
+
+```
+$row = 1; $col = 1;
+$game[$row][$col] = "X";
+
+$row = 2; $col = 2;
+$game[$row][$col] = "O";
+
+$row = 2; $col = 0;
+$game[$row][$col] = "X";
+
+$row = 0; $col = 2;
+$game[$row][$col] = "O";
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Iterate
+
+* Loop through all items in array
+
+```
+$items = [1, 2, 3];
+
+foreach ($items as $value) {
+    echo $value;
+}
+
+foreach ($items as $key => $value) {
+    echo "$key => $value\n";
+}
+```
+
+<p class="footnote">https://www.php.net/manual/en/control-structures.foreach.php</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Functions
+
+* in_array, array_key_exists, array_keys, array_merge
+* array_push, array_pop, array_shift, array_unshift
+* array_sum, array_reverse, array_unique
+
+<p class="footnote">https://www.php.net/manual/en/ref.array.php</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Print
+
+* print_r()
+
+```
+Array
+(
+    [4] => X
+    [8] => O
+    [6] => X
+    [2] => O
+)
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Print...
+
+* var_dump()
+
+```
+array(4) {
+  [4]=>
+  string(1) "X"
+  [8]=>
+  string(1) "O"
+  [6]=>
+  string(1) "X"
+  [2]=>
+  string(1) "O"
+}
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Sort
+
+```
+$values = [7, 4, 1, 91, 3];
+sort($values);
+print_r($values);
+```
+
+```
+Array
+(
+    [0] => 1
+    [1] => 3
+    [2] => 4
+    [3] => 7
+    [4] => 91
+)
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Implode
+
+```
+$values = [7, 4, 1, 91, 3];
+$strOfValues = implode(", ", $values);
+
+echo $strOfValues;  // "7, 4, 1, 91, 3"
+```
+
+<p class="footnote">https://www.php.net/manual/en/function.implode.php</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Explode
+
+```
+$strOfValues = "1 3 42 1337";
+$values = explode(" ", $strOfValues);
+print_r($values);
+```
+
+```
+Array
+(
+    [0] => 1
+    [1] => 3
+    [2] => 42
+    [3] => 1337
+)
+```
+
+<p class="footnote">https://www.php.net/manual/en/function.explode.php</p>
+
+</script>
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Serialize
+
+```
+$items = ["item1", "key2" => "item2", "item3"];
+echo serialize($items);
+```
+
+```
+a:3:{i:0;s:5:"item1";s:4:"key2";s:5:"item2";i:1;s:5:"item3";}
+```
+
+<p class="footnote">https://www.php.net/manual/en/function.serialize.php</p>
 
 </script>
 
@@ -40,6 +430,11 @@
 
 <script data-role="slide" type="text/html" data-markdown>
 # Summary
+
+* Numeric array
+* Key value array
+* Iteration
+* Array functions
 
 </script>
 

@@ -19,20 +19,250 @@
 # Agenda
 
 * Create own functions
+* Function examples
+* Scope
+* Organize ocde
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Industry matters
+# Template
+
+```
+function functionName (argumentList) : returnTypeHint
+{
+    // code
+
+    return someValue; // or do not return a value
+}
+```
+
+<p class="footnote">https://www.php.net/language.functions</p>
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Research matters
+# rollDice()
+
+* Function to roll a dice
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# rollDice()
+
+```
+function rollDice () : int
+{
+    return rand(1, 6);
+}
+
+echo rollDice();
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# rollDiceHand()
+
+* Roll a hand of dice
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# rollDiceHand()
+
+```
+function rollDiceHand () : array
+{
+    $dice = [];
+    for ($i = 1; $i <= 5; $i++) {
+        $dice[] = rand(1, 6);
+    }
+    return $dice;
+}
+
+echo implode(", ", rollDiceHand());
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# sum()
+
+* Sum up to three integers
+
+</script>
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# sum()
+
+```
+function sum (int $a, int $b=0, int $c=0) : int
+{
+    return $a + $b + $c;
+}
+
+echo sum(1);        // 1
+echo sum(1, 2);     // 3
+echo sum(1, 2, 3);  // 6
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# maxValue()
+
+* Find highest value in an array of values
+
+<p class="footnote">The function max() already exists as a builtin function.<br>https://www.php.net/manual/en/function.max.php</p>
+
+</script>
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# maxValue()
+
+```
+function maxValue (array $values) : float
+{
+    $max = null;
+    foreach ($values as $value) {
+        $max = $max < $value ? $value : $max;
+    }
+    return (float) $max;
+}
+
+echo maxValue([99, 42, 13, 1]);
+echo maxValue([1, 99, 13, 42]);
+echo maxValue([1, 13, 42, 99]);
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# swap()
+
+* Swap the content of two variables
+
+</script>
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# swap()
+
+```
+function swap (mixed &$a, mixed &$b) : void
+{
+    $c = $a;
+    $a = $b;
+    $b = $c;
+}
+
+$a = "Yo";
+$b = "tiger";
+echo swap($a, $b);
+echo "$a $b\n";
+echo swap($a, $b);
+echo "$a $b\n";
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Scope
+
+* Function scope
+* Variables declared in functions are local to the function
+* Variables declared on top level are global to the program
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Scope...
+
+```
+function scope () : void
+{
+    $name = "B";
+    echo "$name\n"; // B
+    for ($i = 0; $i <= 0; $i++) {
+        $name = "C";
+        echo "$name\n"; // C
+    }
+    echo "$name\n"; // C
+}
+
+$name = "A";
+echo "$name\n"; // A
+scope();
+echo "$name\n"; // A
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Organize code
+
+* Add all functions to (a) separate file and include in the scripts.
+* Move reusable parts to functions
+* Reduce "global code" on file level, prefer functions
+* Keep functions small, like less than 10 lines, or 20 lines
+* Keep a straight line of code (avoid to many tabbed in code)
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Organize code...
+
+How would you organise your code to create a game of Noughts and crosses?
+
+* A main program
+* A data structure for the game plan
+* Functions to work with the game
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Organize code...
+
+```
+$game = initGame();
+do {
+    // Read user move from terminal
+    if (!isValidMove($game, $move)) {
+        continue;
+    }
+    gameMove($game, $move);
+} while (!gameOver($game));
+```
 
 </script>
 
@@ -40,6 +270,11 @@
 
 <script data-role="slide" type="text/html" data-markdown>
 # Summary
+
+* Create own functions
+* Function examples
+* Scope
+* Organize ocde
 
 </script>
 
