@@ -28,7 +28,7 @@
 
 
 
-<script data-role="slide" type="text/html" data-markdown>
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
 # PHP: Hypertext Preprocessor
 ## (Personal Home Page)
 ### A recursive acronym
@@ -40,15 +40,14 @@
 # Language
 
 * Multi-paradigm
-    * imperative, functional,
-    * object-oriented, procedural, reflective
-* Designed by Rasmus Lerdorf (-94)
+    * imperative, functional, object-oriented, procedural, reflective
+* Designed by Rasmus Lerdorf (Greenland/Danish-Canadian) (-94)
 * Implemented in C (C++)
 * Unix, Windows, Mac
 * Influenced Hack, JSP, ASP
 * Type: (dynamic, weak), gradual (since 7.0)
 
-<p class="footnote">php.net</p>
+<p class="footnote">https://en.wikipedia.org/wiki/PHP<br>php.net</p>
 
 </script>
 
@@ -57,11 +56,11 @@
 <script data-role="slide" type="text/html" data-markdown>
 # Company
 
-* Andi Gutmans and Zeev Surask
+* Andi Gutmans (Switzerland) and Zeev Surask (Israel)
 * Rewrote parser for PHP 3
 * 1999 wrote PHP 4 and called it Zend engine
 * Founded Zend Technology (which since has overseen PHP development)
-* Zend is a blended word from Zeev and Andi
+    * Zend is a blended word from Zeev and Andi
 * Both have left Zend which was aquired 2015/19 and changed focus
 * Zend Framework is nowmore Laminas at the Linux Foundation
 
@@ -69,19 +68,6 @@
 
 </script>
 
-
-
-
-<script data-role="slide" type="text/html" data-markdown>
-# Versions
-<figure>
-    <img src="img/rwd.png" style="width: 30%">
-    <figcaption>Render same content - website - on different devices.</figcaption>
-</figure>
-
-https://www.php.net/supported-versions.php
-
-</script>
 
 
 
@@ -95,6 +81,19 @@ https://www.php.net/supported-versions.php
 * 8.0 (2020) JIT, performance, structure and typing
 
 </script>
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Supported versions
+<figure>
+    <img src="img/versions.png" style="width: 80%">
+    <figcaption></figcaption>
+</figure>
+
+<p class="footnote">https://www.php.net/supported-versions.php</p>
+
+</script>
+
 
 
 <script data-role="slide" type="text/html" data-markdown>
@@ -115,7 +114,7 @@ https://www.php.net/supported-versions.php
 # Organisation
 
 * PHP Group
-* Zend Technologies
+* Zend Technologies (changing its focus with new owners)
 * PHP is run by volunteers with literally zero budget
 
 </script>
@@ -125,7 +124,8 @@ https://www.php.net/supported-versions.php
 <script data-role="slide" type="text/html" data-markdown>
 # Other usage
 
-* Desktop applications
+* Besides web?
+* Desktop applications (cross platform)
 * Terminal applications
 
 </script>
@@ -134,22 +134,6 @@ https://www.php.net/supported-versions.php
 
 <script data-role="slide" type="text/html" data-markdown class="titlepage center">
 # Language
-</script>
-
-
-
-<script data-role="slide" type="text/html" data-markdown>
-# Language reference
-
-* Basic
-* Statements, instructions, expressions
-* Operator and operator preceedence
-* Types
-* Variables and scope
-* Control structures
-
-<p class="footnote">https://www.php.net/manual/en/langref.php</p>
-
 </script>
 
 
@@ -171,7 +155,7 @@ https://www.php.net/supported-versions.php
 </html>
 ```
 
-<p class="footnote">Starttagg &lt;?php and endtag ?&gt;</p>
+<p class="footnote">Start tagg &lt;?php and end tag ?&gt;, also known as opening tag and closing tag.</p>
 
 </script>
 
@@ -186,7 +170,7 @@ https://www.php.net/supported-versions.php
 echo 'Hello, World!';
 ```
 
-<p class="footnote">Empty "web page" without the optional closing tag.</p>
+<p class="footnote">Really small "web page" without the optional closing tag.</p>
 
 </script>
 
@@ -199,7 +183,7 @@ echo 'Hello, World!';
 <?= 'Hello, World!' ?>
 ```
 
-<p class="footnote">"Short echo tag" where &lt;?= replaces the echo part. Useful to print messages and variables to a web page.</p>
+<p class="footnote">"Short echo tag" where &lt;?= replaces the echo part "&lt;? echo". Useful to output/print messages and variables to a web page.</p>
 
 </script>
 
@@ -217,7 +201,7 @@ echo "Hello, World!";
 printf("Hello world!");
 ```
 
-<p class="footnote">Use stricter typing.</p>
+<p class="footnote">Use stricter typing.<br>Try to separate HTML, content and PHP.</p>
 
 </script>
 
@@ -229,9 +213,11 @@ printf("Hello world!");
 * Script language to add server side code in web pages
     * Blended with HTML
 * Programming language with pure PHP
-    * Compare to other programming languages like Python, C++, Java, C#
+    * Compare to other programming languages like Python, C++, Java, C#, Ruby
 * Template language for web pages
     * Print data/variables to web pages
+
+<p class="footnote">"Separations of concerns" is important to reach "good code".</p>
 
 </script>
 
@@ -239,6 +225,22 @@ printf("Hello world!");
 
 <script data-role="slide" type="text/html" data-markdown class="titlepage center">
 # Language reference
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Language reference
+
+* Basic
+* Statements, instructions, expressions
+* Operator and operator preceedence
+* Types
+* Variables and scope
+* Control structures
+
+<p class="footnote">https://www.php.net/manual/en/langref.php</p>
+
 </script>
 
 
@@ -289,12 +291,14 @@ return $a;
 $a = 1;
 $b = 3.1415;
 $sum = $a + $b;
+echo $sum;
 ```
 
 ```
 $part1 = "Mikael";
 $part2 = " is a teacher?";
 $msg = $part1 . $part2;
+echo $msg;
 ```
 
 <p class="footnote">https://www.php.net/manual/en/language.variables.php</p>
@@ -306,9 +310,11 @@ $msg = $part1 . $part2;
 <script data-role="slide" type="text/html" data-markdown>
 # Scalar types
 
+Scalar types holds only one value
+
 ```
 $noValue = null;
-$boolean = true;
+$boolean = true;        // false
 $integer = 1;
 $float = 3.1415;        // also known as "double"
 $string = "Mikael";
@@ -324,14 +330,18 @@ $anotherString = 'Mikael';
 <script data-role="slide" type="text/html" data-markdown>
 # Compound types
 
-Arrays
+Compound types can consists of several values of different types
 
 ```
-$arrayNumeric = [1, 2, 3];
+// Array with numeric implicit keys
+$arrayNumeric = [1, 2, 3, true, "Hi"];
 
+// Array with explicit string keys
 $arrayKeyValue = [
     "one" => 1,
     "two" => 2,
+    "boolean" => true,
+    "msg" => "Hi",
 ];
 ```
 
@@ -349,14 +359,14 @@ Objects
 ```
 class Foo
 {
-    function do_foo()
+    function doFoo()
     {
         echo "Doing foo.";
     }
 }
 
 $bar = new Foo();
-$bar->do_foo();
+$bar->doFoo();
 ```
 
 <p class="footnote">https://www.php.net/manual/en/language.types.object.php</p>
@@ -369,9 +379,11 @@ $bar->do_foo();
 # Type juggling
 
 ```
-$foo = "1";         // $foo is string (ASCII 49)
-$foo = $foo * 2;    // $foo is now an integer (2)
-$foo = $foo * 1.3;  // $foo is now a float (2.6)
+$foo = "1";                     // $foo is string (ASCII 49)
+$foo = $foo * 2;                // $foo is now an integer (2)
+$foo = $foo * 1.3;              // $foo is now a float (2.6)
+
+// These yields NOTICE in PHP 74.
 $foo = 5 * "10 Little Piggies"; // $foo is integer (50)
 $foo = 5 * "10 Small Pigs";     // $foo is integer (50)
 ```
@@ -399,17 +411,18 @@ $bar = (boolean) $foo;  // $bar is a boolean
 <script data-role="slide" type="text/html" data-markdown>
 # String interpolation
 
-Variables are parsed for there values, inside a string.
+Variable parsing, variables are parsed for there values, inside a string.
 
 ```
 $user = "mos";
 $power = 3;
-$msg = "The user $mos has power = $power.";
+$msg = "The user $user has power = $power.\n";
+
+// No variable parsing, nor \n
+$msg = 'The user $mos has power = $power.\n';
 ```
 
-<p class="footnote">This is known as "variable parsing" within a string enclosed with "". String with '' has no variable parsing.</p>
-
-<p class="footnote">https://www.php.net/manual/en/language.types.string.php#language.types.string.parsing</p>
+<p class="footnote">This is known as "variable parsing" within a string enclosed with "". String with '' has no variable parsing.<br>https://www.php.net/manual/en/language.types.string.php#language.types.string.parsing</p>
 
 </script>
 
@@ -418,15 +431,21 @@ $msg = "The user $mos has power = $power.";
 <script data-role="slide" type="text/html" data-markdown>
 # String heredoc
 
+A multiline formatted string with variable parsing.
+
 ```
+$variables = "1, 2, 3";
+
 $message = <<<EOD
 This is a larger message of text,
-spanning several lines and including
-$variables that are parsed for their values.
+    keeping its format,
+    spanning several lines and including
+'$variables' that are parsed for their values.
+
 EOD;
 ```
 
-<p class="footnote">https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc</p>
+<p class="footnote">Nowdoc is the variant of ''.<br>https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc</p>
 
 </script>
 
@@ -441,14 +460,14 @@ echo CONSTANT;          // outputs "Hello world."
 ```
 
 ```
-const CONSTANT = 'Hello World';
+const CONSTANT_MORE = 'Hello World';
 const ANOTHER_CONST = CONSTANT . " - Goodbye World";
 const ANIMALS = array('dog', 'cat', 'bird');
+
+print_r(get_defined_constants());
 ```
 
-<p class="footnote">Using const keyword, only scalar (bool, int, float and string) expressions and constant arrays containing only scalar expressions are accepted.</p>
-
-<p class="footnote">https://www.php.net/manual/en/language.constants.syntax.php</p>
+<p class="footnote">Using const keyword, only scalar (bool, int, float and string) expressions and constant arrays containing only scalar expressions are accepted.<br>https://www.php.net/manual/en/language.constants.syntax.php</p>
 
 </script>
 
@@ -462,7 +481,7 @@ const ANIMALS = array('dog', 'cat', 'bird');
 * Comparisom `==` `===` `!=` `!==` `<` `>` `<=` `>=`
 * Arithmentic `+ - * / % **`
 * Inc/decrement `++$a $a++ --$b $b--`
-* Logical operators `and or` `&& ||`
+* Logical operators `and &&` - `or ||`
 
 <p class="footnote">https://www.php.net/manual/en/language.operators.php</p>
 
@@ -481,6 +500,8 @@ $greatest = 42 >= $a;
 $value = ($boolean === true) && ($greatest++ > 42);
 ```
 
+<p class="footnote">A few random examples on operators building up larger expressions and statements. Prefer readability when constructing your statements.</p>
+
 </script>
 
 
@@ -488,13 +509,15 @@ $value = ($boolean === true) && ($greatest++ > 42);
 <script data-role="slide" type="text/html" data-markdown>
 # String operator
 
+String concatenation, adding strings.
+
 ```
 $who = "Mikael";
 $grade = "might be useful.";
 $msg = $who . " " . $grade;
-```
 
-AKA string concatenation.
+$msg .= " Really $who?";
+```
 
 <p class="footnote">https://www.php.net/manual/en/language.operators.string.php</p>
 
@@ -542,7 +565,7 @@ include "more_code.php";
 $a = "blue";
 
 if ($a) {
-    echo "The variable has a value";
+    echo "The variable has a value and is not empty";
 }
 
 if ($a === "green") {
@@ -585,6 +608,7 @@ $a = "blue";
 
 switch ($a) {
     case "green":
+    case "grass":
         echo "The color is green.";
         break;
     case "blue":
@@ -616,7 +640,7 @@ $color = match ($a) {
 echo "The proposed color code is $color.";
 ```
 
-<p class="footnote">https://www.php.net/manual/en/control-structures.match.php</p>
+<p class="footnote">New in PHP 80.<br>https://www.php.net/manual/en/control-structures.match.php</p>
 
 </script>
 
@@ -625,10 +649,15 @@ echo "The proposed color code is $color.";
 <script data-role="slide" type="text/html" data-markdown>
 # Ternary operator
 
-* An inline version of a if statement
+* An inline version of an if statement
 * Conditional ternary operator `?:`
 
 ```
+$color = "UNKNOWN";
+if ($a === "blue") {
+    $color = "BLUE";
+}
+
 // condition ? true : false
 $color = ($a === "blue") ? "BLUE" : "UNKNOWN";
 ```
@@ -642,7 +671,7 @@ $color = ($a === "blue") ? "BLUE" : "UNKNOWN";
 <script data-role="slide" type="text/html" data-markdown>
 # Null coalesce operator
 
-* Leave the first value that is not null
+* Take/find/leave the first value that is not null
 * Null coalesce operator `??`
 
 ```
@@ -661,6 +690,8 @@ $color = $a ?? $b ?? $c;
 <script data-role="slide" type="text/html" data-markdown>
 # for
 
+Loop with a counter
+
 ```
 for ($i = 1; $i <= 7; $i++) {
     echo $i;
@@ -675,6 +706,8 @@ for ($i = 1; $i <= 7; $i++) {
 
 <script data-role="slide" type="text/html" data-markdown>
 # while
+
+Loop until a condition is false
 
 ```
 $die = null;
@@ -698,6 +731,8 @@ while ($die !== 6) {
 
 <script data-role="slide" type="text/html" data-markdown>
 # do while
+
+Loop at least once, while condition is true
 
 ```
 $die = null;
@@ -830,12 +865,9 @@ $val = rand($min, $max;)
 <script data-role="slide" type="text/html" data-markdown>
 # Global sites
 
-* Facebook
-* Wikipedia
-* Tumblr
-* Slack
-* MailChimp
-* Etsy
+* Facebook, Wikipedia
+* Tumblr, Slack
+* MailChimp, Etsy
 * WordPress
 
 > "PHP is here to stay with an ever-increasing demand amongst some of the largest tech leaders in the global economy."
