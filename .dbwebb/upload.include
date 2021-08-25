@@ -16,6 +16,8 @@
 - .env*.local
 
 /example/
+- /example/vendor
+- /example/**/vendor
 - /example/**/node_modules/*
 /example/**
 
