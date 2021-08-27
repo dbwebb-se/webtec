@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function rollDice () : int
+function rollDice(): int
 {
     return rand(1, 6);
 }

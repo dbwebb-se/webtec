@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function rollDiceHand () : array
+function rollDiceHand(): array
 {
     $dice = [];
     for ($i = 1; $i <= 5; $i++) {

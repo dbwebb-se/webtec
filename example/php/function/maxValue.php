@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function maxValue (array $values) : float
+function maxValue(array $values): float
 {
     $max = null;
     foreach ($values as $value) {

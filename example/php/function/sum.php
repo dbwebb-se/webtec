@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function sum (int $a, int $b=0, int $c=0) : int
+function sum(int $a, int $b = 0, int $c = 0): int
 {
     return $a + $b + $c;
 }

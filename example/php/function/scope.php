@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function scope () : void
+function scope(): void
 {
     $name = "B";
     echo "$name\n";

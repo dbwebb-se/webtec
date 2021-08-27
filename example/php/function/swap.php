@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function swap (mixed &$a, mixed &$b) : void
+function swap(mixed &$a, mixed &$b): void
 {
     $c = $a;
     $a = $b;
