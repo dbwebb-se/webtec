@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+// phpcs:disable PSR1.Files.SideEffects
+
 define("CONSTANT", "Hello world.");
 echo CONSTANT;          // outputs "Hello world."
 

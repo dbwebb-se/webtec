@@ -1,4 +1,8 @@
-<pre><?php
+<?php
+
+declare(strict_types=1);
+
+// phpcs:disable PSR1.Files.SideEffects
 
 function printDate()
 {
@@ -12,6 +16,7 @@ $newLocale = $_GET["locale"] ?? 0;
 
 // Get and use current locale
 $locale = setlocale(LC_ALL, 0);
+echo "<pre>";
 echo "\nCurrent (default) locale is:\n $locale";
 echo "\nDate is:\n" . printDate();
 

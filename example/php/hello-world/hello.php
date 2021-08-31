@@ -3,4 +3,4 @@
 declare(strict_types=1);
 
 echo "Hello, World!";
-printf("Hello world!")
+printf("Hello world!");
