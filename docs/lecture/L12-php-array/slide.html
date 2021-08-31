@@ -59,12 +59,15 @@
 # Numeric array
 
 ```
-$a = {"1", "2"};
+$a = [42, 1337];
 ```
 
+The following are now true
+
 ```
-$a[0] === "1";
-$a[1] === "2";
+$a[0] === 42;
+$a[1] === 1337;
+count($a) === 2
 ```
 
 </script>
@@ -75,16 +78,41 @@ $a[1] === "2";
 # Numeric array...
 
 ```
-$a = {"1", "2"};
-$a[] = "3";
+// The array contains 2 items from previous slide
+$a[] = 3.1415;
+$a[] = "Mikael";
+$a[20] = " likes PHP.";
+$a[10] = true;
+$a[] = null;
 ```
 
 ```
-$a[2] === "3";
-count($a) === 3;
+// how many items does the array contain now?
+count($a);
+
+// what keys does the array contain?
 ```
 
 <p class="footnote">https://www.php.net/manual/en/function.count.php</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Numeric array...
+
+```
+array(7) {
+  [0]=>     int(42)
+  [1]=>     int(1337)
+  [2]=>     float(3.1415)
+  [3]=>     string(6) "Mikael"
+  [20]=>    string(11) " likes PHP."
+  [10]=>    bool(true)
+  [21]=>    NULL
+}
+```
 
 </script>
 
