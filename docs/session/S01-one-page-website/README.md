@@ -2,7 +2,6 @@
 
 * diff on html and body element
 * box sizing border box
-* link to validators
 * variables
 * navbar using a
 * style links
@@ -14,7 +13,7 @@
 * clear float
 * clear fix
 
-* validator-links
+* link to validators
 * (figure element)
 
 
