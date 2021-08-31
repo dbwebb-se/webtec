@@ -8,6 +8,7 @@
 * style links
 * background image
 * box shadow
+* images
 
 * float images
 * clear float
@@ -15,6 +16,9 @@
 
 * validator-links
 * (figure element)
+
+
+(use inline-block or float for equal width boxes)
 
 
 
