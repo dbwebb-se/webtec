@@ -15,6 +15,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        gap: 24px;
 
         background-color: tomato;
         padding: 1em;
@@ -25,18 +26,13 @@
         color: Brown;
 
         width: calc(100% / 3);
-        margin-right: 24px;
         padding: 1em;
-    }
-
-    .row > .col:last-child {
-        margin-right: 0;
     }
 
 </style>
 
 <div class="row">
     <div class="col">And some text</div>
-    <div class="col"><p>This example uses flexbox layout.</p><p>This is the "new and easier than float" way as a solution to columns.</p><p>Learn more by reading "<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a>"</p></div>
+    <div class="col"><p>This example uses flexbox layout with gap between the columns instead of margins.</p><p>Learn more by reading "<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a>" and "<a href="https://coryrylan.com/blog/css-gap-space-with-flexbox">CSS Gap Space with Flexbox</a>".</p><p>Do not forget to check up if <a href="https://caniuse.com/?search=gap">you can use it</a>.</div>
     <div class="col">And some text</div>
 </div>
