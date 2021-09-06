@@ -2,9 +2,14 @@
 
 declare(strict_types=1);
 
-class Foo {
+// phpcs:disable PSR1.Files.SideEffects
 
-};
+namespace Foo;
+
+class Foo
+{
+    // Nothing
+}
 
 $a = [
     "fortytwo"  => 42,
