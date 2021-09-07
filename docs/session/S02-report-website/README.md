@@ -12,27 +12,27 @@ Part I: About websites
     * "webbhotell sverige topp tio"
 
 1. About PageSpeed Insights
-  * https://developers.google.com/speed/pagespeed/insights/
+    * https://developers.google.com/speed/pagespeed/insights/
 
 1. About search engine optimization
-  * https://developers.google.com/search/docs/beginner/seo-starter-guide
+    * https://developers.google.com/search/docs/beginner/seo-starter-guide
   * SEO Sökmotoroptimering av dbwebb.se
-        http://dbwebb.se/t/522
+        * http://dbwebb.se/t/522
 
 1. Security
     * Bedrägeri med hjälp av (mos) webbplats iframe, clickjacking
-        http://dbwebb.se/t/7359
+          * http://dbwebb.se/t/7359
     * dbwebb hijackad i serpen
-        http://dbwebb.se/t/6598
+          * http://dbwebb.se/t/6598
     * Stulet innehåll, tagning 2
-        http://dbwebb.se/t/7306
+          * http://dbwebb.se/t/7306
     * Kmom03: Attacker
-        https://dbwebb.se/kurser/itsec-v2/kmom03
+          * https://dbwebb.se/kurser/itsec-v2/kmom03
 
 1. Analys av webbplatser
     * Ny trendrapport: Hur mår Sveriges webbplatser 2021
-        https://www.webserviceaward.com/posts/2021/09/06/ny-trendrapport-hur-mar-sveriges-webbplatser-2021/
-        https://drive.google.com/file/d/1DqUh6J-g4JjkVrbo9XN5tPHgg8p61Cf6/view?usp=sharing
+          * https://www.webserviceaward.com/posts/2021/09/06/ny-trendrapport-hur-mar-sveriges-webbplatser-2021/
+          * https://drive.google.com/file/d/1DqUh6J-g4JjkVrbo9XN5tPHgg8p61Cf6/view?usp=sharing
 
 
 
