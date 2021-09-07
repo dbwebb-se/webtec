@@ -1,0 +1,48 @@
+<!doctype html>
+<meta charset="utf8">
+<style>
+
+    html {
+        background-image: url("grid-square-20.png");
+        box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+        box-sizing: inherit;
+    }
+
+    .row {
+        background-color: BlanchedAlmond;
+        color: Brown;
+        overflow: auto;
+    }
+
+    .row > .col {
+        background-color: tomato;
+        float: left;
+        width: calc(100% / 3);
+        min-height: 200px;
+        padding: 1em;
+    }
+
+    .col > p {
+        margin: 1em;
+        padding: 1em;
+    }
+
+    .col.col2 {
+        background-color: LightCoral;
+    }
+
+    .col.col3 {
+        background-color: OrangeRed;
+    }
+
+</style>
+
+<div class="row">
+    <div class="col col1"><p>This example used solution.</p></div>
+    <div class="col col2"><p>This example uses floating divs and % but its real hard to layout them and take up the space centered. This is not a proposed solution.</p></div>
+    <div class="col col3"><p>This example uses floating divs and % but its real hard to layout them and take up the space centered. This is not a proposed solution.his example uses floating divs and % but its real hard to layout them and take up the space centered. This is not a proposed solution.his example uses floating divs and % but its real hard to layout them and take up the space centered. This is not a proposed solution.This example uses floating divs and % but its real hard to layout them and take up the space centered. This is not a proposed solution.his example uses floating divs and % but its real hard to layout them and take up the space centered. This is not a proposed solution.his example uses floating divs and % but its real hard to layout them and take up the space centered. This is not a proposed solution.</p></div>
+
+</div>
