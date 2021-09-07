@@ -13,7 +13,10 @@ function swap(mixed &$a, mixed &$b): void
 
 $a = "Yo";
 $b = "tiger";
+echo "$a $b\n";
+
 echo swap($a, $b);
 echo "$a $b\n";
+
 echo swap($a, $b);
 echo "$a $b\n";

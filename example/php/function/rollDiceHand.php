@@ -12,4 +12,5 @@ function rollDiceHand(): array
     }
     return $dice;
 }
+
 echo implode(", ", rollDiceHand());

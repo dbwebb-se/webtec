@@ -6,16 +6,18 @@ declare(strict_types=1);
 
 function scope(): void
 {
-    $name = "B";
-    echo "$name\n";
+    $name = "B";        // Function block scope
+    echo "$name\n";     // B
+    
     for ($i = 0; $i <= 0; $i++) {
         $name = "C";
-        echo "$name\n";
+        echo "$name\n"; // C
     }
-    echo "$name\n";
+    echo "$name\n";     // C
 }
 
-$name = "A";
-echo "$name\n";
+$name = "A";            // Global scope
+echo "$name\n";         // A
+
 scope();
-echo "$name\n";
+echo "$name\n";         // A

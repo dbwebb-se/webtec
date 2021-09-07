@@ -21,7 +21,7 @@
 * Create own functions
 * Function examples
 * Scope
-* Organize ocde
+* Organize code
 
 </script>
 
@@ -58,7 +58,7 @@ function functionName (argumentList) : returnTypeHint
 # rollDice()
 
 ```
-function rollDice () : int
+function rollDice (): int
 {
     return rand(1, 6);
 }
@@ -83,7 +83,7 @@ echo rollDice();
 # rollDiceHand()
 
 ```
-function rollDiceHand () : array
+function rollDiceHand(): array
 {
     $dice = [];
     for ($i = 1; $i <= 5; $i++) {
@@ -94,6 +94,29 @@ function rollDiceHand () : array
 
 echo implode(", ", rollDiceHand());
 ```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# rollDiceHand($number)
+
+```
+function rollDiceHand(int $number = 5): array
+{
+    $dice = [];
+    for ($i = 1; $i <= $number; $i++) {
+        $dice[] = rand(1, 6);
+    }
+    return $dice;
+}
+
+echo implode(", ", rollDiceHand()) . "\n";
+echo implode(", ", rollDiceHand(3)) . "\n";
+```
+
+<p class="footnote">Pass the argument as a value.</p>
 
 </script>
 
@@ -111,7 +134,7 @@ echo implode(", ", rollDiceHand());
 # sum()
 
 ```
-function sum (int $a, int $b=0, int $c=0) : int
+function sum(int $a, int $b = 0, int $c = 0): int
 {
     return $a + $b + $c;
 }
@@ -120,6 +143,8 @@ echo sum(1);        // 1
 echo sum(1, 2);     // 3
 echo sum(1, 2, 3);  // 6
 ```
+
+<p class="footnote">Default value for parameters can make the function more flexible.</p>
 
 </script>
 
@@ -139,7 +164,7 @@ echo sum(1, 2, 3);  // 6
 # maxValue()
 
 ```
-function maxValue (array $values) : float
+function maxValue(array $values): float
 {
     $max = null;
     foreach ($values as $value) {
@@ -169,7 +194,7 @@ echo maxValue([1, 13, 42, 99]);
 # swap()
 
 ```
-function swap (mixed &$a, mixed &$b) : void
+function swap(mixed &$a, mixed &$b): void
 {
     $c = $a;
     $a = $b;
@@ -178,11 +203,16 @@ function swap (mixed &$a, mixed &$b) : void
 
 $a = "Yo";
 $b = "tiger";
+echo "$a $b\n";
+
 echo swap($a, $b);
 echo "$a $b\n";
+
 echo swap($a, $b);
 echo "$a $b\n";
 ```
+
+<p class="footnote">Pass the argument as a reference to be able to change its value and make any change persists after the call.</p>
 
 </script>
 
@@ -191,9 +221,12 @@ echo "$a $b\n";
 <script data-role="slide" type="text/html" data-markdown>
 # Scope
 
+* A variable has a scope (or window) where it is recognized
 * Function scope
 * Variables declared in functions are local to the function
 * Variables declared on top level are global to the program
+
+<p class="footnote">https://www.php.net/manual/en/language.variables.scope.php</p>
 
 </script>
 
@@ -203,22 +236,71 @@ echo "$a $b\n";
 # Scope...
 
 ```
-function scope () : void
+function scope(): void
 {
-    $name = "B";
-    echo "$name\n"; // B
+    $name = "B";        // Function block scope
+    echo "$name\n";     // B
+
     for ($i = 0; $i <= 0; $i++) {
         $name = "C";
         echo "$name\n"; // C
     }
-    echo "$name\n"; // C
+    echo "$name\n";     // C
 }
 
-$name = "A";
-echo "$name\n"; // A
+$name = "A";            // Global scope
+echo "$name\n";         // A
+
 scope();
-echo "$name\n"; // A
+echo "$name\n";         // A
 ```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Scope with global
+
+```
+function scopeWithGlobal(): void
+{
+    global $name;
+
+    $name = "B"; // Referencing global scope
+    echo "$name\n";     // B
+}
+
+$name = "A";            // Global scope
+echo "$name\n";         // A
+
+scopeWithGlobal();
+echo "$name\n";         // B
+```
+
+<p class="footnote">The keyword global makes the variable to reference the same variable name in the global scope.</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Scope with static
+
+```
+function scopeWithStatic(): int
+{
+    static $value = 1;
+
+    return $value++;
+}
+
+echo scopeWithStatic() . "\n";  // 1
+echo scopeWithStatic() . "\n";  // 2
+echo scopeWithStatic() . "\n";  // 3
+```
+
+<p class="footnote">The keyword static makes the variable persist its value through multiple function calls.</p>
 
 </script>
 
@@ -227,7 +309,8 @@ echo "$name\n"; // A
 <script data-role="slide" type="text/html" data-markdown>
 # Organize code
 
-* Add all functions to (a) separate file and include in the scripts.
+* Add all functions to (a) separate file, `functions.php`
+* Include in the scripts, `require "functions.php";`
 * Move reusable parts to functions
 * Reduce "global code" on file level, prefer functions
 * Keep functions small, like less than 10 lines, or 20 lines
@@ -257,12 +340,19 @@ How would you organise your code to create a game of Noughts and crosses?
 $game = initGame();
 do {
     // Read user move from terminal
+
+    // Check if move is valid
     if (!isValidMove($game, $move)) {
         continue;
     }
+
+    // Do the move in the gameplan
     gameMove($game, $move);
+
 } while (!gameOver($game));
 ```
+
+<p class="footnote">The variables $game and $move are important as the contain the "game" as data structures. The data structures of you program are important. They might decrease the code you need to write.</p>
 
 </script>
 
@@ -274,7 +364,7 @@ do {
 * Create own functions
 * Function examples
 * Scope
-* Organize ocde
+* Organize code
 
 </script>
 
