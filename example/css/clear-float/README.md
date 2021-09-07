@@ -33,6 +33,10 @@ I ditt kursrepo har du ett exempelprogram som visar [hur float ser ut](float.htm
 
 Se när jag testar exemplet.
 
+* "Mikael kör igenom exempelprogrammet för float och clear."
+
 [!["Mikael kör igenom exempelprogrammet för float och clear."](https://img.youtube.com/vi/tOjFaCwtSJU/0.jpg)](https://www.youtube.com/watch?v=tOjFaCwtSJU)
+
+* "Mikael förtydligare när clear behövs."
 
 [!["Mikael förtydligare när clear behövs."](https://img.youtube.com/vi/_j1XRxKtgEs/0.jpg)](https://www.youtube.com/watch?v=_j1XRxKtgEs)

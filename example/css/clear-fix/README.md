@@ -11,6 +11,8 @@ Min fix är att använda CSS-konstruktionen `overflow: auto` för att tvinga en 
 
 Se när jag testar exemplet.
 
+* "Mikael visar hur clearfix med overflow auto fungerar."
+
 [!["Mikael visar hur clearfix med overflow auto fungerar."](https://img.youtube.com/vi/BhPxWRkvc74/0.jpg)](https://www.youtube.com/watch?v=BhPxWRkvc74)
 
 Alltså, clear float och clearfix, två vanliga lösningar på problem som uppträder med layouten när float används.

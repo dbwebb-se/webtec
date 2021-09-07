@@ -15,4 +15,6 @@ Måttet `em` motsvarar storleken av ett tecken och i utgångsläget är det 16 p
 
 Det kan se ut så här.
 
+* "Mikael visar hur man sätter minsta höjd på en sida."
+
 [!["Mikael visar hur man sätter minsta höjd på en sida."](https://img.youtube.com/vi/rFSVZlGNqbU/0.jpg)](https://www.youtube.com/watch?v=rFSVZlGNqbU)

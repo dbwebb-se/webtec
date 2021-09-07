@@ -13,4 +13,6 @@ html {
 
 Det kan se ut så här.
 
+* "Mikael visar effekten av att alltid visa scrollbaren."
+
 [!["Mikael visar effekten av att alltid visa scrollbaren."](https://img.youtube.com/vi/SFhSsvuP4Gg/0.jpg)](https://www.youtube.com/watch?v=SFhSsvuP4Gg)
