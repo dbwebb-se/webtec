@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <title>Exempel clearfix</title>
+
+    <style>
+    body {
+        margin: 8px auto;
+        width: 600px;
+    }
+    
+    article {
+        background-color: #eee;
+        overflow: auto;
+    }
+    
+    .right {
+        float: right;
+    }
+    
+    footer {
+        background-color: #eee;
+    }
+    
+    </style>
+</head>
+
+<body>
+<article>
+    
+    <header>
+        <h1>Om Mig Själv</h1>
+        <p class="author">Uppdaterad <time datetime="2015-05-06 11:17:43">6:e maj 2015</time> av Mikael Roos</p>
+    </header>
+    
+    <img src="teddybear.png" class="right">
+    
+    <p>I detta fallet behövs en clearfix på article-elementet som inte vet hur lång nallebjörnen är. Elementet article, vet alltså inte nallens (bildens) höjd och kan därför inte omspänna hela elementet och footern hamnar fel.</p>
+    
+    <p>Nu har elementet article en clearfix som tvingar en omritning av elementet som leder till att det omsluter hela nallens höjd.</p>
+
+</article>
+
+<footer>
+    <p class="copyright">Copyright © 2015 Mikael Roos, mos@dbwebb.se</p>
+</footer>
+    
+</body>
+</html>
