@@ -1,16 +1,20 @@
-Välkommen till kursen mvc!
+Välkommen till kursen webtec!
 
-Jag har kollat igenom din inlämning för att se att saker ligger på rätt plats och att du har ordning och reda på ditt Git-repo. I samband med det kör jag ett antal tester mot ditt repo och du ser resultatet från dem längst ned i denna texten.
+Jag har läst igenom din rapportsida och där vill jag se att du besvarat frågorna med någorlunda fylliga och gärna reflekterande svar.
 
-Jag vill se att din pdf med redovisningstext ser bra ut. Jag har lite högre förväntningar på rapporten i denna kursen än normalt sett.
+Jag tittar igenom din onepage och ser att kraven är uppfyllda och att sidan ser "okey" ut.
 
-Jag förväntar mig ordning och reda med taggar och commits i repot, både lokalt och på GitHub/GitLab. När jag testar ditt repo kommer jag att använda den senaste taggen som är >= 1.0.0 och < 2.0.0. Jag hade gärna sett att du hade en handfull commits redan nu.
+I din responsiva sida vill jag se tydliga inslag av kolumner, responsiva bilder och media queries med stackade kolumner.
 
-Jag vill helst inte se några problem med valideringsverktygen, det blir snyggast om de hintar att koden ser bra ut.
-
-Avslutningsvis spelar jag ditt spel och vill se att det fungerar enligt kraven.
+Jag testar även så att dina webbsidor validerar i Unicorn/HTML/CSS validatorerna.
 
 $TEACHER_SIGNATURE
 
+PS. Vilken feedback kan man förvänta sig på rättningarna?
+https://dbwebb.se/kurser/faq/vilken-feedback-far-man-pa-inlamningarna
+
+PS. Hur skriver man reflekterande redovisningstext och besvarar frågor?
+https://dbwebb.se/kunskap/varfor-regnar-det-pa-bergssidan-ett-exempel-pa-solo-taxonomin
+
 PS. Glöm inte att fråga i GitHub issues för mer utförliga svar på funderingar eller för feedback på kod och lösningar.
-https://github.com/dbwebb-se/mvc/issues
+https://github.com/dbwebb-se/webtec/issues
