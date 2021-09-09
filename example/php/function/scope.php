@@ -8,7 +8,7 @@ function scope(): void
 {
     $name = "B";        // Function block scope
     echo "$name\n";     // B
-    
+
     for ($i = 0; $i <= 0; $i++) {
         $name = "C";
         echo "$name\n"; // C
