@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 . ".dbwebb/inspect-src/kmom.d/functions.bash"
 
+TARGET_DIR="me/htmlcss"
+CHECK_FILES="index.html"
+
 cd $TARGET_DIR || exit 1
 
 all=0
@@ -13,4 +16,4 @@ for file in $CHECK_FILES; do
     fi
 done
 
-doLog $fail "check files ("$(( all-fail ))"/$all)"
+doLog $fail "$TARGET_DIR: check files ("$(( all-fail ))"/$all)"

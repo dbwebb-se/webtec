@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 . ".dbwebb/inspect-src/kmom.d/functions.bash"
 
+TARGET_DIR="me/report"
+CHECK_DIRS=""
+
 cd $TARGET_DIR || exit 1
 
 all=0
@@ -13,9 +16,4 @@ for dir in $CHECK_DIRS; do
     fi
 done
 
-if ! [[ -d htdocs || -d public || -d web ]]; then
-    printf "Missing the public web dir (htdocs, public or web).\n"
-    (( fail++ ))
-fi
-
-doLog $fail "check dirs ("$(( all-fail ))"/$all)"
+doLog $fail "$TARGET_DIR: check dirs ("$(( all-fail ))"/$all)"

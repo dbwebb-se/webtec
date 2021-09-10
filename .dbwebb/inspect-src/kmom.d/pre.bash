@@ -22,57 +22,29 @@ echo $DIR
 echo "[$ACRONYM/$COURSE/$KMOM]" > "$LOG_DOCKER"
 
 # Do different things depending on kmom
-localRepoUrl="http://127.0.0.1:18080/gui-repo"
+#localRepoUrl="http://127.0.0.1:18080/gui-repo"
+
+studentServerUrl="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/me"
+w3cValidatorUnicorn="https://validator.w3.org/unicorn/check?ucn_task=conformance\&ucn_uri"
 
 case $KMOM in
     kmom01)
-        REPO="me/game"
-        studentServerUrl="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/$REPO/htdocs"
-        openUrl "$localRepoUrl/htdocs"
-    ;;
-    kmom02)
-        REPO="me/game"
-        studentServerUrl="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/$REPO/htdocs"
-        openUrl "$localRepoUrl/htdocs"
-        openUrl "$localRepoUrl/doc/yatzy" # Pseudocode & flowchart
+        openUrl "$studentServerUrl/onepage/onepage.html"
+        openUrl "$studentServerUrl/htmlcss"
+        openUrl "$w3cValidatorUnicorn=$studentServerUrl/htmlcss"
     ;;
     kmom03)
-        REPO="me/game"
-        studentServerUrl="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/$REPO/htdocs"
-        openUrl "$localRepoUrl/htdocs"
-        openUrl "$localRepoUrl/build/coverage/index.html" # Code coverage
-    ;;
-    kmom04)
-        REPO="me/framework"
-        studentServerUrl="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/$REPO"
-        openUrl "$localRepoUrl/build/coverage/index.html" # Code coverage
+        :
     ;;
     kmom05)
-        REPO="me/orm"
-        studentServerUrl="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/$REPO"
-        openUrl "$localRepoUrl/build/coverage/index.html" # Code coverage
-    ;;
-    kmom06)
-        REPO="me/ci"
-        studentServerUrl="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/$REPO"
-        openUrl "$localRepoUrl/build/coverage/index.html" # Code coverage
+        :
     ;;
     kmom10)
-        REPO="me/proj"
-        studentServerUrl="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/$REPO"
-        openUrl "$localRepoUrl/doc/design" # Pseudocode & flowchart
-        openUrl "$localRepoUrl/build/coverage/index.html" # Code coverage
+        openUrl "$studentServerUrl/proj"
     ;;
 esac
 
-[[ -d "$DIR/$REPO" ]] || echo "MISSING TARGET DIR '$REPO'. Epic fail."
-[[ -d "$DIR/$REPO/.git" ]] || echo "MISSING TARGET GIT DIR '$REPO/.git'. Epic fail."
-
-openUrl "$studentServerUrl"
-
-gitUrl=$( cd "$DIR/$REPO" && [[ -d .git ]] && git config --get remote.origin.url )
-openGitUrl "$gitUrl"
-[[ $gitUrl ]] || echo "MISSING GIT REMOTE. Epic fail."
+openUrl "$studentServerUrl/report"
 
 # # Rsync the target dir/repo to a temp space
 # install -d gui-repo/

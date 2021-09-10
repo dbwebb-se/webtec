@@ -60,6 +60,6 @@ satsade jag på pokerspel, ett annat år var det geocaching och sedan turfing. N
 
 
 
-<script type="text/javascript" src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

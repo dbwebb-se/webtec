@@ -18,3 +18,5 @@ https://dbwebb.se/kunskap/varfor-regnar-det-pa-bergssidan-ett-exempel-pa-solo-ta
 
 PS. Glöm inte att fråga i GitHub issues för mer utförliga svar på funderingar eller för feedback på kod och lösningar.
 https://github.com/dbwebb-se/webtec/issues
+
+Status från rättningsverktyget:
