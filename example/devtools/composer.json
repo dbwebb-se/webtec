@@ -1,0 +1,40 @@
+{
+    "name": "dbwebb/dev",
+    "type": "utility",
+    "license": "MIT",
+    "description": "Course repo dev tools.",
+    "scripts": {
+        "install-tools": [
+            "curl it"
+        ],
+        "clean": "",
+        "clean-installation": "rm -rf .bin vendor",
+        "clean-all": [
+            "@clean",
+            "@clean-installation"
+        ],
+        "phpcs": "vendor/bin/phpcs",
+        "phpcbf": "vendor/bin/phpcbf",
+        "phpmd": "vendor/bin/phpmd . text phpmd.xml.dist",
+        "phpstan": "vendor/bin/phpstan",
+        "psalm": "vendor/bin/psalm.phar",
+        "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit",
+        "test": [
+            "composer validate",
+            "@phpcs",
+            "@phpstan",
+            "@psalm",
+            "@phpunit"
+        ]
+    },
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.6",
+        "phpmd/phpmd" : "^2.10",
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^0.12.85",
+        "psalm/phar": "^4.7"
+    }
+}

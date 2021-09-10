@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+    # Primary services to use with this course
+    webtec: &webtec
+        #image: dbwebb/courserepo:webtec
+        image: dbwebb/courserepo
+        volumes:
+            - ".:/home/dbwebb/repo"
+            - "/home/dbwebb/repo/bin"
+            - "/home/dbwebb/repo/build"
+            - "/home/dbwebb/repo/node_modules"
+            - "/home/dbwebb/repo/vendor"
+            - "./example/sql/inspect/my.cnf:/home/dbwebb/.my.cnf"
+
+    cli:
+        <<: *webtec
+
+    server:
+        <<: *webtec
+        #volumes:
+            #- ./example/docker/site_default.conf:/etc/apache2/sites-enabled/000-default.conf
+        ports:
+            - "18080:80"
+
+    courserepo:
+        image: dbwebb/courserepo:cli
+        volumes:
+            - ".:/home/dbwebb/repo"
+            #- "/home/dbwebb/repo/bin"
+            #- "/home/dbwebb/repo/build"
+            #- "/home/dbwebb/repo/node_modules"
+            #- "/home/dbwebb/repo/vendor"
+            - "./example/sql/inspect/my.cnf:/home/dbwebb/.my.cnf"
+
+    # Anax images to test various PHP versions
+    php80:
+        image: anax/dev:php80-cli
+        volumes:
+            - .:/home/anax/repo
+
+    php74:
+        image: anax/dev:php74-cli
+        volumes:
+            - .:/home/anax/repo
+
+    php:
+        image: anax/dev:php73-cli
+        volumes:
+            - .:/home/anax/repo
+
+    apache:
+        image: anax/dev:php73-apache
+        ports:
+            - "18080:80"
+        volumes:
+            - .:/app
+            - ./example/docker/site_default.conf:/etc/apache2/sites-enabled/000-default.conf
