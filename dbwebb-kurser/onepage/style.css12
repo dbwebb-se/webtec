@@ -1,0 +1,17 @@
+/" kommentar "/"
+body {
+  background-color: red
+}
+
+.welcome {
+background-color: blueviolet;
+color: chartreuse;
+border: 4px dashed chartreuse;
+text-align: center;
+}
+
+font-size: 24px;
+font-style: comic sans
+.navbar {
+  border: 1px pink solid #0f0;
+}

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="sv">
+	<head>
+		<title>forms!</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+	<header>
+		<hgroup>
+			<h1 id="html4">HTML form elements</h1>
+			<h2>Common elements in a HTML form.</h2>
+		</hgroup>
+	</header>
+	<section>
+		<form>
+			<table>
+				<tr>
+					<td><code>&lt;input type=text value=text&gt;</code></td>
+					<td><input type="text" value="text"></td>
+					<td>Standard-textfält.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=password value=password&gt;</code></td>
+					<td><input type="password" value="password"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=submit value=send&gt;</code></td>
+					<td><input type="submit" value="send"></td>
+					<td>Knapp för att skicka formuläret.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;button type=submit&gt;send&lt;/button&gt;</code></td>
+					<td><button type="submit">send</button></td>
+					<td>En knapp precis som ovan för att skicka formuläret. Fungerar inte så bra i Internet Explorer dock.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=checkbox checked&gt;<br>&lt;input type=checkbox&gt;</code></td>
+					<td><input type="checkbox" checked><br><input type="checkbox"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=radio name=radio1 checked&gt;<br>&lt;input type=radio name=radio1&gt;</code></td>
+					<td><input type="radio" name="radio1" checked><input type="radio" name="radio1"></td>
+					<td>Radio-button används för att välja ett alternativ. Grupperas med name-attributet.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=file&gt;</code></td>
+					<td><input type="file"></td>
+					<td>Välj en fil för uppladdning eller liknande.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=image alt=submit&gt;</code></td>
+					<td><input type="image" src="logo.png" alt="submit"></td>
+					<td>En bild som submit-knapp.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=reset value=reset&gt;</code></td>
+					<td><input type="reset" value="reset"></td>
+					<td>Återställer formuläret till default-värdena.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=button value=button&gt;</code></td>
+					<td><input type="button" value="button"></td>
+					<td>En knapp. Anropa en funktion i ett script eller liknande, skickar inte formuläret.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=hidden value=invisible&gt;</code></td>
+					<td><input type="hidden" value="invisible"></td>
+					<td>Gömd data som skickas med formuläret.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;select name=select&gt;<br>&lt;option value=ett&gt;ett<br>&lt;option value=två&gt;två<br>&lt;select&gt;</code></td>
+					<td><select name="select"><option value="ett">ett</option><option value="två">två</option></select></td>
+					<td>En drop-down lista där man väljer värdet.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;select multiple name=select&gt;<br>&lt;option value=ett&gt;ett<br>&lt;option value=två&gt;två<br>&lt;select&gt;</code></td>
+					<td><select multiple name="select"><option value="ett">ett</option><option value="två">två</option></select></td>
+					<td>En lista där man kan välja flera värden.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;textarea&gt;&lt;/textarea&gt;</code></td>
+					<td><textarea></textarea></td>
+					<td>Ett lite större fält än vanliga text-fältet</td>
+				</tr>
+			</table>
+		</form>
+	</section>
+	<header>
+		<hgroup>
+			<h1 id="html5">html5 forms</h1>
+			<h2>några av de nya funktionerna i html5</h2>
+		</hgroup>
+	</header>
+	<section>
+		<form>
+			<table>
+				<tr>
+					<td><code>&lt;input type=text placeholder=text&gt;</code></td>
+					<td><input type="text" placeholder="text"></td>
+					<td>Text som syns i fältet tills det får fokus.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=text list=kurs&gt;<br>
+						&lt;datalist id=kurs&gt;<br>
+						&lt;option value=htmlphp&gt;<br>
+						&lt;option value=oophp&gt;<br>
+						&lt;option value=dbwebb1&gt;<br>
+						&lt;option value=dbwebb2&gt;<br>
+						&lt;/datalist&gt;</code>
+					</td>
+					<td><input type="text" list="kurs">
+						<datalist id="kurs">
+							<option value="htmlphp"></option>
+							<option value="oophp"></option>
+							<option value="dbwebb1"></option>
+							<option value="dbwebb2"></option>
+						</datalist>
+					</td>
+					<td>En input med autocomplete från en lista som anges.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=text autofocus&gt;</code></td>
+					<td><input type="text" autofocus></td>
+					<td>Ger fältet focus när sidan renderas.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=color&gt;</code></td>
+					<td><input type="color"></td>
+					<td>Välj en färg.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=date&gt;</code></td>
+					<td><input type="date"></td>
+					<td>Välj datum. Kan även vara datetime, time, week, month eller year.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=number min=0 max=100&gt;</code></td>
+					<td><input type="number" min="0" max="100"></td>
+					<td>Nummer med max och min-värden.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=range step=5 min=0 max=100 name=range1&gt;</code></td>
+					<td><input type="range" step="5" min="0" max="100" name="range1"></td>
+					<td>En slider för val av värde.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;output onforminput=&quot;value=range1.value&quot;&gt;&lt;/output&gt;</code></td>
+					<td><output onforminput="value=range1.value"></output></td>
+					<td>Ovanstående ranges värde</td>
+				</tr>
+				<tr>
+					<td><code>&lt;progress value=50 max=100&gt;50&lt;/progress&gt;</code></td>
+					<td><progress value="50" max="100">50</progress></td>
+					<td>En progress-bar som kan användas för at visa tidsförlopp eller liknande. Bra med JavaScript i vissa fall.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;meter value=80 max=100 min=0&gt;80&lt;/meter&gt;</code></td>
+					<td><meter value="80" max="100" min="0">80</meter></td>
+					<td>Mycket lik progress men används för kända intervaller till exempel betygsättning.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=search&gt;</code></td>
+					<td><input type="search"></td>
+					<td>Ett sökfält.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=tel&gt;</code></td>
+					<td><input type="tel"></td>
+					<td>Skriv in ett telefonnummer.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=email&gt;</code></td>
+					<td><input type="email"></td>
+					<td>Skriv in en email-adress.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input type=url&gt;</code></td>
+					<td><input type="url"></td>
+					<td>Ange en url.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input multiple type=file&gt;</code></td>
+					<td><input multiple type="file"></td>
+					<td>Ange flera filer för uppladdning.</td>
+				</tr>
+			</table>
+		</form>
+	</section>
+	<header>
+		<hgroup>
+			<h1>html5 forms validation</h1>
+			<h2>validera vad som finns i fälten och ange vilka som måste fyllas i</h2>
+		</hgroup>
+	</header>
+	<section>
+		<form>
+			<table>
+				<tr>
+					<td><code>&lt;input pattern=&quot;[a-z]{4}[0-9]{2}&quot; name=akronym title=&quot;En students akronym består av fyra bokstäver följt av två siffror.&quot;&gt;</code></td>
+					<td><input pattern="[a-z]{4}[0-9]{2}" name="akronym" title="En students akronym består av fyra bokstäver följt av två siffror."></td>
+					<td>Ett input-fält som har ett pattern som säger att fältet måste innehålla fyra tecken följt av två siffror om det innehåller något.</td>
+				</tr>
+				<tr>
+					<td><code>&lt;input pattern=&quot;[a-z]{4}[0-9]{2}&quot; name=akronym title=&quot;En students akronym består av fyra bokstäver följt av två siffror.&quot; required&gt;</code></td>
+					<td><input pattern="[a-z]{4}[0-9]{2}" name="akronym" title="En students akronym består av fyra bokstäver följt av två siffror." required></td>
+					<td>Ett input-fält som har ett pattern som säger att fältet måste innehålla fyra tecken följt av två siffror. Notera att det övre exemplet kan skickas iväg utan något innehåll.</td>
+				</tr>
+			</table>
+		</form>
+	</section>
+	<footer>
+		<p><a href="http://validator.w3.org/check/referer">html5</a></p>
+	</footer>
+</body>
+</html>

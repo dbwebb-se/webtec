@@ -1,0 +1,15 @@
+/" kommentar "/"
+body {
+  background-color: beige
+}
+
+.welcome {
+background-color: blueviolet;
+color: chartreuse;
+border: 4px dashed chartreuse;
+text-align: center;
+}
+
+.navbar {
+  border: 1px pink;
+}

@@ -1,0 +1,25 @@
+th {
+    background-color: #666;
+    color: #fff;
+}
+
+th,
+td {
+    padding: 0.5em;
+}
+
+td {
+    border-bottom: 1px solid #999;
+}
+
+tr:nth-child(odd) {
+    background: #f6f6f6;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+input {
+    width: 30em;
+}

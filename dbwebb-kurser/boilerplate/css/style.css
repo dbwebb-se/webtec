@@ -1,0 +1,14 @@
+/**
+ * A comment in CSS.
+ */
+body {
+    background-color: #eee;
+    max-width: 800px;
+    margin: 8px auto;
+    border: 1px solid green;
+    padding: 1em;
+}
+
+h1 {
+    border-bottom: 1px solid #999;
+}
