@@ -23,3 +23,11 @@ Exempel: https://www.student.bth.se/~mosstud/dbwebb-kurser/webtec/example/css/wr
 
 [FIX] Din webbplats skall innehålla tydliga inslag av media queries där kolumner stackas.
 Se exempel https://www.student.bth.se/~mosstud/dbwebb-kurser/webtec/example/css/responsive/responsive.html
+
+
+
+# Unicorn
+
+[FIX] Din webbplats skall validera enligt Unicorn/HTML/CSS validatorerna på W3C.
+
+[FIX TILL NÄSTA KMOM] Din webbplats skall validera enligt Unicorn/HTML/CSS validatorerna på W3C.
