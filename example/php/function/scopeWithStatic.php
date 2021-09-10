@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 // phpcs:disable PSR1.Files.SideEffects
 
+/**
+ * Supress phpmd due to https://github.com/phpmd/phpmd/issues/870
+ * @SuppressWarnings(PHPMD.UndefinedVariable)
+ */
 function scopeWithStatic(): int
 {
     static $value = 1;

@@ -16,4 +16,4 @@ for dir in $CHECK_DIRS; do
     fi
 done
 
-doLog $fail "me/report check dirs ("$(( all-fail ))"/$all)"
+doLog $fail "$TARGET_DIR: check dirs ("$(( all-fail ))"/$all)"

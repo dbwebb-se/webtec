@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 . ".dbwebb/inspect-src/kmom.d/functions.bash"
 
-TARGET_DIR="me/report"
-CHECK_FILES=""
+TARGET_DIR="me/php"
+CHECK_FILES="config.php main.php src/functions.php"
 
 cd $TARGET_DIR || exit 1
 
@@ -16,4 +16,4 @@ for file in $CHECK_FILES; do
     fi
 done
 
-doLog $fail "me/report check files ("$(( all-fail ))"/$all)"
+doLog $fail "$TARGET_DIR: check files ("$(( all-fail ))"/$all)"
