@@ -1,10 +1,11 @@
-Om exempelprogrammen
+About the example programs
 ====================
 
-Denna README kan organisera vissa av exempelprogrammen i olika kategorier för att göra det enklare att hitta rätt exempelprogram.
+This README organize some of the sample programs into different categories to make it easier to find the right sample program.
 
 
-Grundlayout för webbsida
+
+Layout for a website
 ---------------------
 
-[Grundlayout med katalogstruktur för webbplats med HTML, CSS och JavaScript](boilerplate)
+[Layout with directory structure for a website with HTML, CSS and JavaScript](boilerplate)
