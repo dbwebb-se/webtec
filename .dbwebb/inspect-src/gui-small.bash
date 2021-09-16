@@ -51,7 +51,7 @@ grade-kmom01()
 
     grade-kmom-header $kmom $acronym
 
-    local url="$WEB_SERVER/~$acronym/$WEB_SERVER_PATH"
+    local url="$WEB_SERVER/\~$acronym/$WEB_SERVER_PATH"
     openUrl "$url/report"
     openUrl "$url/onepage"
     openUrl "$url/htmlcss"
