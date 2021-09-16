@@ -29,6 +29,19 @@ grade-kmom-header()
 
 
 #
+# Add a common footer
+#
+grade-kmom-footer()
+{
+    local kmom=$1
+    local acronym=$2
+
+    feedbackToClipbboard $kmom
+}
+
+
+
+#
 # Grade kmom01
 #
 grade-kmom01()
@@ -43,6 +56,8 @@ grade-kmom01()
     openUrl "$url/onepage"
     openUrl "$url/htmlcss"
     openUrl "https://validator.w3.org/unicorn/check?ucn_task=conformance\&ucn_uri=$url/htmlcss"
+    
+    grade-kmom-footer $kmom $acronym
 }
 
 
@@ -59,6 +74,8 @@ grade-kmom03()
     grade-kmom-header $kmom $acronym
     
     printf "Not yet implemented."
+    
+    grade-kmom-footer $kmom $acronym
 }
 
 
@@ -75,6 +92,8 @@ grade-kmom05()
     grade-kmom-header $kmom $acronym
 
     printf "Not yet implemented."
+    
+    grade-kmom-footer $kmom $acronym
 }
 
 
@@ -91,6 +110,8 @@ grade-kmom10()
     grade-kmom-header $kmom $acronym
 
     printf "Not yet implemented."
+    
+    grade-kmom-footer $kmom $acronym
 }
 
 
@@ -126,6 +147,21 @@ function openUrl {
 
 
 #
+# Copy feedback text to clipboard
+#
+feedbackToClipbboard()
+{
+    local kmom=$1
+    local feedbackFile="$INSPECT_SOURCE_DIR/text/$kmom.txt"
+    local output=
+
+    output=$( eval echo "\"$( cat "$feedbackFile" )"\" )
+    printf "%s" "$output" | eval $TO_CLIPBOARD
+}
+
+
+
+#
 # Check if all tools are available
 #
 function checkTool() {
@@ -133,6 +169,24 @@ function checkTool() {
         printf "$MSG_FAILED Missing '$1'.\n$2\n"
         exit -1
     fi
+}
+
+
+
+#
+# Find the course repo file.
+#
+function findCourseRepoFile
+{
+    dir="$( pwd )/."
+    while [ "$dir" != "/" ]; do
+        dir=$( dirname "$dir" )
+        found="$( find "$dir" -maxdepth 1 -name $DBW_COURSE_FILE_NAME )"
+        if [ "$found" ]; then
+            DBW_COURSE_DIR="$( dirname "$found" )"
+            break
+        fi
+    done
 }
 
 
@@ -207,6 +261,12 @@ checkTool dialog "Install using your packet manager (apt-get|brew install dialog
 checkTool realpath "Install using your packet manager (brew install coreutils)."
 checkTool tree "Install using your packet manager (apt-cyg|apt-get|brew install tree)."
 
+# What is the directory of the current course repo, find recursivly up the tree
+DBW_COURSE_FILE_NAME=".dbwebb.course"
+findCourseRepoFile
+[[ $DBW_COURSE_DIR ]] || die "You must run this command within a valid course repo."
+DIR="$DBW_COURSE_DIR"
+
 # Source the user config file if it exists
 DBWEBB_GUI_CONFIG_FILE="$HOME/.dbwebb/gui_config.bash"
 # shellcheck source=$HOME/.dbwebb.gui_config.bash
@@ -226,11 +286,13 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then   # Linux, use defaults
 elif [[ "$OSTYPE" == "darwin"* ]]; then   # Mac OSX
     OS_TERMINAL="macOS"
     TO_CLIPBOARD="iconv -t macroman | pbcopy"
-    BROWSER="/Applications/Firefox.app/Contents/MacOS/firefox"
+    #BROWSER="/Applications/Firefox.app/Contents/MacOS/firefox"
+    BROWSER="open"
 elif [[ "$OSTYPE" == "cygwin" ]]; then    # Cygwin
     OS_TERMINAL="cygwin"
     TO_CLIPBOARD="cat - > /dev/clipboard"
-    BROWSER="/cygdrive/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe"
+    #BROWSER="/cygdrive/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe"
+    BROWSER="explorer"
 elif [[ "$OSTYPE" == "msys" ]]; then
     :
     # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
@@ -241,12 +303,13 @@ BROWSER=${DBWEBB_BROWSER:-$BROWSER}
 TO_CLIPBOARD=${DBWEBB_TO_CLIPBOARD:-$TO_CLIPBOARD}
 TEACHER_SIGNATURE=${DBWEBB_TEACHER_SIGNATURE:-"// XXX"}
 
-# # Set source dir for scripts and feedback
-# INSPECT_SOURCE_DIR="$DIR/.dbwebb/inspect-src"
+# Set source dir for scripts and feedback
+INSPECT_SOURCE_DIR="$DIR/.dbwebb/inspect-src"
 # INSPECT_SOURCE_DIR=${DBWEBB_INSPECT_SOURCE_DIR:-$INSPECT_SOURCE_DIR}
 # INSPECT_SOURCE_CONFIG_FILE="$INSPECT_SOURCE_DIR/config.bash"
-# 
-# [[ -d  "$INSPECT_SOURCE_DIR" ]] || die "The path to inspect source files does not exists:\n INSPECT_SOURCE_DIR='$INSPECT_SOURCE_DIR'."
+
+[[ -d  "$INSPECT_SOURCE_DIR" ]] || die "The path to inspect source files does not exists:\n INSPECT_SOURCE_DIR='$INSPECT_SOURCE_DIR'."
+
 # 
 # # shellcheck source=$DIR/.dbwebb/inspect-src/config.bash
 # [[ -f $INSPECT_SOURCE_CONFIG_FILE ]] && source "$INSPECT_SOURCE_CONFIG_FILE"
