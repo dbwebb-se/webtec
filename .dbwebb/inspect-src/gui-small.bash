@@ -55,7 +55,7 @@ grade-kmom01()
     openUrl "$url/report"
     openUrl "$url/onepage"
     openUrl "$url/htmlcss"
-    openUrl "https://validator.w3.org/unicorn/check?ucn_task=conformance\&ucn_uri=$url/htmlcss"
+    openUrl "https://validator.w3.org/unicorn/check?ucn_task=conformance&ucn_uri=$url/htmlcss"
     
     grade-kmom-footer $kmom $acronym
 }
@@ -141,7 +141,7 @@ function openUrl {
     local url="$1"
 
     printf "$url\n" 2>&1
-    eval "$BROWSER" "$url" &
+    eval "$BROWSER" '$url' &
 }
 
 
