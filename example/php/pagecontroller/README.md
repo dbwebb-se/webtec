@@ -66,19 +66,38 @@ Lets add some content from separate files, it is always good to separate the con
 Step 8: Use forms to submit data to the server
 ---------------------------
 
+Page to print out the content of `$_SERVER`.
+
 Create a self submitting GET form.
 
-Create a POST form, submitting to a processing page, redirecting to a result page.
+Create a self submitting POST form, posting to another page.
 
-HTML Form
+HTML Form in general.
+
+
+
+Step 9: Use cookies and sessions
+---------------------------
+
+Create a page that uses a cookie to remember my name.
+
+Create a page using the session and increments a numer on each time the page is visited.
+
+Use POST forms with processing pages that redirects to a result page.
+
+https://dbwebb.se/guide/kom-igang-med-programmering-i-php/starta-sessionen
+
+https://dbwebb.se/guide/kom-igang-med-programmering-i-php/forstor-sessionen
+
+
+
+Step 10: A template
+---------------------------
 
 
 
 TODO
 ----
 
-
-Cookie
-Session
 (one task that is containing all of the above)
 guessing game?

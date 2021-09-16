@@ -1,0 +1,14 @@
+@media (max-width: 1000px) {
+    .row-main {
+        flex-wrap: wrap;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .aside {
+        order: -1;
+        width: 100%;
+    }
+}

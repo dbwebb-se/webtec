@@ -1,0 +1,28 @@
+<article>
+<h1>Om mig själv</h1>
+
+<p>Så, en presentation en bra början. Skriv några ord om dig själv. Jag börjar.</p>
+
+<figure class="center">
+    <img src="img/me.jpg" width="450" alt="Bild på mig">
+    <figcaption>Bild på mig.</figcaption>
+</figure>
+
+<p>Mitt namn är Mikael Roos. Född och uppvuxen i Bankeryd, Småland, strax utanför Jönköping, i ett villaområde som byggdes upp samtidigt som vi flyttade in där. Jag gillade landhockey och har spelat bandy och hockey samt gått bowlinggymnasiet i Nässjö. Jag har varit städare, diskare, kallskänka, servitör och kock. På ett bananskal landade jag i Ronneby när jag började högskolan 1990 där och nu är jag kvar med fru, barn och så vidare.</p>
+
+<figure class="right third">
+    <img src="img/me.jpg" width="300" alt="Bild på mig">
+    <figcaption>Bild på mig.</figcaption>
+</figure>
+
+<p>Programmering har alltid intresserat mig sedan 13-årsåldern och min första dator var en Spectravideo 328 med bandspelare.</p>
+
+<p>Om jag skall nämna någon hobby, förutom webbprogrammering, så får det bli att
+bära sten på sommarstugetomten, och det finns sten så det räcker och blir över.</p>
+
+<p>Till och från får jag för mig att börja på lite hobbies, ett år
+satsade jag på pokerspel, ett annat år var det geocaching och sedan turfing. Nu ligger jag lågt med hobbies, men något kanske dyker upp...?</p>
+
+<p>Vi syns och hörs i forum och chatt!</p>
+
+</article>
