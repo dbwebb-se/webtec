@@ -1,6 +1,6 @@
 <!doctype html>
 <meta charset="utf8">
-<title>Home | Style navbar</title>
+<title>Report | Style navbar</title>
 <style>
 nav {
     background-color: SeaShell;
