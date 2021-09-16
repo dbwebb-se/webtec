@@ -126,6 +126,18 @@ function openUrl {
 
 
 #
+# Check if all tools are available
+#
+function checkTool() {
+    if ! hash "$1" 2> /dev/null; then
+        printf "$MSG_FAILED Missing '$1'.\n$2\n"
+        exit -1
+    fi
+}
+
+
+
+#
 #
 #
 gui-firstpage()
