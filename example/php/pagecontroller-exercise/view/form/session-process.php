@@ -16,6 +16,7 @@ if ($rollTheDice) {
 } elseif ($resetTheGame) {
     unset($_SESSION["dice"]);
     unset($_SESSION["sum"]);
+    unset($_SESSION["rolls"]);
 } elseif ($destroySession) {
     sessionDestroy();
 }
