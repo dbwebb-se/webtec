@@ -88,6 +88,13 @@ The view `view/measure.php` is visible on the page and "About".
 
 
 
+View "figure.php"
+----------------------------
+
+1- Create a new view `view/figure.php` that helps you add an image `public/img/leaf_256x256.php`, wrapped in a figure element, onto the sidebar of the "About" page.
+
+
+
 Page "Form GET"
 ----------------------------
 
