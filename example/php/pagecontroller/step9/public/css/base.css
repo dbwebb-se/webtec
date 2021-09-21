@@ -1,0 +1,92 @@
+html {
+  box-sizing: border-box;   /* Alternate box model */
+  background: url(../img/grid-square-20.png) repeat;  /* Show background grid image */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;      /* Alternate box model */
+}
+
+body {
+    overflow-y: scroll;     /* Always display scrollbar, no hopping pages */
+    font-size: 18px;
+
+    margin: 8px auto;
+    max-width: 1200px;
+}
+
+.row {
+    display: flex;
+    /*flex-direction: row;
+    justify-content: space-between;
+    */
+    gap: 24px;
+
+    background-color: tomato;
+    /*padding: 1em;*/
+    margin-bottom: 24px;
+}
+
+.siteheader {
+    background-color: Aquamarine;
+    min-height: 60px;
+    min-width: 100%;
+}
+
+.navbar {
+    text-align: center;
+    background-color: cornflowerblue;
+    margin-bottom: 24px;
+    padding: 0.5em;
+}
+
+.navbar a {
+    display: inline-block;
+    width: 110px;
+    /* width: 20%; */
+    padding: 0.5em;
+    background-color: CadetBlue;
+    color: AliceBlue;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: tomato;
+    text-decoration: underline;
+}
+
+.navbar a.selected {
+    color: tomato;
+    background-color: SeaShell;
+}
+
+.main {
+    background-color: OldLace;
+    width: calc(100% / 3 * 2);
+    min-height: 10em;
+    padding: 0 1em;
+}
+
+.aside {
+    background-color: BlanchedAlmond;
+    width: calc(100% / 3 * 1);
+}
+
+pre {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding: 0.5em;
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    white-space: pre-line;
+}
+
+.sitefooter {
+    background-color: SeaShell;
+    min-height: 100px;
+    min-width: 100%;
+}

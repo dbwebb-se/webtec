@@ -1,0 +1,16 @@
+img {
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width: 800px) {
+    figure.right.third {
+        float: none;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    figure.right.third img {
+        margin: 0 auto;
+    }
+}
