@@ -1,44 +1,87 @@
 <?php
 
+
+
 /**
  * Render the data onto a layout.
  *
- * @param array<string, mixed> $data
+ * @param string $tpl path to the template file, or parts of the path.
  *
- * @SuppressWarnings(PHPMD.MissingImport)
+ * @throws Exception if the path is not found.
+ *
+ * @return string string as the path to the file.
  */
-function render(string $layout, array $data = []): void
+function findTemplateFile(string $tpl): ?string
 {
-    if (!is_readable($layout)) {
-        throw new Exception("The layout file '$layout' does not exists or is not readable.");
+    $viewPath = __DIR__ . "/../view";
+
+    $files = [
+        $tpl,
+        "$viewPath/$tpl",
+        "$viewPath/$tpl.php",
+    ];
+
+    $target = null;
+    foreach ($files as $file) {
+        if (is_readable($file)) {
+            return $file;
+        }
     }
 
-    extract($data);
-    require $layout;
+    throw new Exception("The template file '$tpl' does not exists or is not readable in any way I know of.");
 }
 
 
 
 /**
- * Render data onto a view and return the results.
+ * Render the data onto a template file and output the results directly.
  *
- * @param array<string, mixed> $data
+ * @param string $tpl path to the template file
+ * @param array<string, mixed> $data array with variables to extract
  *
  * @SuppressWarnings(PHPMD.MissingImport)
  */
-function renderView(string $view, array $data = []): string
+function render(string $tpl, array $data = []): void
 {
-    if (!is_readable($view)) {
-        throw new Exception("The layout file '$view' does not exists or is not readable.");
-    }
-
+    $file = findTemplateFile($tpl);
     extract($data);
+    require $file;
+}
+
+
+
+/**
+* Render the data onto a template file and return the results.
+ *
+ * @param string $tpl path to the template file
+ * @param array<string, mixed> $data array with variables to extract
+ *
+ * @SuppressWarnings(PHPMD.MissingImport)
+ */
+function renderToString(string $tpl, array $data = []): string
+{
     ob_start();
-    require $view;
+
+    render($tpl, $data);
     $html = ob_get_contents();
+
     ob_end_clean();
 
     return $html ? $html : "";
+}
+
+
+
+/**
+ * Escape string to make it secure to output unsecure user data to a web page.
+ *
+ * @param string|null $str to escape
+ *
+ * @return string the esacepd string
+ */
+function esc(?string $str): string
+{
+    return htmlentities($str, ENT_QUOTES, "UTF-8");
 }
 
 

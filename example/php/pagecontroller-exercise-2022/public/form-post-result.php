@@ -1,10 +1,17 @@
 <?php
 
+/**
+ * A Pagecontroller as a processing page to process a request, usually a
+ * submitted form, and then redirect to a result page.
+ */
+
 declare(strict_types=1);
 
-require "../config/config.php";
+require "../vendor/autoload.php";
 
 $data["title"] = "Form POST";
-$data["main"] = renderView("../view/form/post-result.php");
+$data["main"]  = renderToString("form/post-result", [
+    "debug" => false,
+]);
 
-render("../view/layout/base.php", $data);
+render("layout/base", $data);

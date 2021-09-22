@@ -1,10 +1,16 @@
 <?php
 
+/**
+ * A Pagecontroller.
+ */
+
 declare(strict_types=1);
 
-require "../config/config.php";
+require "../vendor/autoload.php";
 
 $data["title"] = "Cookie";
-$data["main"] = renderView("../view/form/cookie.php");
+$data["main"]  = renderToString("form/cookie", [
+    "debug" => false,
+]);
 
-render("../view/layout/base.php", $data);
+render("layout/base", $data);

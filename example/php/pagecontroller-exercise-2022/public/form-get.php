@@ -1,10 +1,16 @@
 <?php
 
+/**
+ * A Pagecontroller.
+ */
+
 declare(strict_types=1);
 
-require "../config/config.php";
+require "../vendor/autoload.php";
 
 $data["title"] = "Form GET";
-$data["main"] = renderView("../view/form/get.php");
+$data["main"]  = renderToString("form/get", [
+    "debug" => true,
+]);
 
-render("../view/layout/base.php", $data);
+render("layout/base", $data);

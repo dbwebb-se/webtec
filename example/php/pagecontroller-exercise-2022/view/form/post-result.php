@@ -1,9 +1,16 @@
 <?php
 
+/**
+ * A template file, to use when rendering a view.
+ */
+
+// Check if the form is submitted
 $formIsSubmitted = $_POST["doit"] ?? null;
 
+// Get the message posted through the form and sanitize it to avoid
+// security issues.
 $message = $_POST["message"] ?? null;
-$message = htmlentities($message);
+
 
 
 // phpcs:disable Generic.Files.LineLength
@@ -11,21 +18,15 @@ $message = htmlentities($message);
 
 <?php if ($formIsSubmitted) : ?>
     <output>
-        <p>The form was submitted.</p>
-        <p>The message is: "<?= $message ?>"</p>
+        <p>The form was submitted into another pagecontroller.</p>
+        <p>The message is: "<?= esc($message) ?>"</p>
     </output>
+
 <?php else : ?>
     <p>You have entered this page without posting a form to it. Go to <a href="form-post.php">form-post.php</a> and submit the form to see the message displayed here.</p>
+
 <?php endif; ?>
 
 
-<p>You can <a href="<?= basename($_SERVER["SCRIPT_FILENAME"]) ?>">click here to get a fresh pageload</a>.</p>
 
-<hr>
-
-<h2>DEBUG IT</h2>
-<p>The array $_POST contains the following.</p>
-
-<pre>
-<?= print_r($_POST, true) ?>
-</pre>
+<?php if ($debug ?? null) : render("form/post-debug"); endif ?>

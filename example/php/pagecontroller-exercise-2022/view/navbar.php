@@ -13,6 +13,7 @@ $items = [
 
 $curPage = basename($_SERVER["REQUEST_URI"]);
 
+
 ?><nav>
 <?php foreach ($items as $key => $val) :
     $selected = ($curPage === $val) ? "selected" : null;

@@ -28,6 +28,7 @@
     },
     "autoload": {
         "files": [
+            "config/config.php",
             "src/functions.php"
         ]
     },

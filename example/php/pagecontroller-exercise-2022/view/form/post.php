@@ -1,6 +1,10 @@
 <?php
 
-// No PHP setup is needed for this view
+/**
+ * A template file, to use when rendering a view.
+ */
+
+
 
 // phpcs:disable Generic.Files.LineLength
 ?><h1>Try a form with POST</h1>
@@ -20,15 +24,4 @@
     </fieldset>
 </form>
 
-<p>Enter a message above and press a button to submit the message to the server and see it displayed in another page.</p>
-
-<p>You can <a href="<?= basename($_SERVER["SCRIPT_FILENAME"]) ?>">click here to get a fresh pageload</a>.</p>
-
-<hr>
-
-<h2>DEBUG IT</h2>
-<p>The array $_POST contains the following.</p>
-
-<pre>
-<?= print_r($_POST, true) ?>
-</pre>
+<p>Enter a message above and press a button to submit the message to the server and see it displayed in the result page.</p>

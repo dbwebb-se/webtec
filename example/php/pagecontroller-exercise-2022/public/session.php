@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * A Pagecontroller.
+ */
+
 declare(strict_types=1);
 
 require "../config/config.php";
