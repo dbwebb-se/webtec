@@ -55,6 +55,28 @@ The page layout
 
 
 
+Navbar
+----------------------------
+
+1. Find the view file that generates the navbar. You can find it by looking in the layout file.
+
+1. Add a new item to the navbar, call it `"New" => "new.php",`. See that its visible in the web page. Click it to verify you get a 404 (page not found).
+
+1. If you want to study more on this then you can look in the example `example/php/style-active-navbar-item` and review the article that is linked in the example.
+
+
+
+Add new pagecontroller
+----------------------------
+
+1. Add a new pagecontroller `public/new.php` and add some content into if. Feel free to play around with its content. It is just so that you are aware on how to create a new pagecontroller.
+
+1. Check that the new pagecontroller is clickable in the navbar.
+
+1. You can use this pagecontroller as a way to try out and test various page constructs during the exercise, so just leave it for now.
+
+
+
 Page "Home"
 ----------------------------
 
@@ -132,26 +154,6 @@ View "figure.php"
     1. Try to make the view reusable by using arguments in the view file. The arguments needed you can "send into the view" by using the concept of `$data`.
 
     1. Reuse your view and add another image (of your own choice) to the same page.
-
-
-
-Navbar
-----------------------------
-
-1. Find the view file that generates the navbar. You can find it by looking in the layout file.
-
-1. Add a new item to the navbar, call it `"New" => "new.php",`. See that its visible in the web page. Click it to verify you get a 404 (page not found).
-
-1. If you want to study more on this then you can look in the example `example/php/style-active-navbar-item` and review the article that is linked in the example.
-
-
-
-Add new pagecontroller
-----------------------------
-
-1. Add a new pagecontroller `public/new.php` and add some content into if. Feel free to play around with its content. It is just so that you are aware on how to create a new pagecontroller.
-
-1. Check that the new pagecontroller is clickable in the navbar.
 
 
 
@@ -233,16 +235,16 @@ Uppgift som tvingar att man lägger till något i sessionen.
 
 1. Create a histogram for the dices rolled and show it together with the statistics on the dice rolls.
 
-A histogram shows how many times the dice has rolled 1, 2, 3, 4, 5 and 6 eyes. A simple histogram could look like this for a serie of rolls 1, 1, 2, 3, 5, 6, 6.
+A histogram shows how many times the dice has rolled 1, 2, 3, 4, 5 and 6 eyes. A simple histogram could look like this for a serie of rolls 1, 1, 2, 3, 5, 6, 6, 6.
 
-1 **
-2 *
-3 *
-4 
-5 *
-6 **
+1. `**`
+2. `*`
+3. `*`
+4. 
+5. `*`
+6. `***`
 
-You can create the histogram as you wish. Use plain figures, some text graphic, use form elements for graphic or even more advanced. Its fine to make the plain and simple choice, its just a matter of the visualisation.
+You can create the histogram as you wish. Use plain figures, some text graphic, use form elements for graphic or even more advanced. It is fine to make the plain and simple choice, it is just a matter of the visualisation.
 
 Read more on [`$_SESSION` in the manual](https://www.php.net/manual/en/reserved.variables.session.php).
 
@@ -296,6 +298,14 @@ You can open up the file `composer.json` to review it for how the scripts are se
 
 
 <!--
+
+phpenv/phpenv
+-----------------------
+
+https://github.com/phpenv/phpenv
+
+
+
 Debug bar {#debugbar}
 -----------------------
 

@@ -203,16 +203,16 @@ Page "Session"
 
 1. Create a histogram for the dices rolled and show it together with the statistics on the dice rolls.
 
-A histogram shows how many times the dice has rolled 1, 2, 3, 4, 5 and 6 eyes. A simple histogram could look like this for a serie of rolls 1, 1, 2, 3, 5, 6, 6.
+A histogram shows how many times the dice has rolled 1, 2, 3, 4, 5 and 6 eyes. A simple histogram could look like this for a serie of rolls 1, 1, 2, 3, 5, 6, 6, 6.
 
 1. `**`
 2. `*`
 3. `*`
 4. 
 5. `*`
-6. `**`
+6. `***`
 
-You can create the histogram as you wish. Use plain figures, some text graphic, use form elements for graphic or even more advanced. Its fine to make the plain and simple choice, its just a matter of the visualisation.
+You can create the histogram as you wish. Use plain figures, some text graphic, use form elements for graphic or even more advanced. It is fine to make the plain and simple choice, it is just a matter of the visualisation.
 
 Read more on [`$_SESSION` in the manual](https://www.php.net/manual/en/reserved.variables.session.php).
 
