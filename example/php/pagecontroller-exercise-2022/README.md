@@ -1,7 +1,7 @@
 Pagecontroller exercise
 ============================
 
-This template contains a working website but there are some things missing that you should fix. Doing so you will have an opportunity to investigate the structure and layout of the template and try to understand how its stucture is, how to extend it and come to sense with if the structure is good and helpful.
+This template contains a working website but there are some things missing that you should fix. Doing so you will have an opportunity to investigate the structure and layout of the template and try to understand how its structure is, how to extend it and come to sense with if the structure is good and helpful.
 
 
 
@@ -151,6 +151,8 @@ Add new pagecontroller
 
 1. Add a new pagecontroller `public/new.php` and add some content into if. Feel free to play around with its content. It is just so that you are aware on how to create a new pagecontroller.
 
+1. Check that the new pagecontroller is clickable in the navbar.
+
 
 
 HTML forms
@@ -231,7 +233,7 @@ Read more on [`$_SESSION` in the manual](https://www.php.net/manual/en/reserved.
 Add a new pagecontroller `game.php`
 ----------------------------
 
-1. Create a new page "Game", with a pagecontroller `game.php`.
+1. Create a new page "Game", with a new pagecontroller `game.php`.
 
 1. Add a form with a button on it.
 
