@@ -205,12 +205,12 @@ Page "Session"
 
 A histogram shows how many times the dice has rolled 1, 2, 3, 4, 5 and 6 eyes. A simple histogram could look like this for a serie of rolls 1, 1, 2, 3, 5, 6, 6.
 
-1 **
-2 *
-3 *
-4 
-5 *
-6 **
+1. **
+2. *
+3. *
+4. 
+5. *
+6. **
 
 You can create the histogram as you wish. Use plain figures, some text graphic, use form elements for graphic or even more advanced. Its fine to make the plain and simple choice, its just a matter of the visualisation.
 
