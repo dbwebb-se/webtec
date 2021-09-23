@@ -55,6 +55,28 @@ The page layout
 
 
 
+Navbar
+----------------------------
+
+1. Find the view file that generates the navbar. You can find it by looking in the layout file.
+
+1. Add a new item to the navbar, call it `"New"   => "new.php",`. See that its visible in the web page. Click it to verify you get a 404 (page not found).
+
+1. If you want to study more on this then you can look in the example `example/php/style-active-navbar-item` and review the article that is linked in the example.
+
+
+
+Add new pagecontroller
+----------------------------
+
+1. Add a new pagecontroller `public/new.php` and add some content into if. Feel free to play around with its content. It is just so that you are aware on how to create a new pagecontroller.
+
+1. Check that the new pagecontroller is clickable in the navbar.
+
+1. You can use this pagecontroller as a way to try out and test various page constructs during the exercise, so just leave it for now.
+
+
+
 Page "Home"
 ----------------------------
 
@@ -163,19 +185,16 @@ Read more on [`$_POST` in the manual](https://www.php.net/manual/en/reserved.var
 Page "Cookie"
 ----------------------------
 
-Review the example on the page.
-
-1. Answer the question "Why is it important with a processing page"?
+1. Investigate the example and follow the flow:
+    1. The pagecontroller `cookie.php` shows the first page.
+    1. Submit the form, it is submitted to a processing pagecontroller `cookie-process.php` that is responsible for extracting the form data and update/set the cookie.
+    1. The processing page redirects to a resultpage `cookie.php` that shows the "result".
 
 1. Add a checkbox to the form. The checkbox should be checked when the cookie is active (have a value) and it should be unchecked when the cookie does not have a value. Make it readonly so the user can not change its state.
 
-1. Calculate the number of cookies you have and print it out at the top of the page.
+1. Try to answer the question "Why is it important with a processing page"? You may read about it here "[Processingsida och vidare dirigering](https://dbwebb.se/guide/kom-igang-med-programmering-i-php/processingsida-och-vidare-dirigering)".
 
-1. Consider, why are all these cookies there and what are they doing?
-
-1. Find the cookies in the browser, they are sent with each request in the header of the request. You should see that the cookies and their values matches in the browser and in the server.
-
-1. Consider, what does it mean that the cookies are visible in plain sight in the server? Can we store sensitive information in the cookies?
+Read more on [`$_COOKIE` in the manual](https://www.php.net/manual/en/reserved.variables.cookies.php).
 
 
 
@@ -195,25 +214,7 @@ A histogram shows how many times the dice has rolled 1, 2, 3, 4, 5 and 6 eyes. A
 
 You can create the histogram as you wish. Use plain figures, some text graphic, use form elements for graphic or even more advanced. Its fine to make the plain and simple choice, its just a matter of the visualisation.
 
-
-
-Navbar
-----------------------------
-
-1. Find the view file that generates the navbar. You can find it by looking in the layout file.
-
-1. Add a new item to the navbar, call it `"New"   => "new.php",`. See that its visible in the web page. Click it to verify you get a 404 (page not found).
-
-1. If you want to study more on this then you can look in the example `example/php/style-active-navbar-item` and review the article that is linked in the example.
-
-
-
-Add new pagecontroller
-----------------------------
-
-1. Add a new pagecontroller `public/new.php` and add some content into if. Feel free to play around with its content. It is just so that you are aware on how to create a new pagecontroller.
-
-1. Check that the new pagecontroller is clickable in the navbar.
+Read more on [`$_SESSION` in the manual](https://www.php.net/manual/en/reserved.variables.session.php).
 
 
 
