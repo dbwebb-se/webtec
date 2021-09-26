@@ -22,5 +22,5 @@ CREATE TABLE course
     kmom INTEGER,
     done DATETIME,
     
-    PRIMARY KEY code
+    PRIMARY KEY (code)
 );

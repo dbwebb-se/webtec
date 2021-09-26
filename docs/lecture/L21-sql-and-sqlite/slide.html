@@ -9,7 +9,7 @@
 
 <script data-role="slide" type="text/html" data-markdown class="titlepage center">
 # SQL and SQLite
-## CREATE, INSERT, UPDATE, DELETE and SELECT
+## Structured Query Language
 ### Mikael Roos
 </script>
 
@@ -19,10 +19,171 @@
 # Agenda
 
 * SQL
-* CREATE/DROP
+* DDL/DML
+* CREATE/ALTER/DROP
+* INSERT/UPDATE/DELETE
+* SELECT
+* Built in functions
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# SQL
+## Structured Query Language
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SQL
+
+* Domain-specific language used in programming
+* Relational database management system (RDBMS)
+* Handling structured data
+* Relations among entities and variables
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SQL
+
+* DDL Data Definition Language
+    * CREATE
+    * ALTER
+    * DROP
+* DML Data Manipulation Language
+    * INSERT
+    * UPDATE
+    * DELETE
+    * SELECT
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# SQL DDL
+## Data Definition Language
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SQL DDL
+
+* Create and modify the database schema
+* The databas schema is the structure of the database
+* Tables, views
+* CREATE
+* ALTER
+* DROP
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# CREATE
+
+```
+CREATE TABLE course
+(
+    code TEXT,
+    name TEXT NOT NULL,
+    points REAL DEFAULT 7.5,
+    term INTEGER,
+    kmom INTEGER,
+    done DATETIME,
+    
+    PRIMARY KEY (code)
+);
+```
+
+<p class="footnote">https://www.sqlite.org/lang_createtable.html</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# DROP
+
+```
+DROP TABLE course;
+DROP TABLE course IF EXISTS;
+```
+
+<p class="footnote">https://www.sqlite.org/lang_droptable.html</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# ALTER
+
+```
+ALTER TABLE course ADD COLUMN program TEXT;
+ALTER TABLE course RENAME TO course1;
+```
+
+<p class="footnote">https://www.sqlite.org/lang_altertable.html</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Datatypes columns
+
+* NULL. The value is a NULL value.
+
+* INTEGER. The value is a signed integer, stored in 1, 2, 3, 4, 6, or 8 bytes depending on the magnitude of the value.
+
+* REAL. The value is a floating point value, stored as an 8-byte IEEE floating point number.
+
+<p class="footnote">https://www.sqlite.org/datatype3.html</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Datatypes columns...
+
+* TEXT. The value is a text string, stored using the database encoding (UTF-8, UTF-16BE or UTF-16LE).
+
+* BLOB. The value is a blob of data, stored exactly as it was input.
+
+* NULL, INTEGER, REAL, TEXT, BLOB
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# SQL DML
+## Data Manipulation Language
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SQL DML
+
+* Create, modify the content of the database schema
+* Select and view content from the database
+* Rows and columns in the tables
 * INSERT
-* DELETE
 * UPDATE
+* DELETE
 * SELECT
 
 </script>
@@ -30,14 +191,327 @@
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Industry matters
+# INSERT
+
+```
+INSERT INTO course
+VALUES (
+    'DV1462', 'htmlphp', 7.5, 1, NULL, NULL
+);
+
+INSERT INTO course 
+    (code, name, term) 
+VALUES 
+    ('DV1531', 'python', 1)
+;
+```
+
+<p class="footnote">https://www.sqlite.org/lang_insert.html</p>
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Research matters
+# INSERT...
+
+```
+INSERT INTO course
+    (code, name, term)
+VALUES
+    ('PA1436', 'design', 2),
+    ('DV1532', 'javascript1', 2)
+;
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# UPDATE
+
+```
+UPDATE course SET points = 5.0;
+UPDATE course SET points = 5.0 LIMIT 1;
+UPDATE course SET points = 7.5;
+```
+
+<p class="footnote">https://www.sqlite.org/lang_update.html</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# UPDATE
+
+```
+UPDATE course SET code='DV1561' WHERE name='javascript1';
+
+UPDATE course SET
+    code = 'PA1439'
+WHERE
+    code = 'DV1462'
+;
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# UPDATE...
+
+```
+UPDATE course SET
+    done = datetime('now')
+WHERE
+    code = 'PA1439'
+;
+
+UPDATE course SET
+    done = datetime('now', 'localtime')
+WHERE
+    name = 'python'
+;
+```
+
+<p class="footnote">https://www.sqlite.org/lang_datefunc.html</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# UPDATE...
+
+```
+UPDATE course SET
+    kmom = 'kmom03/04',
+    done = datetime(done, 'localtime')
+WHERE
+    code = 'PA1439'
+```
+
+<p class="footnote">https://www.sqlite.org/lang_datefunc.html</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# DELETE
+
+```
+DELETE FROM course
+WHERE
+    course = 'PA1439'
+;
+
+DELETE FROM course
+WHERE
+    name LIKE '%a%'
+;
+```
+
+<p class="footnote">https://www.sqlite.org/lang_delete.html</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# DELETE
+
+```
+DELETE FROM course
+LIMIT 1
+;
+
+DELETE FROM course
+WHERE
+    rowid = 4
+;
+
+DELETE FROM course;
+```
+
+<p class="footnote">https://www.sqlite.org/lang_delete.html</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# SELECT
+## Create reports
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Reports
+
+```
+sqlite> SELECT * FROM course;
+code        name        points      term        kmom        done               
+----------  ----------  ----------  ----------  ----------  -------------------
+PA1439      htmlphp     7.5         1           kmom03/04   2021-09-24 23:58:06
+DV1531      python      7.5         1                       2021-09-24 23:58:06
+PA1436      design      7.5         2                                          
+DV1561      javascript  7.5         2                                          
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SELECT
+
+```
+SELECT * FROM course;
+
+SELECT rowid, * FROM course;
+
+SELECT name FROM course;
+
+SELECT name, points FROM course WHERE code = 'PA1439';
+
+SELECT name, points FROM course WHERE term = 1;
+```
+
+<p class="footnote">https://www.sqlite.org/lang_select.html</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SELECT...
+
+```
+SELECT
+    rowid AS 'Id',
+    *
+FROM course
+WHERE
+    name IN ('htmlphp', 'design')
+;
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SELECT...
+
+```
+SELECT
+    *
+FROM course
+WHERE
+    code LIKE 'PA%'
+;
+
+SELECT
+    *
+FROM course
+ORDER BY code ASC
+;
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SELECT...
+
+```
+--
+-- Show courses that are done (using builtin functions).
+--
+SELECT
+    name || ' (' || code || ')' AS 'Kurs',
+    strftime('%Y-%m-%d', done) AS 'Klar!'
+FROM course
+WHERE
+    done IS NOT NULL
+;
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SELECT...
+
+```
+Kurs              Klar!     
+----------------  ----------
+htmlphp (PA1439)  2021-09-24
+python (DV1531)   2021-09-24
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SELECT...
+
+```
+--
+-- Aggregate, sum up points
+--
+SELECT COUNT(code) FROM course;
+
+SELECT SUM(points) AS 'Summa poäng' FROM course;
+
+SELECT
+    SUM(points) AS 'Summa poäng'
+FROM course
+WHERE
+    done IS NOT NULL
+;
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Builtin functions
+
+* Core functions (50 functions)
+    * Numbers, strings, utilities, etc
+* Date & Time functions
+* Math functions
+* Aggregate functions
+* and more
+
+* Define additional functions written in C and added to the database engine using the sqlite3_create_function() API
+
+<p class="footnote">https://www.sqlite.org/lang_corefunc.html</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Tip
+
+* Save your SQL code in a file
+* Format it so it looks pretty and is easy to read and follow
+* Use comments to explain dificullt parts or separate parts of the code
+* Save different type of SQL in each own file, ddl, insert, select.
+* Copy and paste into the terminal to execute it
+    * or run it from within the terminal using `.read`
 
 </script>
 
@@ -45,6 +519,13 @@
 
 <script data-role="slide" type="text/html" data-markdown>
 # Summary
+
+* SQL, Structured Query Language
+* SQL DDL, Data Definition Language
+    * CREATE, ALTER, DROP
+* SQL DML, Data Manipulation Language
+    * INSERT, UPDATE, DELETE
+    * SELECT
 
 </script>
 

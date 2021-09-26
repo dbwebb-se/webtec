@@ -19,21 +19,289 @@
 # Agenda
 
 * SQLite
+* Features
+* Usage
 * Clients
+    * Terminal
+    * Desktop
+    * Web based
+    * Libraries
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# SQLite
+
+> "Small. Fast. Reliable."
+> "Choose any three."
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Industry matters
+# SQLite
+
+> "SQLite is the most used database engine in the world"
+
+* C-language library
+* Implements a 
+    * small
+    * fast
+    * self-contained
+    * high-reliability
+    * full-featured
+    * SQL database engine
+
+<p class="footnote">https://www.sqlite.org</p>
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Research matters
+# SQLite file format
+
+* Stable
+* Cross-platform
+* Backwards compatible
+    * developers pledge to keep it that way through the year 2050
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Usage
+
+* Containers to transfer rich content between systems
+* Long-term archival format for data
+* Built into all mobile phones and most computers
+* Bundled inside countless other applications that people use every day
+
+> "There are over 1 trillion (1e12) SQLite databases in active use."
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Public domain
+
+> "SQLite source code is in the public-domain and is free to everyone to use for any purpose."
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SQLite Consortium
+
+> "Ongoing development and support of SQLite is made possible in part by SQLite Consortium members."
+
+> "The SQLite Consortium is a membership association dedicated to insuring the continuing vitality and independence of SQLite."
+
+</script>
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Features
+
+* Self-contained
+* Serverless
+* Zero-configuration
+* Transactional SQL database
+* ACID transactions, even after power loss
+* Stable, enduring file format
+* Extensive, detailed documentation
+* Long-term support
+
+<p class="footnote">https://www.sqlite.org/about.html</p>
+
+</script>
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SQLite is found
+
+* Every Android device
+* Every iPhone and iOS device
+* Every Mac
+* Every Windows10 machine
+* Every Firefox, Chrome, and Safari web browser
+* Every instance of Skype
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SQLite is found...
+
+* Every instance of iTunes
+* Every Dropbox client
+* Every TurboTax and QuickBooks
+* PHP and Python
+* Most television sets and set-top cable boxes
+* Most automotive multimedia systems
+* Countless millions of other applications
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Top five
+
+> "SQLite is probably one of the top five most deployed software modules of any description."
+
+* Other libraries with similar reach include:
+    * The original zlib implementation
+    * The original reference implementation for libpng
+    * Libjpeg from the Independent JPEG Group
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Clients
+
+* Terminal client
+* Desktop client
+* Web client
+* Libraries with programming languages like PHP, Python, C, C++, Java and more.
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Terminal client
+
+* sqlite3
+    * Install with package manager
+    * man sqlite3
+
+Read more in "[En kommandoradsklient för SQLite](https://dbwebb.se/labbmiljo/sqlite3)".
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# sqlite3
+<figure>
+    <img src="https://dbwebb.se/image/snapvt15/sqlite3.png" style="width: 80%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Desktop client
+
+* DB Browser for SQLite
+    * https://sqlitebrowser.org/
+
+Read more in "[Kom igång med databasen SQLite med DB Browser för SQLite](https://dbwebb.se/kunskap/kom-igang-med-databasen-sqlite-med-db-browser-for-sqlite)".
+
+</script>
+
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# DB Browser
+<figure>
+    <img src="https://dbwebb.se/image/snapht18/jetty-insert.png" style="width: 80%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Web client
+
+* phpliteadmin
+    * https://www.phpliteadmin.org/
+* MyWebSQL
+    * https://samnan.github.io/MyWebSQL/
+
+Read more in "[En webbaserad klient för SQLite, phpliteadmin](https://dbwebb.se/kunskap/en-webbaserad-klient-for-sqlite-phpliteadmin)".
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# phpliteadmin
+<figure>
+    <img src="https://dbwebb.se/image/snapvt15/phpliteadmin-oversikt.png" style="width: 80%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# MyWebSQL
+<figure>
+    <img src="https://dbwebb.se/image/snapvt15/mywebsql-overview.png" style="width: 80%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Libraries
+
+* PHP
+* Python
+* and more
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# PHP
+
+```
+$dsn = "sqlite:db/boatclub.sqlite";
+$db = new PDO($dsn);
+
+$stmt = $db->prepare("SELECT * FROM jetty");
+$stmt->execute();
+
+$res = $stmt->fetchAll();
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Python
+
+```
+db = sqlite3.connect(dbFile)
+dbc = db.cursor()
+
+dbc.execute("SELECT url, time, response FROM Pings")
+
+for row in dbc:
+    print(row)
+```
 
 </script>
 
@@ -41,6 +309,18 @@
 
 <script data-role="slide" type="text/html" data-markdown>
 # Summary
+
+</script>
+
+
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# References
+
+* https://www.sqlite.org/
+* https://en.wikipedia.org/wiki/SQLite
 
 </script>
 
