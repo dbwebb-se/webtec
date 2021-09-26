@@ -100,7 +100,7 @@ CREATE TABLE course
     term INTEGER,
     kmom INTEGER,
     done DATETIME,
-    
+
     PRIMARY KEY (code)
 );
 ```
@@ -142,11 +142,11 @@ ALTER TABLE course RENAME TO course1;
 <script data-role="slide" type="text/html" data-markdown>
 # Datatypes columns
 
-* NULL. The value is a NULL value.
+* NULL: The value is a NULL value.
 
-* INTEGER. The value is a signed integer, stored in 1, 2, 3, 4, 6, or 8 bytes depending on the magnitude of the value.
+* INTEGER: The value is a signed integer, stored in 1, 2, 3, 4, 6, or 8 bytes depending on the magnitude of the value.
 
-* REAL. The value is a floating point value, stored as an 8-byte IEEE floating point number.
+* REAL: The value is a floating point value, stored as an 8-byte IEEE floating point number.
 
 <p class="footnote">https://www.sqlite.org/datatype3.html</p>
 
@@ -157,11 +157,12 @@ ALTER TABLE course RENAME TO course1;
 <script data-role="slide" type="text/html" data-markdown>
 # Datatypes columns...
 
-* TEXT. The value is a text string, stored using the database encoding (UTF-8, UTF-16BE or UTF-16LE).
+* TEXT: The value is a text string, stored using the database encoding (UTF-8, UTF-16BE or UTF-16LE).
 
-* BLOB. The value is a blob of data, stored exactly as it was input.
+* BLOB: The value is a blob of data, stored exactly as it was input.
 
-* NULL, INTEGER, REAL, TEXT, BLOB
+* To summarize:
+    * NULL, INTEGER, REAL, TEXT, BLOB
 
 </script>
 
@@ -199,9 +200,9 @@ VALUES (
     'DV1462', 'htmlphp', 7.5, 1, NULL, NULL
 );
 
-INSERT INTO course 
-    (code, name, term) 
-VALUES 
+INSERT INTO course
+    (code, name, term)
+VALUES
     ('DV1531', 'python', 1)
 ;
 ```
@@ -356,12 +357,12 @@ DELETE FROM course;
 
 ```
 sqlite> SELECT * FROM course;
-code        name        points      term        kmom        done               
+code        name        points      term        kmom        done
 ----------  ----------  ----------  ----------  ----------  -------------------
 PA1439      htmlphp     7.5         1           kmom03/04   2021-09-24 23:58:06
 DV1531      python      7.5         1                       2021-09-24 23:58:06
-PA1436      design      7.5         2                                          
-DV1561      javascript  7.5         2                                          
+PA1436      design      7.5         2
+DV1561      javascript  7.5         2
 ```
 
 </script>
@@ -452,7 +453,7 @@ WHERE
 # SELECT...
 
 ```
-Kurs              Klar!     
+Kurs              Klar!
 ----------------  ----------
 htmlphp (PA1439)  2021-09-24
 python (DV1531)   2021-09-24
@@ -493,9 +494,7 @@ WHERE
 * Date & Time functions
 * Math functions
 * Aggregate functions
-* and more
-
-* Define additional functions written in C and added to the database engine using the sqlite3_create_function() API
+* and more...
 
 <p class="footnote">https://www.sqlite.org/lang_corefunc.html</p>
 
@@ -508,10 +507,11 @@ WHERE
 
 * Save your SQL code in a file
 * Format it so it looks pretty and is easy to read and follow
-* Use comments to explain dificullt parts or separate parts of the code
-* Save different type of SQL in each own file, ddl, insert, select.
+* Use comments to explain difficult parts or separate sections of the code
+* Save different type of SQL in each own file:
+    * ddl, insert, select
 * Copy and paste into the terminal to execute it
-    * or run it from within the terminal using `.read`
+    * or run it from within the terminal using `.read file.sql`
 
 </script>
 
@@ -523,9 +523,11 @@ WHERE
 * SQL, Structured Query Language
 * SQL DDL, Data Definition Language
     * CREATE, ALTER, DROP
+    * To manipulate the schema
 * SQL DML, Data Manipulation Language
     * INSERT, UPDATE, DELETE
     * SELECT
+    * To manipulate the content
 
 </script>
 
