@@ -32,7 +32,7 @@ $aside1 = renderToString("block", [
 $main = renderToString("article", [
     "title" => "This is the title",
     "content" => "<p>This is the content of the article, to show how one can"
-        . "use views to render page content from variables and views.</p>",
+        . " use views to render page content from variables and views.</p>",
 ]);
 
 
