@@ -9,6 +9,13 @@ $items = [
     "Form POST" => "form-post.php",
     "Cookie"    => "cookie.php",
     "Session"   => "session.php",
+    "DB status" => "db-status.php",
+    "DB connect" => "db-connect.php",
+    "DB select"  => "db-select.php",
+    "DB search"  => "db-search.php",
+    "DB single"  => "db-single.php",
+    "DB show"    => "db-show.php",
+    "DB insert"  => "db-insert.php",
 ];
 
 $curPage = basename($_SERVER["REQUEST_URI"]);

@@ -1,0 +1,9 @@
+<article>
+
+<h1>This is part of HTML</h1>
+
+<p>This content is loaded from a file in the <code>content/</code> directory, it contains parts of HTML and can be loaded using the PHP function <code>file_get_contents()</code>.</p>
+
+<p>This is useful when you have "content" such as written text, as HTML. Put it into separate files to avoid messing up your PHP code and your views.</p>
+
+</article>

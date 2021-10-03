@@ -12,8 +12,10 @@
  * @throws Exception if the path is not found.
  *
  * @return string string as the path to the file.
+ *
+ * @SuppressWarnings(PHPMD.MissingImport)
  */
-function findTemplateFile(string $tpl): ?string
+function findTemplateFile(string $tpl): string
 {
     $viewPath = __DIR__ . "/../view";
 
@@ -23,14 +25,17 @@ function findTemplateFile(string $tpl): ?string
         "$viewPath/$tpl.php",
     ];
 
-    $target = null;
     foreach ($files as $file) {
         if (is_readable($file)) {
             return $file;
         }
     }
 
-    throw new Exception("The template file '$tpl' does not exists or is not readable in any way I know of. I even tried the paths '$viewPath/$tpl' and '$viewPath/$tpl.php'.");
+    throw new Exception(
+        "The template file '$tpl' does not exists or is not readable in"
+        . " any way I know of. I even tried the paths '$viewPath/$tpl' and"
+        . " '$viewPath/$tpl.php'."
+    );
 }
 
 
@@ -40,8 +45,6 @@ function findTemplateFile(string $tpl): ?string
  *
  * @param string $tpl path to the template file
  * @param array<string, mixed> $data array with variables to extract
- *
- * @SuppressWarnings(PHPMD.MissingImport)
  */
 function render(string $tpl, array $data = []): void
 {
@@ -97,7 +100,7 @@ function renderView(string $view, array $data = []): string
  */
 function esc(?string $str): string
 {
-    return htmlentities($str, ENT_QUOTES, "UTF-8");
+    return htmlentities($str ?? "", ENT_QUOTES, "UTF-8");
 }
 
 
@@ -159,7 +162,9 @@ function defaultHtmlExceptionHandler(Exception $e): void
  * Exception handler to print out a HTML message with details on the exception,
  * useful to deal with uncaught exceptions.
  *
- * @return object as the database connection object.
+ * @return object as the PDO database connection object.
+ *
+ * @SuppressWarnings(PHPMD.MissingImport)
  */
 function connectToDatabase(string $dsn): object
 {

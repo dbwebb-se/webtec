@@ -10,9 +10,13 @@ declare(strict_types=1);
 // Bootstrap the application and load the essentials
 require "../config/bootstrap.php";
 
+
+// Load the content file
+$html = file_get_contents("../content/html-part.txt");
+
 // Prepare the data variables
 $data["title"] = "Home";
-$data["main"] = file_get_contents("../content/me.txt");
+$data["main"] = $html;
 
-// Render data variables onto a page layout
-render("layout/base.php", $data);
+// Render data variables onto a page layout to create the web page
+render("layout/base", $data);

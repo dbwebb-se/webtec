@@ -9,7 +9,7 @@
 
 <script data-role="slide" type="text/html" data-markdown class="titlepage center">
 # PHP PDO
-## Connect to databases using PHP
+## Connect to (SQLite) databases using PHP
 ### Mikael Roos
 </script>
 
@@ -29,6 +29,317 @@
 * Execute a query
 * Insert, delete, update
 * last insert id
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# PHP PDO
+
+* PHP Data Objects (PDO)
+* Interface för att accessa olika databaser
+* Kräver specifik db-driver
+* Tex PDO_SQLITE
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Data-access abstraction
+
+* Data-access abstraction layer
+* Oavsett db - samma funktioner
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Database abstraction
+
+* INTE database abstraction
+* (skriva om SQL-satser baserat på db)
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# PDO drivers som finns
+
+* IBM, MySQL/MariaDb, Oracle, SQL Server, mfl
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# Koppla mot databas
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Data Source Name (DSN)
+
+```
+// Create a DSN for the database using its filename
+$fileName = __DIR__ . "/db/jetty.sqlite";
+$dsn = "sqlite:$fileName";
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Öppna databas
+
+```
+// Open the database file and catch the exception it it fails.
+try {
+    $db = new PDO($dsn);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Failed to connect to the database using DSN:<br>$dsn<br>";
+    throw $e;
+}
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Ställ frågan
+
+```
+// Prepare and execute the SQL statement
+$stmt = $db->prepare("SELECT * FROM Jetty");
+$stmt->execute();
+```
+
+* Skapa ett statment och därefter exekvera det.
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Hämta resultatet
+
+```
+// Get the results as an array with column names as array keys
+$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+print_r($res);
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Resultset i array
+
+<img alt="Resultset" src="https://dbwebb.se/image/snapvt15/pdo20-connect.png" style="width: 100%">
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Olika sätt hämta resultset
+
+* PDO::FETCH_NUM
+* PDO::FETCH_ASSOC, PDO::FETCH_BOTH
+* PDO::FETCH_OBJ, PDO::FETCH_LAZY
+* PDO::FETCH_CLASS, PDO::FETCH_INTO
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# PDO klasser
+
+* [PDO](http://php.net/manual/en/class.pdo.php)
+* [PDOStatement](http://php.net/manual/en/class.pdostatement.php)
+* [PDOException](http://php.net/manual/en/class.pdoexception.php)
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Prepared statements
+
+* Kompilera SQL innan exekvering
+* Kompilera en gång, exekvera många
+* Bifoga parametrar
+* Parametrar behöver inte "quotas"
+* Skyddar SQL injection
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Prepared statements...
+
+```
+// Prepare the SQL statement
+$sql = "SELECT * FROM Jetty WHERE boatType LIKE ? OR boatEngine LIKE ?";
+$stmt = $db->prepare($sql);
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Prepared statements...
+
+```
+// Execute the SQL statement using parameters to replace the ?
+//WHERE boatType LIKE ? OR boatEngine LIKE ?";
+$params = [$search, $search];
+$stmt->execute($params);
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Bra att ha
+
+* [PDO::lastInsertId()](http://php.net/manual/en/pdo.lastinsertid.php)
+* [PDOStatement::rowCount()](http://php.net/manual/en/pdostatement.rowcount.php)
+* [PDO::errorInfo()](http://php.net/manual/en/pdo.errorInfo.php)
+* [PDOStatement::errorInfo()](http://php.net/manual/en/pdostatement.errorinfo.php)
+* [PDOStatement::debugDumpParams()](http://php.net/manual/en/pdostatement.debugdumpparams.php)
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SQL injections
+
+<img alt="sql injection" src="img/exploits_of_a_mom.png" style="width: 100%">
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SQL injections...
+
+```
+search.php?search=%buster%
+search.php?search=1+UNION+(SELECT+1,1,1,user,password,email+FROM+Users)--
+```
+
+```
+$sql = "SELECT * FROM Jetty WHERE boatType LIKE $search OR boatEngine LIKE $search";
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Säkerhetshål?
+
+* Kan du hitta säkerhetshål i exemplet?
+* SQL injection?
+* XSS?
+* CSRF?
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Om CRUD
+
+* Create, Read, Update, Delete
+* Vanligt sätt att jobba mot databaser
+* Vanlig formulärhanering
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Testkör exemplet
+
+* [Exempel](https://dbwebb.se/repo/htmlphp/example/pdo-sqlite/)
+* [Källkod](https://github.com/dbwebb-se/htmlphp/tree/master/example/pdo-sqlite)
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Några vanliga felmeddelanden
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Felmeddelanden
+
+* *unable to open database file*
+
+> “Fatal error: Uncaught exception ‘PDOException’ with message ‘SQLSTATE[HY000] [14] unable to open database file’ in /home/mos/git/htmlphp/example/pdo-sqlite/connect.php on line 8”
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Felmeddelanden...
+
+* *unable to open database file*
+* Dubbelkolla sökvägen till databasen
+* Kontrollera att katalogen är skrivbar
+* `chmod 777 db`
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Felmeddelanden
+
+* *write a readonly database*
+
+> “Fatal error: Uncaught exception ‘PDOException’ with message ‘SQLSTATE[HY000]: General error: 8 attempt to write a readonly database’ in /home/mos/git/htmlphp/example/pdo-sqlite/init.php on line 29”
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Felmeddelanden...
+
+* *write a readonly database*
+* Kontrollera att databasfilen är skrivbar
+* `chmod 666 db/db.sqlite`
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Remember troubleshooting
+
+> "Always solve the top error first and solve one issue, and test it, before looking at the next one."
 
 </script>
 

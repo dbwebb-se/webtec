@@ -1,0 +1,28 @@
+.dice {
+    font-size: 50px;
+    margin: 0;
+}
+
+.dice-1:after {
+    content: "⚀"
+}
+
+.dice-2:after {
+    content: "⚁"
+}
+
+.dice-3:after {
+    content: "⚂"
+}
+
+.dice-4:after {
+    content: "⚃"
+}
+
+.dice-5:after {
+    content: "⚄"
+}
+
+.dice-6:after {
+    content: "⚅"
+}

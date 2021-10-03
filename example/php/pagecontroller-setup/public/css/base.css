@@ -67,9 +67,14 @@ body {
     padding: 0 1em;
 }
 
+.main.fullwidth {
+    width: 100%;
+}
+
 .aside {
     background-color: BlanchedAlmond;
     width: calc(100% / 3 * 1);
+    padding: 0.5em;
 }
 
 pre {
