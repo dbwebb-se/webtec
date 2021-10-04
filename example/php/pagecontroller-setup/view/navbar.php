@@ -8,11 +8,12 @@
  */
 
 $items = [
-    "Debug"     => "debug.php",
+    "Page controller" => "page-controller.php",
     "HTML part" => "html.php",
     "Markdown"  => "markdown.php",
     "Layout"    => "layout.php",
     "Views"     => "views.php",
+    "Debug"     => "debug.php",
 ];
 
 $curPage = basename($_SERVER["REQUEST_URI"]);

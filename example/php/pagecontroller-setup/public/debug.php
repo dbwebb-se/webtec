@@ -16,6 +16,10 @@ echo <<<EOD
 <p>This pagecontroller just outputs directly from the pagecontroller, without using a layout or views.</p>
 
 <p>This is good for debugging and troubleshooting and testing code constructs.</p>
+
+<p>You can also exclude the bootstrapping file if you feel like it, but I would stick with it and try to discover what it does for me.</p>
 EOD;
 
-echo "PHP version is " . PHP_VERSION;
+echo "<p>PHP version is " . PHP_VERSION;
+
+echo "<p>These are the extensions loaded into your PHP installation:<br>" . implode(", ", get_loaded_extensions());
