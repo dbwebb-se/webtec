@@ -1,5 +1,14 @@
-A really small web framework
+Tiny and small web framework
 ============================
+
+This tiny and small web framework is intended for education of new web programmers. The framework is a relativly small code base containing a structure and a few basic external libraries that could be the core of any larger framework. The intention is to "learn from this example". While you build your website you will have the opportunity to dig into the code base and try to understand its bits and pieces.
+
+
+
+**This documentation is to be written**
+
+
+
 
 <!-- Rewrite this to be documentation, learn from the documentation -->
 

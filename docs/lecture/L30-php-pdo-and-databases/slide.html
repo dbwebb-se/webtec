@@ -9,7 +9,7 @@
 
 <script data-role="slide" type="text/html" data-markdown class="titlepage center">
 # PHP PDO
-## Connect to (SQLite) databases using PHP
+## Connect to SQLite database using PHP
 ### Mikael Roos
 </script>
 
@@ -18,17 +18,13 @@
 <script data-role="slide" type="text/html" data-markdown>
 # Agenda
 
-* PHP and databases
-* PHP PDO
-* Is installed
-* Connect
-* Prepared statements
-* Execute a SELECT query
+* PHP PDO and databases
+* Connect and do SELECT
 * Deal with the resultset
-* Fetch, fetchall
-* Execute a query
-* Insert, delete, update
-* last insert id
+* Prepared statements
+* SQL injections
+* INSERT, UPDATE, DELETE
+* Troubleshooting
 
 </script>
 
@@ -38,9 +34,30 @@
 # PHP PDO
 
 * PHP Data Objects (PDO)
-* Interface för att accessa olika databaser
-* Kräver specifik db-driver
-* Tex PDO_SQLITE
+* Interface for accessing databases in PHP
+* PHP PDO contains generic implementation and API
+    * (API collection of classes, functions amd methods to use)
+* Each database has its own driver
+    * PDO\_SQLITE: (SQLite 3 and SQLite 2)
+    * PDO\_MYSQL: (MySQL 3.x/4.x/5.x)
+
+<p class="footnote">https://www.php.net/manual/en/intro.pdo.php</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# More drivers
+
+* PDO_PGSQL: (PostgreSQL)
+* PDO_SQLSRV: (Microsoft SQL Server / SQL Azure)
+* PDO_ODBC: ODBC v3 (IBM DB2, unixODBC and win32 ODBC)
+* PDO_OCI: Oracle Call Interface
+* PDO_DBLIB: FreeTDS / Microsoft SQL Server / Sybase
+* PDO_FIREBIRD: Firebird
+
+<p class="footnote">https://www.php.net/manual/en/pdo.drivers.php</p>
 
 </script>
 
@@ -49,34 +66,50 @@
 <script data-role="slide" type="text/html" data-markdown>
 # Data-access abstraction
 
+PDO is:
+
 * Data-access abstraction layer
-* Oavsett db - samma funktioner
+* Regardless of database, same interface to use to access it
 
-</script>
+PDO is not:
 
-
-
-<script data-role="slide" type="text/html" data-markdown>
-# Database abstraction
-
-* INTE database abstraction
-* (skriva om SQL-satser baserat på db)
-
-</script>
-
-
-
-<script data-role="slide" type="text/html" data-markdown>
-# PDO drivers som finns
-
-* IBM, MySQL/MariaDb, Oracle, SQL Server, mfl
+* Database abstraction layer that rewrites the SQL code to fit any database
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown class="titlepage center">
-# Koppla mot databas
+# Check if database driver is installed
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Check whats installed
+
+```
+// Is PDO supported?
+if (class_exists('PDO')) {
+    echo "YES";
+};
+```
+
+```
+// Is the sqlite driver installed?
+if (in_array("sqlite", PDO::getAvailableDrivers())) {
+    echo "YES";
+};
+```
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# Reference the database
+## Data Source Name (DSN) as its name
 
 </script>
 
@@ -85,27 +118,101 @@
 <script data-role="slide" type="text/html" data-markdown>
 # Data Source Name (DSN)
 
-```
-// Create a DSN for the database using its filename
-$fileName = __DIR__ . "/db/jetty.sqlite";
-$dsn = "sqlite:$fileName";
-```
+* DSN is a string
+* DSN prefix is `sqlite:`
+    * `"sqlite:"`
+* Access database on disk, append absolute/relative path
+    * `"sqlite:data/db.sqlite"`
+* Append `:memory:` to create a database in memory
+    * `"sqlite::memory:"`
+* If only prefix, then a temporary database is used which is deleted when the connection is closed
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Öppna databas
+# DSN example
+
+Create a DSN in a variable.
 
 ```
-// Open the database file and catch the exception it it fails.
-try {
-    $db = new PDO($dsn);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Failed to connect to the database using DSN:<br>$dsn<br>";
-    throw $e;
+// Create a DSN for the database using its filename
+$fileName = "db/db.sqlite";
+$dsn = "sqlite:$fileName";
+```
+
+Examples of DSN.
+
+```
+sqlite:/opt/databases/mydb.sq3
+sqlite::memory:
+sqlite:
+```
+
+<p class="footnote">https://www.php.net/manual/en/ref.pdo-sqlite.connection.php</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# Connect to the database
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Create a connection
+
+```
+// Create a connection to the database
+$db = new PDO($dsn);
+```
+
+The database connection object is stored in the variable `$db`.
+
+<p class="footnote">https://www.php.net/manual/en/ref.pdo-sqlite.connection.php</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Set attributes
+
+Attributes can change how the connection object appears.
+
+```
+// Set attributes of the connection
+$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+```
+
+<p class="footnote">https://www.php.net/manual/en/pdo.setattribute.php</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Connect
+
+```
+function connectToDatabase(string $dsn): object
+{
+    try {
+        $db = new PDO($dsn);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "Failed to connect to the database using
+            . DSN:<br>'$dsn'<br>";
+        throw $e;
+    }
+
+    return $db;
 }
 ```
 
@@ -113,61 +220,215 @@ try {
 
 
 
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# Ask a question to the database
+## SQL and SELECT
+
+</script>
+
+
+
 <script data-role="slide" type="text/html" data-markdown>
-# Ställ frågan
+# Choose a SQL query
 
 ```
-// Prepare and execute the SQL statement
-$stmt = $db->prepare("SELECT * FROM Jetty");
+SELECT
+    rowid,
+    *
+FROM namnlista
+WHERE
+    namn = 'Mikael'
+    OR namn = 'Magnus'
+    OR namn = 'Carina'
+;
+```
+
+This is an ordinary SELECT statement for a SQLite database.
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Result in sqlite3
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/sqlite-select.png" style="width: 80%">
+    <figcaption>This is how the results looks like when executinG the query in the terminal client sqlite3.</figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SQL into a variable
+
+```php
+$sql = <<<EOD
+SELECT
+    rowid,
+    *
+FROM namnlista
+WHERE
+    namn = 'Mikael'
+    OR namn = 'Magnus'
+    OR namn = 'Carina'
+;
+EOD;
+```
+
+Store the SELECT statement into a variable.
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Prepare the statement
+
+We are using prepared statements.
+
+```
+// Prepare the SQL statement so it can be executed
+$stmt = $db->prepare($sql);
+```
+
+The SQL statement is being prepared, but not yet executed.
+
+An object of the class PDOStatement is returned.
+
+<p class="footnote">https://www.php.net/manual/en/pdo.prepare.php</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Execute the statement
+
+The statement is now executed as a query towards the database.
+
+```
+// Execute the SQL statement towards the database
 $stmt->execute();
 ```
 
-* Skapa ett statment och därefter exekvera det.
+A resultset is prepared and can now be retrieved.
+
+<p class="footnote">https://www.php.net/manual/en/pdostatement.execute.php</p>
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Hämta resultatet
+# Fetch the resultset
 
 ```
-// Get the results as an array with column names as array keys
-$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-print_r($res);
+// Get the resultset and print it out
+$res = $stmt->fetchAll();
 ```
 
-</script>
+```
+echo "<pre>", print_r($res, true), "</pre>";
+```
 
+<p class="footnote">https://www.php.net/manual/en/pdostatement.fetchall.php</p>
 
-
-<script data-role="slide" type="text/html" data-markdown>
-# Resultset i array
-
-<img alt="Resultset" src="https://dbwebb.se/image/snapvt15/pdo20-connect.png" style="width: 100%">
-
-</script>
-
-
-
-<script data-role="slide" type="text/html" data-markdown>
-# Olika sätt hämta resultset
-
-* PDO::FETCH_NUM
-* PDO::FETCH_ASSOC, PDO::FETCH_BOTH
-* PDO::FETCH_OBJ, PDO::FETCH_LAZY
-* PDO::FETCH_CLASS, PDO::FETCH_INTO
+<p class="footnote">Use <code>fetch()</code> when your resultset only contains one row.<br>https://www.php.net/manual/en/pdostatement.fetch.php</p>
 
 </script>
 
 
 
-<script data-role="slide" type="text/html" data-markdown>
-# PDO klasser
+<script data-role="slide" data-markdown type="text/html" class="center">
+# The resultset
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/pdo-select.png" style="width: 80%">
+    <figcaption>The resultset is an array of rows where each row contains the values for each column.</figcaption>
+</figure>
 
-* [PDO](http://php.net/manual/en/class.pdo.php)
-* [PDOStatement](http://php.net/manual/en/class.pdostatement.php)
-* [PDOException](http://php.net/manual/en/class.pdoexception.php)
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Compare with sqlite3
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/sqlite-select.png" style="width: 80%">
+    <figcaption>This is how the results looks like when executin the query in the terminal client sqlite3.</figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Output as table
+
+* Can we output the resultset as a HTML table into a web page?
+* Perhaps with a `foreach()` statement?
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# The resultset
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/select-table.png" style="width: 80%">
+    <figcaption>The resultset displayed in a HTML table.</figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# Creating a table
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/res-to-table.png" style="width: 70%">
+    <figcaption>Using the resultset to create a HTML table.</figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Type of resultset
+
+There are different ways to organise the returned resultset.
+
+* PDO::FETCH\_NUM
+* PDO::FETCH\_ASSOC, PDO::FETCH\_BOTH
+* PDO::FETCH\_OBJ, PDO::FETCH\_LAZY
+* PDO::FETCH\_CLASS, PDO::FETCH\_INTO
+
+<p class="footnote">https://www.php.net/manual/en/pdostatement.fetch.php</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# PDO classes
+
+* PDO
+    * The database connection and preparing statements.
+* PDOStatement
+    * Executing statements, preparing and fetching resultsets.
+* PDOException
+    * When something goes wrong.
+
+<p class="footnote">PDO http://php.net/manual/en/class.pdo.php<br>PDOStatement https://www.php.net/manual/en/class.pdostatement.php</p>
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# Prepared statements
 
 </script>
 
@@ -176,11 +437,12 @@ print_r($res);
 <script data-role="slide" type="text/html" data-markdown>
 # Prepared statements
 
-* Kompilera SQL innan exekvering
-* Kompilera en gång, exekvera många
-* Bifoga parametrar
-* Parametrar behöver inte "quotas"
-* Skyddar SQL injection
+* Compile the SQL, before its executed
+* Compile once, execute many
+* Attach parameters in a safe way
+* Parameters needs to be escaped to avoid SQL injection
+
+<p class="footnote">https://www.php.net/manual/en/pdo.prepare.php</p>
 
 </script>
 
@@ -191,9 +453,16 @@ print_r($res);
 
 ```
 // Prepare the SQL statement
-$sql = "SELECT * FROM Jetty WHERE boatType LIKE ? OR boatEngine LIKE ?";
+$sql = <<<EOD
+SELECT * FROM namnlista WHERE
+    namn = ?
+    OR namn = ?
+    OR namn = ?;
+EOD;
 $stmt = $db->prepare($sql);
 ```
+
+The statement is now prepared (compiled) and having placeholders `?` that shall be replaced by arguments when the query is executed.
 
 </script>
 
@@ -203,33 +472,23 @@ $stmt = $db->prepare($sql);
 # Prepared statements...
 
 ```
-// Execute the SQL statement using parameters to replace the ?
-//WHERE boatType LIKE ? OR boatEngine LIKE ?";
-$params = [$search, $search];
-$stmt->execute($params);
+// Execute the SQL statement towards the database
+$args = ['Mikael', 'Magnus', 'Carina'];
+$stmt->execute($args);
 ```
 
-</script>
+When executing the query, the arguments will replace the placeholder in the SELECT statement.
 
-
-
-<script data-role="slide" type="text/html" data-markdown>
-# Bra att ha
-
-* [PDO::lastInsertId()](http://php.net/manual/en/pdo.lastinsertid.php)
-* [PDOStatement::rowCount()](http://php.net/manual/en/pdostatement.rowcount.php)
-* [PDO::errorInfo()](http://php.net/manual/en/pdo.errorInfo.php)
-* [PDOStatement::errorInfo()](http://php.net/manual/en/pdostatement.errorinfo.php)
-* [PDOStatement::debugDumpParams()](http://php.net/manual/en/pdostatement.debugdumpparams.php)
+Always use placeholders.
 
 </script>
 
 
 
-<script data-role="slide" type="text/html" data-markdown>
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
 # SQL injections
 
-<img alt="sql injection" src="img/exploits_of_a_mom.png" style="width: 100%">
+<img alt="sql injection" src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png" style="width: 100%">
 
 </script>
 
@@ -238,122 +497,275 @@ $stmt->execute($params);
 <script data-role="slide" type="text/html" data-markdown>
 # SQL injections...
 
+Consider this url to a search script.
+
 ```
-search.php?search=%buster%
+search.php?search=%mikael%
+```
+
+But what if the user submits the following?
+
+```
 search.php?search=1+UNION+(SELECT+1,1,1,user,password,email+FROM+Users)--
 ```
 
+Would that imply a problem?
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# SQL injections...
+
+No problem if using placeholders and prepared statements.
+
 ```
-$sql = "SELECT * FROM Jetty WHERE boatType LIKE $search OR boatEngine LIKE $search";
+$sql = "SELECT * FROM namnlista WHERE namn LIKE ?";
+```
+
+SQL injection if the arguments is not safely escaped.
+
+```
+$sql = "SELECT * FROM namnlista WHERE namn LIKE $_GET['search']";
 ```
 
 </script>
 
 
 
-<script data-role="slide" type="text/html" data-markdown>
-# Säkerhetshål?
 
-* Kan du hitta säkerhetshål i exemplet?
-* SQL injection?
-* XSS?
-* CSRF?
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# INSERT, UPDATE, DELETE
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# INSERT
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/insert-filled.png" style="width: 90%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# INSERT...
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/insert-get-form.png" style="width: 90%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# INSERT...
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/insert-do.png" style="width: 90%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# UPDATE
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/table-edit.png" style="width: 90%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# UPDATE...
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/update.png" style="width: 90%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# UPDATE...
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/update-get-form.png" style="width: 90%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# UPDATE...
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/update-do.png" style="width: 90%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# DELETE
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/search-delete.png" style="width: 90%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# DELETE...
+<figure>
+    <img src="http://dbwebb.se/image/webtec/pdo/delete.png" style="width: 90%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# DELETE...
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/delete-get-form.png" style="width: 90%">
+    <figcaption></figcaption>
+</figure>
+
+</script>
+
+
+
+<script data-role="slide" data-markdown type="text/html" class="center">
+# DELETE...
+<figure>
+    <img src="https://dbwebb.se/image/webtec/pdo/delete-do.png" style="width: 90%">
+    <figcaption></figcaption>
+</figure>
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Om CRUD
+# CRUD
 
-* Create, Read, Update, Delete
-* Vanligt sätt att jobba mot databaser
-* Vanlig formulärhanering
+Four basic operations for persistent storage. Sometimes used to describe the user interface of an application.
 
-</script>
+* C, Create: INSERT
+* R, Read: SELECT
+* U, Update: UPDATE
+* D, Delete: DELETE
 
-
-
-<script data-role="slide" type="text/html" data-markdown>
-# Testkör exemplet
-
-* [Exempel](https://dbwebb.se/repo/htmlphp/example/pdo-sqlite/)
-* [Källkod](https://github.com/dbwebb-se/htmlphp/tree/master/example/pdo-sqlite)
+<p class="footnote">https://en.wikipedia.org/wiki/Create,_read,_update_and_delete</p>
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Några vanliga felmeddelanden
+# PDO utilities
+
+* PDO::lastInsertId()
+    * Get the last inserted id
+
+* PDOStatement::rowCount()
+    * Count the numbers of affected rows of the last query
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Felmeddelanden
+# PDO errors
+
+* PDO::errorInfo()
+    * Extended error information associated with the last operation
+
+* PDOStatement::errorInfo()
+    * Same as above, but related to the statement and not the connection
+
+* PDOStatement::debugDumpParams()
+    * As `var_dump()` but include all the details of the statement, including its parameters
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown class="titlepage center">
+# Some common error messages
+
+</script>
+
+
+
+<script data-role="slide" type="text/html" data-markdown>
+# Open file
 
 * *unable to open database file*
 
-> “Fatal error: Uncaught exception ‘PDOException’ with message ‘SQLSTATE[HY000] [14] unable to open database file’ in /home/mos/git/htmlphp/example/pdo-sqlite/connect.php on line 8”
+> “Fatal error: Uncaught exception ‘PDOException’ with message ‘SQLSTATE[HY000] [14] unable to open database file’ in /example/pdo-sqlite/connect.php on line 8”
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Felmeddelanden...
+# Open file...
 
 * *unable to open database file*
-* Dubbelkolla sökvägen till databasen
-* Kontrollera att katalogen är skrivbar
-* `chmod 777 db`
+* Check the path to the database file
+* Check that the directory is writable (by the web server)
+* Fix with `chmod 777 db`
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Felmeddelanden
+# Readonly
 
 * *write a readonly database*
 
-> “Fatal error: Uncaught exception ‘PDOException’ with message ‘SQLSTATE[HY000]: General error: 8 attempt to write a readonly database’ in /home/mos/git/htmlphp/example/pdo-sqlite/init.php on line 29”
+> “Fatal error: Uncaught exception ‘PDOException’ with message ‘SQLSTATE[HY000]: General error: 8 attempt to write a readonly database’ in /example/pdo-sqlite/init.php on line 29”
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Felmeddelanden...
+# Readonly...
 
 * *write a readonly database*
-* Kontrollera att databasfilen är skrivbar
-* `chmod 666 db/db.sqlite`
+* Check that the databas file is writable (by the webserver)
+* Fix with `chmod 666 db/db.sqlite`
 
 </script>
 
 
 
 <script data-role="slide" type="text/html" data-markdown>
-# Remember troubleshooting
+# Troubleshooting
 
 > "Always solve the top error first and solve one issue, and test it, before looking at the next one."
 
-</script>
-
-
-
-<script data-role="slide" type="text/html" data-markdown>
-# Industry matters
-
-</script>
-
-
-
-<script data-role="slide" type="text/html" data-markdown>
-# Research matters
+* Use `PDOStatement::debugDumpParams()`to debug a query.
 
 </script>
 
@@ -361,6 +773,16 @@ $sql = "SELECT * FROM Jetty WHERE boatType LIKE $search OR boatEngine LIKE $sear
 
 <script data-role="slide" type="text/html" data-markdown>
 # Summary
+
+* PHP PDO
+* Check and connect
+* Prepare and execute a statement
+* Deal with resultsets
+* Using placeholders
+* SELECT, INSERT, UPDATE, DELETE
+* CRUD
+* Utilities
+* Troubleshooting
 
 </script>
 
