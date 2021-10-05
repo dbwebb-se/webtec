@@ -1,7 +1,7 @@
 Databas för namn
 ==========================
 
-Databasen är en samling an namn och relaterad data såsom namnsdagar och betydelse.
+Databasen är en samling av namn och relaterad data såsom namnsdagar och betydelse.
 
 Databasfilen heter `db.sqlite` och innehåller följande tabeller.
 
