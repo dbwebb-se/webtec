@@ -88,7 +88,7 @@ De namn som finns i namnlängden har en förklaring rörande [Namnens ursprung o
 
 Data är insamlad från webbplatsen till filen `data/Svenska_akademin_namn_betydelse.csv` och därefter importerad till databasen.
 
-Databastabellen heter `namnbetydelse` och innehåller den namnet och dess betydelse.
+Databastabellen heter `namnbetydelse` och innehåller namnet och dess betydelse.
 
 ```
 sqlite> SELECT * FROM namnbetydelse LIMIT 3;
