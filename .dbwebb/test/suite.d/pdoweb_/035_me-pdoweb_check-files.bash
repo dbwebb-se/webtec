@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 . ".dbwebb/inspect-src/kmom.d/functions.bash"
 
-TARGET_DIR="me/php"
+TARGET_DIR="me/pdoweb"
 CHECK_FILES="db/todo.sqlite config/config.php src/functions.php vendor/autoload.php"
 
 cd $TARGET_DIR || exit 1
