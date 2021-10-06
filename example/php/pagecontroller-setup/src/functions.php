@@ -141,7 +141,7 @@ function sessionDestroy(): void
  * Exception handler to print out a HTML message with details on the exception,
  * useful to deal with uncaught exceptions.
  */
-function defaultHtmlExceptionHandler(Exception $e): void
+function defaultHtmlExceptionHandler(Throwable $e): void
 {
     $class = get_class($e);
 
