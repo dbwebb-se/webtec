@@ -159,8 +159,7 @@ function defaultHtmlExceptionHandler(Exception $e): void
 
 
 /**
- * Exception handler to print out a HTML message with details on the exception,
- * useful to deal with uncaught exceptions.
+ * Connect to the database and return the connection object.
  *
  * @return object as the PDO database connection object.
  *
