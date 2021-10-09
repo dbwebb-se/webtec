@@ -70,11 +70,20 @@ grade-kmom03()
     local kmom=$1
     local acronym=$2
     local url=
+    local input=
     
     grade-kmom-header $kmom $acronym
     
-    printf "Not yet implemented."
-    
+    local url="$WEB_SERVER/~$acronym/$WEB_SERVER_PATH"
+    openUrl "$url/report"
+    openUrl "$url/session/public"
+
+    printf "\nExecute cli php [Yn]: "
+    read input
+    if [[ $input != "n" ]]; then
+        dbwebb run "cd ~$acronym/dbwebb-kurser/webtec/me/php; tree; php main.php"
+    fi
+
     grade-kmom-footer $kmom $acronym
 }
 
@@ -91,7 +100,9 @@ grade-kmom05()
     
     grade-kmom-header $kmom $acronym
 
-    printf "Not yet implemented."
+    local url="$WEB_SERVER/~$acronym/$WEB_SERVER_PATH"
+    openUrl "$url/report"
+    openUrl "$url/pdoweb"
     
     grade-kmom-footer $kmom $acronym
 }
@@ -140,8 +151,9 @@ pressEnterToContinue()
 function openUrl {
     local url="$1"
 
-    printf "$url\n" 2>&1
+    printf "$BROWSER $url\n" 2>&1
     eval "$BROWSER" '$url' &
+    echo "DONE"
 }
 
 
