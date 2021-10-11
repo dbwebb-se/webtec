@@ -34,10 +34,11 @@ case $KMOM in
         openUrl "$w3cValidatorUnicorn=$studentServerUrl/htmlcss"
     ;;
     kmom03)
-        :
+        openUrl "$studentServerUrl/session/public"
     ;;
     kmom05)
-        :
+        openUrl "$studentServerUrl/sqlite"
+        openUrl "$studentServerUrl/pdoweb/public"
     ;;
     kmom10)
         openUrl "$studentServerUrl/proj"

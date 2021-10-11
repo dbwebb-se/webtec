@@ -56,7 +56,7 @@ grade-kmom01()
     openUrl "$url/onepage"
     openUrl "$url/htmlcss"
     openUrl "https://validator.w3.org/unicorn/check?ucn_task=conformance&ucn_uri=$url/htmlcss"
-    
+
     grade-kmom-footer $kmom $acronym
 }
 
@@ -71,9 +71,9 @@ grade-kmom03()
     local acronym=$2
     local url=
     local input=
-    
+
     grade-kmom-header $kmom $acronym
-    
+
     local url="$WEB_SERVER/~$acronym/$WEB_SERVER_PATH"
     openUrl "$url/report"
     openUrl "$url/session/public"
@@ -97,13 +97,14 @@ grade-kmom05()
     local kmom=$1
     local acronym=$2
     local url=
-    
+
     grade-kmom-header $kmom $acronym
 
     local url="$WEB_SERVER/~$acronym/$WEB_SERVER_PATH"
     openUrl "$url/report"
-    openUrl "$url/pdoweb"
-    
+    openUrl "$url/sqlite"
+    openUrl "$url/pdoweb/public"
+
     grade-kmom-footer $kmom $acronym
 }
 
@@ -117,11 +118,11 @@ grade-kmom10()
     local kmom=$1
     local acronym=$2
     local url=
-    
+
     grade-kmom-header $kmom $acronym
 
     printf "Not yet implemented."
-    
+
     grade-kmom-footer $kmom $acronym
 }
 
@@ -151,9 +152,8 @@ pressEnterToContinue()
 function openUrl {
     local url="$1"
 
-    printf "$BROWSER $url\n" 2>&1
+    printf "$url\n" 2>&1
     eval "$BROWSER" '$url' &
-    echo "DONE"
 }
 
 
@@ -322,7 +322,7 @@ INSPECT_SOURCE_DIR="$DIR/.dbwebb/inspect-src"
 
 [[ -d  "$INSPECT_SOURCE_DIR" ]] || die "The path to inspect source files does not exists:\n INSPECT_SOURCE_DIR='$INSPECT_SOURCE_DIR'."
 
-# 
+#
 # # shellcheck source=$DIR/.dbwebb/inspect-src/config.bash
 # [[ -f $INSPECT_SOURCE_CONFIG_FILE ]] && source "$INSPECT_SOURCE_CONFIG_FILE"
 
