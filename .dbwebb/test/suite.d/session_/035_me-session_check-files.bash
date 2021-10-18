@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 . ".dbwebb/inspect-src/kmom.d/functions.bash"
 
-TARGET_DIR="me/php"
+TARGET_DIR="me/session"
 CHECK_FILES="config/config.php src/functions.php vendor/autoload.php"
 
 cd $TARGET_DIR || exit 1
