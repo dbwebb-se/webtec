@@ -80,3 +80,17 @@ services:
         volumes:
             - .:/app
             - ./example/docker/site_default.conf:/etc/apache2/sites-enabled/000-default.conf
+
+    php80:
+        image: anax/dev:php80-cli
+        volumes:
+            - .:/home/anax/repo
+
+    php80-apache:
+        image: anax/dev:php80-apache
+        ports:
+            - "18085:80"
+        volumes:
+            - .:/app
+            #- ./apache.conf:/etc/apache2/sites-enabled/000-default.conf
+            - ./example/docker/site_default.conf:/etc/apache2/sites-enabled/000-default.conf
