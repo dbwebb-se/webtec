@@ -41,7 +41,8 @@ case $KMOM in
         openUrl "$studentServerUrl/pdoweb/public"
     ;;
     kmom10)
-        openUrl "$studentServerUrl/proj"
+        openUrl "$studentServerUrl/proj/public"
+        openUrl "$w3cValidatorUnicorn=$studentServerUrl/proj/public"
     ;;
 esac
 

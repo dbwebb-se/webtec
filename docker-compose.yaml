@@ -7,8 +7,8 @@ volumes:
 services:
     # Primary services to use with this course
     webtec: &webtec
-        #image: dbwebb/courserepo:webtec
-        image: dbwebb/courserepo
+        image: dbwebb/courserepo:webtec
+        #image: dbwebb/courserepo
         volumes:
             - ".:/home/dbwebb/repo"
             - "/home/dbwebb/repo/bin"

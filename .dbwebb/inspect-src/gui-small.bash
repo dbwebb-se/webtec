@@ -121,7 +121,10 @@ grade-kmom10()
 
     grade-kmom-header $kmom $acronym
 
-    printf "Not yet implemented."
+    local url="$WEB_SERVER/~$acronym/$WEB_SERVER_PATH"
+    openUrl "$url/report"
+    openUrl "$url/proj/public"
+    openUrl "https://validator.w3.org/unicorn/check?ucn_task=conformance&ucn_uri=$url/proj/public"
 
     grade-kmom-footer $kmom $acronym
 }
