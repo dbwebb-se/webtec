@@ -27,7 +27,8 @@ export TESTSUITE="$4"
 # Prepare the logdir and logfile
 LOG_DIR="$COURSE_REPO_BASE/.log/test"
 [[ -d $LOG_DIR ]] || install -d "$LOG_DIR"
-export LOG="$( realpath "$COURSE_REPO_BASE/.log/test/$TESTSUITE" )"
+#export LOG="$( realpath "$COURSE_REPO_BASE/.log/test/$TESTSUITE" )"
+export LOG="$COURSE_REPO_BASE/.log/test/$TESTSUITE"
 (( $? == 0 )) || exit 2
 > "$LOG"
 
