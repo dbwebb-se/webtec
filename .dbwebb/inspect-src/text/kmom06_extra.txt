@@ -1,0 +1,2 @@
+[FIX] I uppgiften Scrutinizer ombeds man fixa tre badges till sin README.md, det verkar som du missat det.
+https://github.com/dbwebb-se/mvc/blob/main/example/scrutinizer/README.md#get-the-badges
