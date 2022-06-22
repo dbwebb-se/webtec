@@ -4,20 +4,11 @@
 # Map item to dirname while doing, for example, dbwebb validate lab1
 #
 
-# kmom01/02
 me/report
-me/onepage
-me/htmlcss
-
-# kmom03/04
-me/php
-me/session
-
-# kmom05/06
-me/dbtest
-me/sqlite
-me/pdoclient
-me/pdoweb
-
-# kmom01/02
-me/proj
+me/kmom01
+me/kmom02
+me/kmom03
+me/kmom04
+me/kmom05
+me/kmom06
+me/kmom10
