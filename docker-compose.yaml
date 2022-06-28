@@ -68,6 +68,20 @@ services:
             - ./example/sql/inspect/mysql_my.cnf:/root/.my.cnf
 
     # Anax images to test various PHP versions
+    php81:
+        image: anax/dev:php81-cli
+        volumes:
+            - .:/home/anax/repo
+
+    php81-apache:
+        image: anax/dev:php81-apache
+        ports:
+            - "18081:80"
+        volumes:
+            - .:/app
+            #- ./apache.conf:/etc/apache2/sites-enabled/000-default.conf
+            - ./example/docker/site_default.conf:/etc/apache2/sites-enabled/000-default.conf
+
     php:
         image: anax/dev:php73-cli
         volumes:

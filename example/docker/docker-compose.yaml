@@ -1,0 +1,10 @@
+version: "3"
+services:
+    php81:
+        image: anax/dev:php81
+        volumes: [ ".:/home/anax/repo" ]
+
+    php81-apache:
+        image: anax/dev:php81-apache
+        ports: [ "11081:80" ]
+        volumes: [ ".:/home/anax/repo" ]
