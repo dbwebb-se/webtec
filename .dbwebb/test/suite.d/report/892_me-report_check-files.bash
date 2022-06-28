@@ -7,6 +7,7 @@ config/config.php
 public/about.php
 public/me.php
 public/report.php
+public/today.php
 public/css/style.css
 view/footer.php
 view/header.php
