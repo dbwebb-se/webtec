@@ -1,0 +1,124 @@
+<!doctype html>
+<meta charset="utf8">
+<style>
+
+body {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.figure {
+      display: table;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 24px;
+}
+
+.figure img {
+    max-width: 100%; /* Make images responsive */
+    display: block;
+}
+
+.figure figcaption {
+    display: table-caption;
+    caption-side: bottom;
+
+    margin-top: 0;
+    margin-bottom: 0;
+    font-style: italic;
+    padding-top: 0.5em;
+}
+
+/* Chrome shinks images in td */
+.figure td img {
+    max-width: none;
+}
+
+/* Position the images */
+.figure.center {
+    clear: both;
+    margin: auto;
+
+    figcaption {
+        text-align: center;
+    }
+}
+
+.figure.left {
+    float: left;
+    margin-right: 1em;
+}
+
+.figure.right {
+    float: right;
+    margin-left: 1em;
+}
+
+</style>
+
+<body>
+
+<h1>Align figure using .center</h1>
+
+<p>This example shows how an image can be aligned to the center, even if the image has less width than the text area.</p>
+
+<figure class="figure center">
+    <img src="img/kabbe_533x200.jpg" alt="kabbe">
+    <figcaption>
+        The dog Kabbe is out on a walk, just when the autumn has joined us.
+    </figcaption>
+</figure>
+
+<p style="color: #999">Text text text text text text text text text text text text text text text text text text text text text text text text text text.</p>
+
+
+
+<h1>Align figure using .left</h1>
+
+<p>This example shows how an image can be aligned to the left.</p>
+
+<p style="color: #999">Text text text text text text text text text text text text text text text text text text text text text text text text text text.</p>
+
+<figure class="figure left">
+    <img src="img/kabbe_267x200.jpg" alt="kabbe">
+    <figcaption>
+        The dog Kabbe is out on a walk, just when the autumn has joined us.
+    </figcaption>
+</figure>
+
+<p style="color: #999">Text text text text text text text text text text text text text text text text text text text text text text text text text text.</p>
+
+<p style="color: #999">Text text text text text text text text text text text text text text text text text text text text text text text text text text.</p>
+
+<p style="color: #999">Text text text text text text text text text text text text text text text text text text text text text text text text text text.</p>
+
+<p style="color: #999">Text text text text text text text text text text text text text text text text text text text text text text text text text text.</p>
+
+<p style="color: #999">Text text text text text text text text text text text text text text text text text text text text text text text text text text.</p>
+
+
+
+<h1>Align figure using .right</h1>
+
+<p>This example shows how an image can be aligned to the right.</p>
+
+<p style="color: #999">Text text text text text text text text text text text text text text text text text text text text text text text text text text.</p>
+
+<figure class="figure right">
+    <img src="img/kabbe_267x200.jpg" alt="kabbe">
+    <figcaption>
+        The dog Kabbe is out on a walk, just when the autumn has joined us.
+    </figcaption>
+</figure>
+
+<p style="color: #999">Text text text text text text text text text text text text text text text text text text text text text text text text text text.</p>
+
+<p style="color: #999">Text text text text text text text text text text text text text text text text text text text text text text text text text text.</p>
+
+<p style="color: #999">Text text text text text text text text text text text text text text text text text text text text text text text text text text.</p>
+
+<p style="color: #999">Text text text text text text text text text text text text text text text text text text text text text text text text text text.</p>
+
+<p style="color: #999">Text text text text text text text text text text text text text text text text text text text text text text text text text text.</p>
+
+</body>

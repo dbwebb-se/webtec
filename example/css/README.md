@@ -3,6 +3,7 @@ About the example programs
 
 This README organize some of the sample programs into different categories to make it easier to find the right sample program.
 
+__(Note that all examples are not included in below table of content.)__
 
 
 Common CSS-fixes
