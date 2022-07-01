@@ -1,0 +1,64 @@
+/** responsive.css */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* @media (max-width: 1000px) {
+    body {
+        font-size: 16px;
+    }
+
+    .triptych {
+        flex-wrap: wrap;
+    }
+
+    .triptych > * {
+        width: calc(var(--box-max-width));
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 950px) {
+    .wrap-main {
+        flex-wrap: wrap;
+    }
+
+    .wrap-main > *,
+    aside.left,
+    aside.right {
+        width: calc(var(--box-max-width));
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .half {
+        flex-wrap: wrap;
+    }
+
+    .half > * {
+        width: calc(var(--box-max-width));
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    main {
+        order: -1;
+    }
+}
+
+@media (max-width: 700px) {
+    :root {
+        --box-margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --box-margin-bottom: 6px;
+    }
+} */
