@@ -2,6 +2,8 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+printf "# Kmom01 start\n";
+
 # Create the structure
 . "$DIR/1_structure.bash"
 
@@ -50,3 +52,5 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Verktyg och tjänster
 . "$DIR/17_tools.bash"
+
+printf "# Kmom01 done\n";

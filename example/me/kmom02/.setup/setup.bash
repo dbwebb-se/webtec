@@ -2,6 +2,8 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+printf "# Kmom02 start\n";
+
 # Create the structure
 . "$DIR/1_setup_kmom01.bash"
 
@@ -28,3 +30,5 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Responsive
 . "$DIR/9_responsive.bash"
+
+printf "# Kmom02 done\n";

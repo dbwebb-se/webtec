@@ -9,6 +9,10 @@
     padding: 0 1em;
 }
 
+html {
+    background-color: #000;
+}
+
 /*
  * Style the links.
  */
