@@ -1,0 +1,22 @@
+/** byline.css */
+
+.byline {
+    border: 1px solid #ccc;
+    background: linear-gradient(to bottom right, #fff, #fff, #fff, #696);
+    margin-top: 48px;
+    margin-bottom: 48px;
+    overflow: auto;
+    clear: both;
+}
+
+.byline .figure {
+    border: none;
+}
+
+.byline p::first-letter {
+    font-size: 3em;
+}
+
+.byline p::first-line {
+    color: #696;
+}

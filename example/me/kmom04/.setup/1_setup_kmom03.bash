@@ -1,5 +1,5 @@
-# Run setup from kmom01
-. "$DIR/../../kmom01/.setup/setup.bash"
+# Run setup from kmom02
+. "$DIR/../../kmom03/.setup/setup.bash"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
