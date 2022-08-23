@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-cat $LOG
+cat "$LOG"
