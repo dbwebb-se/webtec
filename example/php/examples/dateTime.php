@@ -7,6 +7,7 @@ $dateLondon = new DateTime();
 $dateLondon->setTimeZone(new DateTimeZone('Europe/London'));
 $dateOld = new DateTime('2001-01-12');
 
+echo "<pre>";
 echo "Dagens datum: " . $dateNow->format('Y-m-d') . "\n";
 
 echo "Svensk tid: " . $dateNow->format('H:i:s') . "\n";

@@ -7,6 +7,7 @@
  * It is good practice to keep this in two stages, it makes your code cleaner
  * and easier to read, edit and develop.
  */
+
 $name = "Mikael";
 $city = "Bankeryd";
 

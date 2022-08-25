@@ -8,6 +8,18 @@
  * and easier to read, edit and develop.
  */
 
+$mikael = [
+    "Mikael",
+    "Roos",
+    1968,
+    "Teacher",
+    78.2
+];
+
+$items = count($mikael);
+
+$pos0HasValue = array_key_exists(0, $mikael);
+$pos10HasValue = array_key_exists(10, $mikael);
 
 ?>
 
@@ -15,3 +27,13 @@
 <h2>Array som datastrukturer</h2>
 
 <p>Låt oss testa att använda en array.</p>
+
+<p>På position 0 finns följande värde: '<?= $mikael[0] ?>' och på position 4 finns värdet: '<?= $mikael[4] ?>'.</p>
+
+<p>Arrayen innehåller <?= $items ?> värden.</p>
+
+<p>På position 0 finns ett värde: '<?= $pos0HasValue ? "TRUE" : "FALSE" ?>' och på position 10 finns ett värde: '<?= $pos10HasValue ? "TRUE" : "FALSE" ?>'.</p>
+
+<pre><?= print_r($mikael, true) ?></pre>
+
+<pre><?= var_dump($mikael) ?></pre>
