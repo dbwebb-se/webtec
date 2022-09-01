@@ -1,7 +1,10 @@
 # Report
 
 [FIX] Din redovisningstext lever inte upp till grundkraven.
-https://dbwebb.se/kurser/webtec-v1/redovisa
+https://dbwebb.se/kurser/webtec-v2/redovisa
+
+[FIX] Din redovisningstext lever inte upp till grundkraven, läs på vad som krävs och förbättra den till nästa inlämning.
+https://dbwebb.se/kurser/webtec-v2/redovisa
 
 [FIX TILL NÄSTA KMOM] Träna dig på att skriva "bättre och fylligare" redovisningstext.
 https://dbwebb.se/kunskap/varfor-regnar-det-pa-bergssidan-ett-exempel-pa-solo-taxonomin
@@ -10,6 +13,6 @@ https://dbwebb.se/kunskap/varfor-regnar-det-pa-bergssidan-ett-exempel-pa-solo-ta
 
 # Unicorn
 
-[FIX] Din webbplats skall validera enligt Unicorn/HTML/CSS validatorerna på W3C.
+[FIX] Din webbplats skall validera enligt Unicorn/HTML/CSS validatorerna på W3C. Någon av dina sidor har problem med validering.
 
 [FIX TILL NÄSTA KMOM] Din webbplats skall validera enligt Unicorn/HTML/CSS validatorerna på W3C.
