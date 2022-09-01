@@ -1,12 +1,18 @@
 Välkommen till kursen webtec!
 
-Jag har läst igenom din rapportsida och där vill jag se att du besvarat frågorna med någorlunda fylliga och gärna reflekterande svar.
+Här är kort återkoppling på de saker jag tittat på i din inlämning samt lite info om hur vi normalt går tillväga när vi tittar på en inlämning.
 
-Jag tittar igenom din onepage och ser att kraven är uppfyllda och att sidan ser "okey" ut.
+Jag börjar alltid att köra igenom 'dbwebb test kmom01' för att se att alla dina filer ligger på rätt plats.
 
-I din responsiva sida vill jag se tydliga inslag av kolumner, responsiva bilder och media queries med stackade kolumner.
+Jag öppnar din rapportsida och kollar det "allmänna läget" för att få en uppfattning om hur långt du kom i kmom01.
 
-Jag testar även så att dina webbsidor validerar i Unicorn/HTML/CSS validatorerna.
+Jag tittar också så att din inlämning uppfyller de krav som finns i uppgiften.
+
+Jag läser igenom din rapportsida med redovisningstext och där vill jag se att du besvarat frågorna med någorlunda fylliga och gärna reflekterande svar.
+
+Jag testar någon, eller några, av dina sidor så att de validerar i Unicorn/HTML/CSS validatorerna.
+
+Om jag inte explicit påtalar att du behöver FIXA något så betyder det att du är på rätt väg och kan jobba vidare!
 
 $TEACHER_SIGNATURE
 

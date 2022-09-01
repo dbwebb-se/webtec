@@ -8,24 +8,6 @@ https://dbwebb.se/kunskap/varfor-regnar-det-pa-bergssidan-ett-exempel-pa-solo-ta
 
 
 
-# OnePage
-
-[FIX] Dina länkar i navbaren skall leda till sektioner längre ned i samma sida.
-
-
-
-# Responsive (htmlcss)
-
-[FIX] Din webbplats skall validera enligt Unicorn/HTML/CSS validatorerna på W3C.
-
-[FIX] Din webbplats skall innehålla tydliga inslag av responsiva bilder, det skall vara lätt att se att bilderna är responsiva.
-Exempel: https://www.student.bth.se/~mosstud/dbwebb-kurser/webtec/example/css/wrapped-page/responsive-image.html
-
-[FIX] Din webbplats skall innehålla tydliga inslag av media queries där kolumner stackas.
-Se exempel https://www.student.bth.se/~mosstud/dbwebb-kurser/webtec/example/css/responsive/responsive.html
-
-
-
 # Unicorn
 
 [FIX] Din webbplats skall validera enligt Unicorn/HTML/CSS validatorerna på W3C.

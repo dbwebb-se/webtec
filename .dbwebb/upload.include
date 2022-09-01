@@ -15,6 +15,8 @@
 .env.student.local
 - .env*.local
 
+- *:Zone.Identifier
+
 /example/
 - /example/vendor
 - /example/**/vendor
