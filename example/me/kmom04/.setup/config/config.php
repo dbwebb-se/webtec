@@ -11,6 +11,3 @@ ini_set('display_errors', '1');
 $name = preg_replace("/[^a-z\d]/i", "", __DIR__);
 session_name($name);
 session_start();
-
-// Include the functions.php file
-include("../src/functions.php");

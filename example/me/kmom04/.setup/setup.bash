@@ -10,29 +10,25 @@ printf "# Kmom04 start\n";
 # The first code
 . "$DIR/2_start.bash"
 
-# # Variables
-# . "$DIR/3_variable.bash"
-# . "$DIR/3_variable1.bash"
+# Array with date
+. "$DIR/3_array_date.bash"
 
-# # If statements
-# . "$DIR/4_if.bash"
+# Foreach
+. "$DIR/5_foreach.bash"
 
-# # Loop constructs
-# . "$DIR/5_loop.bash"
+# Array gallery
+. "$DIR/4_array_gallery.bash"
 
-# # Query string
-# . "$DIR/6_querystring.bash"
+# HTML form POST
+. "$DIR/6_form_post.bash"
 
-# # HTML form GET
-# . "$DIR/7_form.bash"
+# Session
+. "$DIR/7_session.bash"
 
-# # $_SERVER
-# . "$DIR/8_server.bash"
+# Flash
+. "$DIR/8_flash.bash"
 
-# # Statistics
-# . "$DIR/9_stats.bash"
-
-# # navbar current
-# . "$DIR/10_navbar.bash"
+# Functions
+. "$DIR/9_functions.bash"
 
 printf "# Kmom04 done\n";

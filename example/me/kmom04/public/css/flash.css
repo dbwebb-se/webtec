@@ -1,0 +1,24 @@
+.success {
+    background-color: green;
+    color: #fff;
+}
+
+.success::before {
+    content: "✓ ";
+    font-size: 4rem;
+}
+
+.warning {
+    background-color: yellow;
+    color: #333;
+}
+
+.warning::before {
+    content: "⚠ ";
+    font-size: 4rem;
+}
+
+.success,
+.warning {
+    padding: 1em;
+}
