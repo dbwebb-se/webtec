@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-
-
 /**
  * Render the data onto a layout.
  */

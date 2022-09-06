@@ -19,7 +19,7 @@ $success = $name && $address && $checkbox;
 
 <?php if ($name) : ?>
     <p>Name:<br><?= htmlentities($name) ?></p>
-<?php else: ?>
+<?php else : ?>
     <p>You did NOT enter your name!</p>
 <?php endif; ?>
 
@@ -27,7 +27,7 @@ $success = $name && $address && $checkbox;
 
 <?php if ($address) : ?>
     <p>Address:<br><?= htmlentities($address) ?></p>
-<?php else: ?>
+<?php else : ?>
     <p>You did NOT enter your address!</p>
 <?php endif; ?>
 
@@ -35,7 +35,7 @@ $success = $name && $address && $checkbox;
 
 <?php if ($checkbox) : ?>
     <p>You DID check the terms. Nice, all terms apply!</p>
-<?php else: ?>
+<?php else : ?>
     <p>You did NOT check the terms. Why is that? Try once more!</p>
 <?php endif; ?>
 
@@ -43,7 +43,7 @@ $success = $name && $address && $checkbox;
 
 <?php if ($success) : ?>
     <p>Success! All parts of the form are valid! You may proceed!</p>
-<?php else: ?>
+<?php else : ?>
     <p>You failed to fill in some parts of your form, try once more!</p>
 <?php endif; ?>
 

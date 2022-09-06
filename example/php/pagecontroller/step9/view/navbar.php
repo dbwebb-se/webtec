@@ -15,8 +15,7 @@ $curPage = basename($_SERVER["REQUEST_URI"]);
 
 ?><nav class="navbar">
 <?php foreach ($items as $key => $val) :
-    $selected = ($curPage === $val) ? "selected" : null;
-?>
+    $selected = ($curPage === $val) ? "selected" : null; ?>
     <a class="<?= $selected ?>" href="<?= $val ?>"><?= $key ?></a>
 <?php endforeach; ?>
 </nav>

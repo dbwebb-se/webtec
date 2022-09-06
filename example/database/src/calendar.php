@@ -6,8 +6,8 @@
 
 /**
  * Get the name days "namnsdagar" enligt Svenska akademin.
- * 
- * @return array where the key is the name and the value is the date. 
+ *
+ * @return array where the key is the name and the value is the date.
  */
 function getNameDaysByName(): array
 {
@@ -17,8 +17,9 @@ function getNameDaysByName(): array
     }
 
     $nameDays = [];
-    if (($handle = fopen($filename, "r")) !== FALSE) {
-        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+    $handle = fopen($filename, "r");
+    if ($handle !== false) {
+        while (($data = fgetcsv($handle, 1000, ",")) !== false) {
             $key = $data[0];
             $value = $data[1];
             $nameDays[$key] = $value;
@@ -33,8 +34,8 @@ function getNameDaysByName(): array
 
 /**
  * Get the explanation of the some common names.
- * 
- * @return array where the key is the name and the value is the explanation. 
+ *
+ * @return array where the key is the name and the value is the explanation.
  */
 function getNameExplanation(): array
 {
@@ -44,8 +45,9 @@ function getNameExplanation(): array
     }
 
     $nameDays = [];
-    if (($handle = fopen($filename, "r")) !== FALSE) {
-        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+    $handle = fopen($filename, "r");
+    if ($handle !== false) {
+        while (($data = fgetcsv($handle, 1000, ",")) !== false) {
             $key = $data[0];
             $value = $data[1];
             $nameDays[$key] = $value;
@@ -55,5 +57,3 @@ function getNameExplanation(): array
 
     return $nameDays;
 }
-
-

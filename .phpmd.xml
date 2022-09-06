@@ -15,6 +15,7 @@
     <rule ref="rulesets/cleancode.xml">
         <exclude name="BooleanArgumentFlag" />
         <exclude name="ElseExpression" />
+        <exclude name="MissingImport" />
     </rule>
 
     <rule ref="rulesets/codesize.xml" />

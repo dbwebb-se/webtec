@@ -5,7 +5,7 @@ $sum   = $_SESSION["sum"]   ?? null;
 $rolls = $_SESSION["rolls"] ?? null;
 
 $diceClass = "dice-$dice";
-$average = $rolls ? round($sum/$rolls, 2) : 0;
+$average = $rolls ? round($sum / $rolls, 2) : 0;
 
 
 ?><h1>Throw a dice, and remember it</h1>

@@ -12,7 +12,6 @@ require "view/searchForm.php";
 
 // Do the search query, if the form is submitted
 if ($doit || $query) {
-
     // Connect to the database
     $dsn = "sqlite:db/db.sqlite";
     $db = connectToDatabase($dsn);

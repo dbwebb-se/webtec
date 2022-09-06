@@ -7,15 +7,13 @@
     },
     "extends": "eslint:recommended",
     "parserOptions": {
+        "ecmaVersion": 2021,
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
             "jsx": true
         },
         "sourceType": "module"
     },
-    "plugins": [
-        "react"
-    ],
     "rules": {
         "indent": [
             2,
