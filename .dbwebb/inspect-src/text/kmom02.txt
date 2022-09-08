@@ -8,7 +8,7 @@ Jag kollar också om din sida/sidor validerar i Unicorn.
 
 Jag kikar lite extra på sidan "today.php" för att se hur du valde att "styla till den".
 
-Jag tittar allmänt hur du löst stilen av sidans olika element och att du uppfyller kraven i uppgiften.
+Jag tittar allmänt hur du löst stilen av sidans olika element och att du uppfyller kraven i uppgiften. Jag vill se att du har löst kravet med byline.
 
 Om jag inte ber dig FIXA något så är det bara att jobba vidare!
 
