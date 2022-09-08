@@ -1,14 +1,20 @@
-Då kikar vi på kmom02!
+Då kikar vi på kmom02 med CSS och stylning!
 
-Jag läser igenom din rapport.
+Jag läser igenom din rapport för att se hur du upplevde och reflekterar kring kursmomentet.
 
-Jag checkar ut den senaste taggen som är >= 2.0.0 och < 3.0.0. Jag hade gärna sett att du hade tiotalet commits i ditt repo.
+Jag kikar allmänt igenom din webbplats för att se struktur, innehåll och att alla sidor är på plats.
 
-Det vore bra om valideringsverktygen inte visade på några bekymmer.
+Jag kollar också om din sida/sidor validerar i Unicorn.
 
-Avslutningsvis spelar jag ditt spel och vill se att det fungerar enligt kraven.
+Jag kikar lite extra på sidan "today.php" för att se hur du valde att "styla till den".
+
+Jag tittar allmänt hur du löst stilen av sidans olika element och att du uppfyller kraven i uppgiften.
+
+Om jag inte ber dig FIXA något så är det bara att jobba vidare!
 
 $TEACHER_SIGNATURE
 
 PS. Glöm inte att fråga i GitHub issues för mer utförliga svar på funderingar eller för feedback på kod och lösningar.
 https://github.com/dbwebb-se/mvc/issues
+
+Status från rättningsverktyget:

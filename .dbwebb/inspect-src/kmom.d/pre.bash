@@ -29,15 +29,18 @@ w3cValidatorUnicorn="https://validator.w3.org/unicorn/check?ucn_task=conformance
 
 case $KMOM in
     kmom01)
-        openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/me.php"
     ;;
     kmom02)
-        openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/me.php"
     ;;
     kmom03)
-        #openUrl "$studentServerUrl/session/public"
+    ;;
+    kmom04)
     ;;
     kmom05)
+        #openUrl "$studentServerUrl/sqlite"
+        #openUrl "$studentServerUrl/pdoweb/public"
+    ;;
+    kmom06)
         #openUrl "$studentServerUrl/sqlite"
         #openUrl "$studentServerUrl/pdoweb/public"
     ;;
@@ -47,7 +50,9 @@ case $KMOM in
     ;;
 esac
 
+openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/me.php"
 openUrl "$studentServerUrl/report/public/me.php"
+openUrl "$studentServerUrl/report/public/report.php#$KMOM"
 
 # # Rsync the target dir/repo to a temp space
 # install -d gui-repo/
