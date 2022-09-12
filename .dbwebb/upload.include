@@ -16,6 +16,7 @@
 - .env*.local
 
 - *:Zone.Identifier
+- .vscode
 
 /example/
 - /example/vendor
