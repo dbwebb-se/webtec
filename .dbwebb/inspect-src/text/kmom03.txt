@@ -1,9 +1,13 @@
-Då tittar vi igenom kmom03/04 med PHP!
+Då tittar vi igenom kmom03 med PHP!
 
-Jag läser igenom din rapport och ser hur du upplevde kursmomentet.
+Jag läser som vanligt igenom din rapport och ser hur du upplevde kursmomentet.
 
-Jag kör igenom din klientapplikation i 'me/php' och jag vill se att det fungerar som tänkt.
+Jag kikar på din 'friday.php' för att se hur den ser ut en vanlig dag och en fredag.
 
-Jag kör din webbapplikation från 'me/session' med alla dess sidkontrollers och jag tittar extra på att du har implementerat histogrammet.
+Jag kikar på din 'month.php' och är spänd att se hur nära du kommer förebilden för kalendern samt att du lyckats klura ut hur next/prev skall fungera.
+
+Jag kollar också om din sida/sidor validerar i Unicorn.
 
 $TEACHER_SIGNATURE
+
+Status från rättningsverktyget:

@@ -33,6 +33,9 @@ case $KMOM in
     kmom02)
     ;;
     kmom03)
+        openUrl "$studentServerUrl/report/public/friday.php"
+        openUrl "$studentServerUrl/report/public/friday.php?date=2022-08-26"
+        openUrl "$studentServerUrl/report/public/month.php"
     ;;
     kmom04)
     ;;
