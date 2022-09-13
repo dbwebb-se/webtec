@@ -1,3 +1,10 @@
+
+
+
+
+
+## OLD
+
 [FIX] Jag spelade ditt spel, både lokalt med rätt tagg och på studentservern (senaste versionen du publicerat). Ingen av de versionerna fungerade. Laga så att spelet Yatzy fungerar.
 
 [FIX TILL NÄSTA KMOM] Du har en hel del valideringsfel när man kör 'make phps', städa upp dem till nästa kmom. Det är egentligen rätt enkelt om du kör 'make phpcbf' som försöker städa upp koden automatiskt.
