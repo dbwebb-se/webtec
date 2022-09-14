@@ -4,7 +4,6 @@
 TARGET_DIR="me/report"
 CHECK_FILES="
 public/session.php
-public/gallery.php
 public/photocal.php
 public/guessname.php
 src/functions.php
