@@ -38,6 +38,9 @@ case $KMOM in
         openUrl "$studentServerUrl/report/public/month.php"
     ;;
     kmom04)
+        openUrl "$studentServerUrl/report/public/session.php"
+        openUrl "$studentServerUrl/report/public/photocal.php"
+        openUrl "$studentServerUrl/report/public/guessname.php"
     ;;
     kmom05)
         #openUrl "$studentServerUrl/sqlite"
