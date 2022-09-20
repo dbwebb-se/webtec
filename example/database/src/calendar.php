@@ -11,7 +11,7 @@
  */
 function getNameDaysByName(): array
 {
-    $filename = __DIR__ . "/../data/Svenska_akademin_namnlista.csv";
+    $filename = "../data/Svenska_akademin_namnlista.csv";
     if (!is_readable($filename)) {
         throw new Exception("The data file '$filename' is not there!");
     }
@@ -39,7 +39,7 @@ function getNameDaysByName(): array
  */
 function getNameExplanation(): array
 {
-    $filename = __DIR__ . "/../data/Svenska_akademin_namn_betydelse.csv";
+    $filename = "../data/Svenska_akademin_namn_betydelse.csv";
     if (!is_readable($filename)) {
         throw new Exception("The data file '$filename' is not there!");
     }
