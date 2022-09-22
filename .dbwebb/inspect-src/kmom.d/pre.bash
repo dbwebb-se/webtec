@@ -29,8 +29,10 @@ w3cValidatorUnicorn="https://validator.w3.org/unicorn/check?ucn_task=conformance
 
 case $KMOM in
     kmom01)
+        openUrl "$studentServerUrl/report/public/me.php"
     ;;
     kmom02)
+        openUrl "$studentServerUrl/report/public/me.php"
     ;;
     kmom03)
         openUrl "$studentServerUrl/report/public/friday.php"
@@ -57,7 +59,6 @@ case $KMOM in
 esac
 
 openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/me.php"
-openUrl "$studentServerUrl/report/public/me.php"
 openUrl "$studentServerUrl/report/public/report.php#$KMOM"
 
 # # Rsync the target dir/repo to a temp space
