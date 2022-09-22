@@ -12,10 +12,6 @@
 function getNameDaysByName(): array
 {
     $filename = "../data/Svenska_akademin_namnlista.csv";
-    if (!is_readable($filename)) {
-        throw new Exception("The data file '$filename' is not there!");
-    }
-
     $nameDays = [];
     $handle = fopen($filename, "r");
     if ($handle !== false) {
@@ -40,10 +36,6 @@ function getNameDaysByName(): array
 function getNameExplanation(): array
 {
     $filename = "../data/Svenska_akademin_namn_betydelse.csv";
-    if (!is_readable($filename)) {
-        throw new Exception("The data file '$filename' is not there!");
-    }
-
     $nameDays = [];
     $handle = fopen($filename, "r");
     if ($handle !== false) {
