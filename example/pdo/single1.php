@@ -5,9 +5,10 @@ require "src/database.php";
 
 // Get details from the query string
 $id = $_GET['id'] ?? null;
+$name = $_GET['name'] ?? null;
 
 // Exit the script if the id is missing
-if (!$id) {
+if (!($id || $name)) {
     die("You have accessed this page without entering an is through the query string.");
 }
 
@@ -23,6 +24,8 @@ SELECT
 FROM namnlista
 WHERE
     rowid = ?
+    OR
+    namn = ?
 ;
 EOD;
 
@@ -30,7 +33,7 @@ EOD;
 $stmt = $db->prepare($sql);
 
 // Execute the SQL statement towards the database
-$args = [$id];
+$args = [$id, $name];
 $stmt->execute($args);
 
 // Get the resultset

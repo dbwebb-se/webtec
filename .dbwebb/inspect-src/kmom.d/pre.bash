@@ -29,24 +29,31 @@ w3cValidatorUnicorn="https://validator.w3.org/unicorn/check?ucn_task=conformance
 
 case $KMOM in
     kmom01)
+        openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/me.php"
         openUrl "$studentServerUrl/report/public/me.php"
     ;;
     kmom02)
+        openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/about.php"
         openUrl "$studentServerUrl/report/public/me.php"
     ;;
     kmom03)
+        openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/month.php"
         openUrl "$studentServerUrl/report/public/friday.php"
         openUrl "$studentServerUrl/report/public/friday.php?date=2022-08-26"
         openUrl "$studentServerUrl/report/public/month.php"
     ;;
     kmom04)
+        openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/photocal.php"
         openUrl "$studentServerUrl/report/public/session.php"
         openUrl "$studentServerUrl/report/public/photocal.php"
         openUrl "$studentServerUrl/report/public/guessname.php"
     ;;
     kmom05)
-        #openUrl "$studentServerUrl/sqlite"
-        #openUrl "$studentServerUrl/pdoweb/public"
+        openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/search.php"
+        openUrl "$studentServerUrl/report/public/name.php"
+        openUrl "$studentServerUrl/report/public/name.php?query=NO_NAME"
+        openUrl "$studentServerUrl/report/public/name.php?query=Mikael"
+        openUrl "$studentServerUrl/report/public/search.php"
     ;;
     kmom06)
         #openUrl "$studentServerUrl/sqlite"
@@ -58,7 +65,6 @@ case $KMOM in
     ;;
 esac
 
-openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/me.php"
 openUrl "$studentServerUrl/report/public/report.php#$KMOM"
 
 # # Rsync the target dir/repo to a temp space

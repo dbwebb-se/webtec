@@ -1,7 +1,7 @@
 <?php
 
-// Include the functions
-require "src/database.php";
+require "functions.php";
+
 
 // Get details if the form is posted or not
 $doit  = $_GET['doit'] ?? null;
@@ -39,7 +39,7 @@ if ($doit || $query) {
 
     // Get the resultset
     $res = $stmt->fetchAll();
-
-    // Print out the resultset
-    require "view/table.php";
 }
+
+// Print out the resultset
+require "view/table.php";

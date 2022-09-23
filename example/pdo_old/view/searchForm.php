@@ -1,6 +1,6 @@
 <?php
 
-$query = htmlentities($query ?? "") ?? null;
+$query = htmlentities($query) ?? null;
 
 ?><h1>Search the name database</h1>
 
@@ -10,7 +10,7 @@ $query = htmlentities($query ?? "") ?? null;
 
         <p>
             <label>Search:
-                <input type="text" name="query" placeholder="Search for, % is wildcard" value="<?= $query ?>">
+                <input type="text" name="query" placeholder="What to search for, % is wildcard" value="<?= $query ?>">
             </label>
         </p>
 

@@ -1,12 +1,13 @@
 <?php
 
-require "functions.php";
+// Include the functions
+require "src/database.php";
 
 // Connect to the database
 $dsn = "sqlite:db/db.sqlite";
 $db = connectToDatabase($dsn);
 
-// Prepare and execute the SQL statement
+// Create the SQL statement
 $sql = <<<EOD
 SELECT
     rowid,

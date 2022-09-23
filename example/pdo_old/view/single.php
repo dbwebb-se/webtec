@@ -1,9 +1,9 @@
 <?php
 
-$id         = htmlentities($res['rowid'] ?? "");
-$name       = htmlentities($res['namn'] ?? "");
-$date       = htmlentities($res['datum'] ?? "");
-$nameLength = htmlentities($res['namnlangd'] ?? "");
+$id         = htmlentities($res['rowid'] ?? null);
+$name       = htmlentities($res['namn'] ?? null);
+$date       = htmlentities($res['datum'] ?? null);
+$nameLength = htmlentities($res['namnlangd'] ?? null);
 
 $checked = $nameLength === "Ja" ? 'Checked="Checked"' : null;
 
@@ -36,6 +36,11 @@ $checked = $nameLength === "Ja" ? 'Checked="Checked"' : null;
             <label>Namnlängd:
                 <input type="checkbox" name="nameLength" value="Ja" <?= $checked ?> disabled="disabled">
             </label>
+        </p>
+
+        <p>
+            <input type="reset" value="Reset">
+            <input type="submit" name="doit" value="Add">
         </p>
     </fieldset>
 </form>

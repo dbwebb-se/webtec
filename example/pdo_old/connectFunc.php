@@ -1,6 +1,6 @@
 <?php
 
-require "src/database.php";
+require "functions.php";
 
 // Connect to the database
 $dsn = "sqlite:db/db.sqlite";

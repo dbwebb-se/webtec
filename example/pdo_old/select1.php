@@ -1,22 +1,21 @@
 <?php
 
-// Include the functions
-require "src/database.php";
+require "functions.php";
 
 // Connect to the database
 $dsn = "sqlite:db/db.sqlite";
 $db = connectToDatabase($dsn);
 
-// Create the SQL statement
+// Prepare and execute the SQL statement
 $sql = <<<EOD
 SELECT
     rowid,
     *
 FROM namnlista
 WHERE
-    namn = 'Mikael'
-    OR namn = 'Magnus'
-    OR namn = 'Carina'
+    namn = ?
+    OR namn = ?
+    OR namn = ?
 ;
 EOD;
 
@@ -24,7 +23,8 @@ EOD;
 $stmt = $db->prepare($sql);
 
 // Execute the SQL statement towards the database
-$stmt->execute();
+$args = ['Mikael', 'Magnus', 'Carina'];
+$stmt->execute($args);
 
 // Get the resultset and print it out
 $res = $stmt->fetchAll();
