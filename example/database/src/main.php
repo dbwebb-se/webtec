@@ -10,4 +10,4 @@ var_dump(getNameDaysByName());
 
 //var_dump(getNameDaysByNameFull());
 
-var_dump(getNameExplanation());
+//var_dump(getNameExplanation());
