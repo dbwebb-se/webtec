@@ -40,6 +40,13 @@ WHERE
     acronym = 'doe'
 ;
 
+-- Update details on a user
+UPDATE user SET
+    name = 'Mikael (mos) Roos'
+WHERE
+    acronym = 'mos'
+;
+
 -- Insert a new user
 INSERT INTO user
     (acronym, password, role)
