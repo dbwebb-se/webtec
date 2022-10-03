@@ -3,6 +3,7 @@
 
 TARGET_DIR="me/report"
 CHECK_FILES="
+db/user.sqlite
 "
 
 cd $TARGET_DIR || exit 1

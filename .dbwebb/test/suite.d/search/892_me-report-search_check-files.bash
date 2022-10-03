@@ -3,6 +3,7 @@
 
 TARGET_DIR="me/report"
 CHECK_FILES="
+db/db.sqlite
 public/name.php
 public/search.php
 "
