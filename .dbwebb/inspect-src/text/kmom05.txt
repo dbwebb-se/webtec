@@ -1,9 +1,13 @@
-Då tittar vi på databasdelarna.
+Då tittar vi på kmom05 med sökmotorn.
 
-Jag läser igenom din rapport och ser hur du upplevde kursmomentet.
+Jag läser igenom din redovisningstext för att se hur du upplevde kursmomentet.
 
-Jag tittar igenom din SQL-kod från uppgiften 'me/sqlite'.
+Jag tittar på din 'name.php' för att se att den fungerar både med riktiga namn och felhantering.
 
-Jag kör igenom din webbapplikation i 'me/pdoweb' och jag vill se att den fungerar inklusive flödet mellan show, insert och single. 
+Jag tittar på din 'search.php' och provar att söka olika namn och ser att man kan klicka sig vidare till namnet.
+
+Som vanligt tittar om din sida/sidor validerar i Unicorn.
 
 $TEACHER_SIGNATURE
+
+Status från rättningsverktyget:

@@ -31,6 +31,7 @@ case $KMOM in
     kmom01)
         openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/me.php"
         openUrl "$studentServerUrl/report/public/me.php"
+        openUrl "$studentServerUrl/report/public/today.php"
     ;;
     kmom02)
         openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/about.php"
