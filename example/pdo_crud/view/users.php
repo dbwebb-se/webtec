@@ -1,6 +1,5 @@
 <?php
 
-
 ?><h1>All users</h1>
 
 <?= getFlashMessage() ?>
@@ -16,7 +15,7 @@
         <th>Signature</th>
     </tr>
 
-<?php foreach ($res as $row) : 
+<?php foreach ($res as $row) :
     $userEncoded = urlencode($row['acronym']);
     $urlToProfile = "profile.php?user=" . htmlentities($userEncoded);
     ?>

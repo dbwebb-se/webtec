@@ -1,5 +1,6 @@
 <?php
 
+// Prepare variables for output.
 
 ?><h1>User profile for: '<?= $user ?>'</h1>
 

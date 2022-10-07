@@ -9,7 +9,7 @@ $user = checkIfUserLoggedIn();
     Logged in as '<?= $user ?> '
     <a href="user.php">Profile</a> | 
     <a href="logout_process.php">Logout</a> | 
-<?php else: ?>
+<?php else : ?>
     <a href="login.php">Login</a>
 <?php endif; ?>
 
