@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 . ".dbwebb/inspect-src/kmom.d/functions.bash"
 
+TARGET="month cal"
 TARGET_DIR="me/report"
 CHECK_FILES="
 public/friday.php
@@ -19,4 +20,4 @@ for file in $CHECK_FILES; do
     fi
 done
 
-doLog $fail "$TARGET_DIR: check files ("$(( all-fail ))"/$all)"
+doLog $fail "$TARGET_DIR $TARGET: check files ("$(( all-fail ))"/$all)"

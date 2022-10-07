@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 . ".dbwebb/inspect-src/kmom.d/functions.bash"
 
+TARGET="photocal + guess"
 TARGET_DIR="me/report"
 CHECK_FILES="
-config/config.php
-public/about.php
-public/me.php
-public/report.php
-public/today.php
-public/css/style.css
-view/footer.php
-view/header.php
+public/session.php
+public/photocal.php
+public/guessname.php
+src/functions.php
+src/calendar.php
 "
 
 cd $TARGET_DIR || exit 1
@@ -25,4 +23,4 @@ for file in $CHECK_FILES; do
     fi
 done
 
-doLog $fail "$TARGET_DIR: check files ("$(( all-fail ))"/$all)"
+doLog $fail "$TARGET_DIR $TARGET: check files ("$(( all-fail ))"/$all)"

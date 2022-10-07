@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 . ".dbwebb/inspect-src/kmom.d/functions.bash"
 
+TARGET="style"
 TARGET_DIR="me/report"
 CHECK_FILES="
-public/session.php
-public/photocal.php
-public/guessname.php
-src/functions.php
-src/calendar.php
+view/byline.php
 "
 
 cd $TARGET_DIR || exit 1
@@ -22,4 +19,4 @@ for file in $CHECK_FILES; do
     fi
 done
 
-doLog $fail "$TARGET_DIR: check files ("$(( all-fail ))"/$all)"
+doLog $fail "$TARGET_DIR $TARGET: check files ("$(( all-fail ))"/$all)"

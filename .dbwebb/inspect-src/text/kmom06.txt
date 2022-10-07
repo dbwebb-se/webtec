@@ -1,7 +1,11 @@
-Då avslutar vi med kmom06, bara projektet kvar.
+Då avslutar vi med kmom06 och CRUD, sedan är det bara projektet kvar.
 
-Jag läser främst igenom din redovisningstext för att se hur du upplevde kursmomentet och hur det gick med ditt kvalitetsarbete och allmänt kring begreppet "kodkvalitet".
+Jag läser igenom din redovisningstext för att se hur du upplevde kursmomentet.
 
-Sen vill jag gärna se ett antal gröna badges i din README på ditt repo.
+Jag tittar på din hantering av inloggning och kontrollerar att den fungerar som tänkt.
+
+Som vanligt tittar om din sida/sidor validerar i Unicorn.
 
 $TEACHER_SIGNATURE
+
+Status från rättningsverktyget:

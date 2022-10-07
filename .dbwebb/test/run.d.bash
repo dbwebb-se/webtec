@@ -111,8 +111,9 @@ fi
 file="$DIR/pre.bash"
 [[ -f "$file" ]] && . "$file"
 
-for file in "$WORK_TARGET/"??*_*.bash; do
+for file in $WORK_TARGET/??*_*.bash; do
     output=
+    voutput=
     target=$( basename "$file" )
     echo && header "$target"
 
@@ -120,12 +121,15 @@ for file in "$WORK_TARGET/"??*_*.bash; do
     status=$?
     if (( $status == 2 )); then
         output="$MSG_WARNING $target\n"
+        voutput="$MSG_WARNING $target\n"
     elif (( $status )); then
         output="$MSG_FAILED  $target\n"
+        voutput="$MSG_FAILED  $target\n"
     else
         output="$MSG_OK      $target\n"
+        voutput="$MSG_OK\n"
     fi
-    printf "$output"
+    printf "$voutput"
     summary="$summary$output"
 done
 

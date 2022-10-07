@@ -35,7 +35,11 @@ export MSG_FAILED="\033[0;37;41mFAILED\033[0m"
 # Print a header
 #
 function header {
-    printf "\033[32;01m>>> -------------- %-40s -------------------------\033[0m\n" "$1"
+    local title=$( echo $1 | cut -d "_" -f2- )
+    title=$( echo $title | cut -d "." -f1 )
+    title=$( echo $title | sed 's/-/\//g' )
+    title=$( echo $title | sed 's/_/ /g' )
+    printf "\033[32;01m>>> -------------- %-40s -------------------------\033[0m\n" "$title"
 }
 
 #
@@ -95,6 +99,7 @@ file="$DIR/docker_pre.bash"
 
 for file in $WORK_TARGET/??*_*.bash; do
     output=
+    voutput=
     target=$( basename "$file" )
     echo && header "$target"
 
@@ -102,12 +107,15 @@ for file in $WORK_TARGET/??*_*.bash; do
     status=$?
     if (( $status == 2 )); then
         output="$MSG_WARNING $target\n"
+        voutput="$MSG_WARNING $target\n"
     elif (( $status )); then
         output="$MSG_FAILED  $target\n"
+        voutput="$MSG_FAILED  $target\n"
     else
         output="$MSG_OK      $target\n"
+        voutput="$MSG_OK\n"
     fi
-    printf "$output"
+    printf "$voutput"
     summary="$summary$output"
 done
 
