@@ -1,19 +1,12 @@
 Bildtexter till Begravningsseder och bruk
 ============================
 
-
-
-Kommentar
-----------------------------
-
-Bildtexter som användes till artikeln "Begravningsseder och Bruk" i kursen htmlphp-v1. Bildtexterna försvann när kursen utvecklades till htmlphp-v2, så jag la dem här, utifall någon vill använda dem för att komplettera sin webbplats.
+Rörande bildtexter som användes till artikeln "Begravningsseder och Bruk".
 
 Den ursprungliga artikeln med bildtexter finns att läsa här:
 https://arkiv.dbwebb.se/htmlphp/me//kmom10/project.php?p=articles
 
 (välj Begravningsseder och bruk (6) i dropdownmenyn)
-
-/Mikael
 
 
 
