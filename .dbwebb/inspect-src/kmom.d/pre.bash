@@ -61,8 +61,8 @@ case $KMOM in
         openUrl "$studentServerUrl/report/public/me.php"
     ;;
     kmom10)
-        #openUrl "$studentServerUrl/proj/public"
-        #openUrl "$w3cValidatorUnicorn=$studentServerUrl/proj/public"
+        openUrl "$studentServerUrl/proj/public/home.php"
+        openUrl "$w3cValidatorUnicorn=$studentServerUrl/proj/public/home.php"
     ;;
 esac
 
