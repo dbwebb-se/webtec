@@ -1,11 +1,15 @@
 Tågordning på uppropet
 =======================
 
+* Den korta varianten, det som är viktigast 
+
 * Presentera dig själv
 
 * Presentera din roll som programansvarig
 
 * Berätta lite kort om (distans) programmet
+
+* Introveckan
 
 * (Ropa upp studenterna)
 
@@ -17,7 +21,7 @@ Tågordning på uppropet
 
     * Enklaste sättet att få hjälp
 
-    * Studiegrupper
+    * Studiegrupper och hjälp varandra
 
     * (mer)
 
