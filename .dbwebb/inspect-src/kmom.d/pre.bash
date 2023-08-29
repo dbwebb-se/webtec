@@ -26,19 +26,27 @@ echo "[$ACRONYM/$COURSE/$KMOM]" > "$LOG_DOCKER"
 
 studentServerUrl="$REDOVISA_HTTP_PREFIX/~$ACRONYM/dbwebb-kurser/$COURSE/me"
 w3cValidatorUnicorn="https://validator.w3.org/unicorn/check?ucn_task=conformance\&ucn_uri"
+w3cValidatorHTML="https://validator.w3.org/check?uri"
+w3cValidatorCSS="https://jigsaw.w3.org/css-validator/validator?uri"
 
 case $KMOM in
     kmom01)
-        openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/me.php"
+        #openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/me.php"
+        openUrl "$w3cValidatorHTML=$studentServerUrl/report/public/me.php"
+        openUrl "$w3cValidatorCSS=$studentServerUrl/report/public/me.php"
         openUrl "$studentServerUrl/report/public/me.php"
         openUrl "$studentServerUrl/report/public/today.php"
     ;;
     kmom02)
-        openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/about.php"
+        #openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/about.php"
+        openUrl "$w3cValidatorHTML=$studentServerUrl/report/public/about.php"
+        openUrl "$w3cValidatorCSS=$studentServerUrl/report/public/about.php"
         openUrl "$studentServerUrl/report/public/me.php"
     ;;
     kmom03)
-        openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/month.php"
+        #openUrl "$w3cValidatorUnicorn=$studentServerUrl/report/public/month.php"
+        openUrl "$w3cValidatorHTML=$studentServerUrl/report/public/month.php"
+        openUrl "$w3cValidatorCSS=$studentServerUrl/report/public/month.php"
         openUrl "$studentServerUrl/report/public/friday.php"
         openUrl "$studentServerUrl/report/public/friday.php?date=2022-08-26"
         openUrl "$studentServerUrl/report/public/month.php"

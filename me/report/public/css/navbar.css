@@ -1,0 +1,50 @@
+/** navbar.css */
+
+/*
+ * Add colors and borders.
+ */
+ .navbar {
+    background-color: #8892BF;
+    border-top: 4px solid #4F5B93;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0.5em 0;
+}
+
+.navbar .selected {
+    background-color: #4F5B93;
+}
+
+/*
+ * Style links.
+ */
+.navbar a {
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    color: #FFFFFF;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+
+.navbar a:hover {
+    color: #EEE;
+    background-color: #4F5B93;
+    opacity: 0.7;
+    border: 2px solid #689D18;
+}
+
+/*
+ * Remove bullets, margins and padding from the list.
+ */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Put the li items on a line.
+ */
+.navbar li {
+    display: inline;
+}

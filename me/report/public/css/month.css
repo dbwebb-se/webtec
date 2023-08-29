@@ -1,0 +1,68 @@
+.calender {
+    background-color: #FDFDFD;
+    border-collapse:collapse; /* Must use to get border-bottom to work on tr */
+    border: 2px solid #eee;
+    box-shadow: 1px 2px #dad9d9;
+    padding: 0.5em;
+}
+
+.calender tbody {
+    border-top: 20px outset #eee;
+}
+
+.calender tr {
+    border-bottom: 1px solid #dad9d9;
+}
+
+.month {
+    font-size: 2em;
+    text-align: left;
+    padding-left: 0.3em;
+}
+
+.date {
+    font-size: 2em;
+    text-align: right;
+    padding-left: 0.3em;
+    width: 15%;
+}
+
+.dateSunday {
+    color: red;
+}
+
+.day {
+    padding-left: 0.3em;
+}
+
+.sunday {
+    background-color: #eee;
+}
+
+.weekNo {
+    font-size: 1.2em;
+    width: 10%;
+}
+
+.calender,
+.monthLinks {
+    width:50%;
+}
+
+.prevMonth,
+.nextMonth {
+    border: 2px outset #eee;
+    border-radius: 4px;
+    padding: 0.3em;
+    font-size: 1.3em;
+    text-decoration: none;
+}
+
+.prevMonth:hover,
+.nextMonth:hover{
+    background-color: #b7bbcf;
+}
+
+.nextMonth {
+    float: right;
+}

@@ -1,0 +1,27 @@
+/** responsive.css */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .two-col-layout {
+        flex-wrap: wrap;
+    }
+
+    .two-col-layout > .main,
+    .two-col-layout > .aside {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .footer .row {
+        flex-wrap: wrap;
+    }
+
+    .footer .row > .col3 {
+        width: 100%;
+    }
+}

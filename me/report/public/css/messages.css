@@ -1,0 +1,21 @@
+.success {
+    background-color: green;
+    height: 3em;
+    text-align: center;
+    padding-top: 1em;
+}
+
+.success p {
+    background-color: green;
+}
+
+.warning {
+    background-color: yellow;
+    height: 3em;
+    text-align: center;
+    padding-top: 1em;
+}
+
+.succewarningss p {
+    background-color: yellow;
+}

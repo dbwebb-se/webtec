@@ -1,0 +1,65 @@
+.photo_cal {
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 2em;
+    table-layout: fixed;
+}
+
+.photo_cal tr { 
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.month-heading {
+    height: 2em;
+    font-size: 2em;
+    text-align: left;
+    padding-left: 0.3em;
+}
+
+.name-weekday-heading {
+    font-size: large;
+    height: 2em;
+}
+
+.name-weekday-heading td {
+    border: 1px solid lightgrey;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.cal-space {
+    height: 0.5em;
+}
+ 
+.cal-date {
+    border: 1px solid lightgrey;
+    border-collapse: collapse;
+    text-align: left;
+    vertical-align: top;
+    font-size: 1.5em;
+    padding: 0.5em;
+}
+
+.pale {
+    opacity: 40%;
+}
+
+.sunday {
+    color: red;
+}
+
+.nameday {
+    text-align:right;
+    vertical-align:bottom;
+    font-size:0.7em;
+    margin-bottom: 0;
+    /* CSS 3 */
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;  /* old browsers */
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+}

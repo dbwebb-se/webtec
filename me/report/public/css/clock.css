@@ -1,0 +1,23 @@
+/* today.php */
+.today {
+    text-align: center;
+}
+
+.clock {
+    font-size: 4em;
+    color: #4F5B93;
+    font-weight: bold;
+    text-shadow: 3px 3px #333;
+}
+
+.weekday {
+    font-size: 3em;
+    color:  lime;
+    font-weight: bold;
+}
+
+.week {
+    font-size: 2em;
+    color:  violet;
+    font-weight: bold;
+}

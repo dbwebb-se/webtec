@@ -1,0 +1,11 @@
+.friday {
+    font-size: 3em;
+    color:  lime;
+    font-weight: bold;
+    transition: font-size 2s;
+}
+
+.friday:hover {
+    font-size: 5em;
+    clear: both;
+}

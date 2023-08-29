@@ -1,0 +1,17 @@
+/** two_column_layout.css */
+
+.two-col-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width:900px;
+    margin: 0 auto;
+}
+
+.two-col-layout > .main {
+    width: calc(100% / 16 * 12); /* 12/16 width */
+}
+
+.two-col-layout > .aside {
+    width: calc(100% / 16 * 4); /* 4/16 width */
+}
