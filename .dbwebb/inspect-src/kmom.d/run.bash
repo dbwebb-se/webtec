@@ -13,7 +13,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export KMOM="$1"
 export COURSE_REPO="$PWD"
 export ACRONYM="$2"
-export LOG="$( realpath $DIR/../../../$3 )"
+export LOG="$( realpath "$DIR/../../../$3" )"
 (( $? == 0 )) || exit 2
 
 TEST_TARGET="$DIR/$KMOM"
