@@ -62,7 +62,7 @@ Datat i tabellerna är insamlat från de platser som anges nedan.
 Svenska akademin - Namnlängd och namnlista
 --------------------------
 
-Du kan läsa beskrivning av [Svenska akademins almanacka, manlängd och namnlista](https://www.svenskaakademien.se/svenska-akademien/almanackan).
+Du kan läsa beskrivning av [Svenska akademins almanacka, namnlängd och namnlista](https://www.svenskaakademien.se/svenska-akademien/almanackan).
 
 Data är insamlad från webbplatsen till filen `data/Svenska_akademin_namnlista.csv` och därefter importerad till databasen.
 
