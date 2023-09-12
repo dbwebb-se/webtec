@@ -4,7 +4,7 @@ Jag läser igenom din rapport för att se hur du upplevde och reflekterar kring 
 
 Jag kikar allmänt igenom din webbplats för att se struktur, innehåll och att alla sidor är på plats.
 
-Jag kollar också om din sida/sidor validerar i Unicorn.
+Jag kollar också om din sida/sidor validerar (HTML & CSS).
 
 Jag kikar lite extra på sidan "today.php" för att se hur du valde att "styla till den".
 
