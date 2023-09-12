@@ -17,7 +17,7 @@ $dayStr         = date('l', $timestamp);
 
 <h2>HTML formulär med GET</h2>
 
-<form action="" method="post">
+<form action="" method="get">
     <p>
         Datum:
         <input type="text" value="<?= $dateStr ?>" name="date" placeholder="Skriv in ett datum">
