@@ -6,7 +6,7 @@ Jag kikar på din 'friday.php' för att se hur den ser ut en vanlig dag och en f
 
 Jag kikar på din 'month.php' och är spänd att se hur nära du kommer förebilden för kalendern samt att du lyckats klura ut hur next/prev skall fungera.
 
-Jag kollar också om din sida/sidor validerar i Unicorn.
+Jag kollar också om din sida/sidor validerar (HTML & CSS).
 
 $TEACHER_SIGNATURE
 

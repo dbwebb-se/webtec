@@ -6,7 +6,7 @@ Jag tittar på din 'name.php' för att se att den fungerar både med riktiga nam
 
 Jag tittar på din 'search.php' och provar att söka olika namn och ser att man kan klicka sig vidare till namnet.
 
-Som vanligt tittar om din sida/sidor validerar i Unicorn.
+Som vanligt tittar om din sida/sidor validerar (HTML & CSS).
 
 $TEACHER_SIGNATURE
 

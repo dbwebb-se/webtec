@@ -6,7 +6,7 @@ Jag tittar på din 'photocal.php' för att se att den fungerar med föregåenden
 
 Jag tittar på din 'guessname.php' och försöker gissa namnet och kollar att du implementerat flashmeddelandet på rätt sätt.
 
-Som vanligt tittar om din sida/sidor validerar i Unicorn.
+Som vanligt tittar om din sida/sidor validerar (HTML & CSS).
 
 $TEACHER_SIGNATURE
 

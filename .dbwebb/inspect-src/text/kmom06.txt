@@ -4,7 +4,7 @@ Jag läser igenom din redovisningstext för att se hur du upplevde kursmomentet.
 
 Jag tittar på din hantering av inloggning och kontrollerar att den fungerar som tänkt.
 
-Som vanligt tittar om din sida/sidor validerar i Unicorn.
+Som vanligt tittar om din sida/sidor validerar (HTML & CSS).
 
 $TEACHER_SIGNATURE
 
