@@ -44,26 +44,25 @@ case $KMOM in
         openUrl "$studentServerUrl/report/public/month.php"
     ;;
     kmom04)
-        openUrl "$w3cValidatorHTML=$studentServerUrl/report/public/month.php"
+        openUrl "$w3cValidatorHTML=$studentServerUrl/report/public/photocal.php"
         openUrl "$studentServerUrl/report/public/session.php"
         openUrl "$studentServerUrl/report/public/photocal.php"
         openUrl "$studentServerUrl/report/public/guessname.php"
     ;;
     kmom05)
-        openUrl "$w3cValidatorHTML=$studentServerUrl/report/public/month.php"
+        openUrl "$w3cValidatorHTML=$studentServerUrl/report/public/search.php"
         openUrl "$studentServerUrl/report/public/name.php"
         openUrl "$studentServerUrl/report/public/name.php?query=NO_NAME"
         openUrl "$studentServerUrl/report/public/name.php?query=Mikael"
         openUrl "$studentServerUrl/report/public/search.php"
     ;;
     kmom06)
-        openUrl "$w3cValidatorHTML=$studentServerUrl/report/public/month.php"
+        openUrl "$w3cValidatorHTML=$studentServerUrl/report/public/me.php"
         openUrl "$studentServerUrl/report/public/me.php"
     ;;
     kmom10)
-        openUrl "$w3cValidatorHTML=$studentServerUrl/report/public/month.php"
+        openUrl "$w3cValidatorHTML=$studentServerUrl/proj/public/home.php"
         openUrl "$studentServerUrl/proj/public/home.php"
-        openUrl "$w3cValidatorUnicorn=$studentServerUrl/proj/public/home.php"
     ;;
 esac
 
