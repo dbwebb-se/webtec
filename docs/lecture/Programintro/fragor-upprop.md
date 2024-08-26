@@ -1,17 +1,21 @@
 Tågordning på uppropet
 =======================
 
-* Den korta varianten, det som är viktigast 
+* Den korta varianten, det som är viktigast
+    * Upprop & registrering
+    * Kurstart tisdag (obligatorisk?)
+    * Målet med introveckan
 
 * Presentera dig själv
 
 * Presentera din roll som programansvarig
+    * Visa videon
 
 * Berätta lite kort om (distans) programmet
 
-* Introveckan
+* Introveckan (snabb genomgång)
 
-* (Ropa upp studenterna)
+* (Ropa upp studenterna, nje)
 
 * Så här funkar det vid BTH
 
@@ -19,10 +23,13 @@ Tågordning på uppropet
 
     * Att studera parallellt med jobb/familj
 
-    * Enklaste sättet att få hjälp
-
     * Studiegrupper och hjälp varandra
 
-    * (mer)
+    * Enklaste sättet att få hjälp
+        * Kika på Discord
+        * Meddelande på Canvas
+        * Mail?
+
+    * (mer?)
 
 
