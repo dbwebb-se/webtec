@@ -10,7 +10,7 @@ Jag tittar också så att din inlämning uppfyller de krav som finns i uppgiften
 
 Jag läser igenom din rapportsida med redovisningstext och där vill jag se att du besvarat frågorna med någorlunda fylliga och gärna reflekterande svar.
 
-Jag testar någon, eller några, av dina sidor så att de validerar i Unicorn/HTML/CSS validatorerna.
+Jag testar någon, eller några, av dina sidor så att de validerar i HTML/CSS validatorerna.
 
 Om jag inte explicit påtalar att du behöver FIXA något så betyder det att du är på rätt väg och kan jobba vidare!
 
