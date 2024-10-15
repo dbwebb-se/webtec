@@ -5,7 +5,7 @@ $incomingDate      = $_GET["date"] ?? date("Y-m-d");
 $incomingTimestamp = strtotime($incomingDate);
 
 // Find the first day in the month, and its timestamp
-$firstDayInMonth = date("Y-m-01", $incomingTimestamp);
+$firstDayInMonth          = date("Y-m-01", $incomingTimestamp);
 $firstDayInMonthTimestamp = strtotime($firstDayInMonth);
 
 // Weekday for the first day in the month (just checking)
@@ -13,12 +13,12 @@ $firstDayInMonthWeekday = date("N", $firstDayInMonthTimestamp);
 
 // The monday to start with, and its timestamp
 $firstMondayTimestamp = strtotime("Monday this week", $firstDayInMonthTimestamp);
-$firstMonday = date("Y-d-m", $firstMondayTimestamp);
-$firstMondayWeekday = date("N", $firstMondayTimestamp);
+$firstMonday          = date("Y-d-m", $firstMondayTimestamp);
+$firstMondayWeekday   = date("N", $firstMondayTimestamp);
 
 // Previous and next month
 $previousMonth = date('Y-m-d', strtotime("first day of previous month", $incomingTimestamp));
-$nextMonth = date('Y-m-d', strtotime("first day of next month", $incomingTimestamp));
+$nextMonth     = date('Y-m-d', strtotime("first day of next month", $incomingTimestamp));
 
 
 ?><style>
