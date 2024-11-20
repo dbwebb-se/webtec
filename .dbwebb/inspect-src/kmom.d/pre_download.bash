@@ -57,9 +57,9 @@ case $KMOM in
         openUrl "$studentServerUrl/report/public/search.php"
     ;;
     kmom06)
-        openUrl "$w3cValidatorHTML=$studentServerUrl/report/public/me.php"
         openUrl "$w3cValidatorHTML=$studentServerUrl/report/public/login.php"
         openUrl "$studentServerUrl/report/public/me.php"
+        openUrl "$studentServerUrl/report/public/login.php"
     ;;
     kmom10)
         openUrl "$w3cValidatorHTML=$studentServerUrl/proj/public/home.php"
